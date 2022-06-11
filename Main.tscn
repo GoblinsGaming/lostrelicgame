@@ -81,4 +81,6 @@ texture = ExtResource( 8 )
 [node name="Camera2D" type="Camera2D" parent="PlayerController/Player"]
 position = Vector2( -109, -87 )
 current = true
+limit_left = 0
+limit_right = 5120
 smoothing_speed = 1.0
