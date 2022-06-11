@@ -12,21 +12,41 @@ export var still_camera_drift_speed = 200
 #export var moving_camera_drift_speed = 500
 export var max_camera_drift = 500
 
+export var does_flip = true
+export var flip_speed = 10
+
+var is_right = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 func _process(delta):
 	camera_drift_settings()
 	
 	if Input.is_action_pressed("right"): 
 		$Player.position.x += player_speed*delta
-		$Player/Sprite.flip_h = false
+		is_right = true
 	elif Input.is_action_pressed("left"): 
 		$Player.position.x -= player_speed*delta
-		$Player/Sprite.flip_h = true
+		is_right = false
+	
+	flip_sprite(delta)
 	drift_camera(delta)
+
+func flip_sprite(delta): 
+	if does_flip:
+		if is_right: 
+			if $Player/Sprite.scale.x < 1: 
+				$Player/Sprite.scale.x += flip_speed * delta
+		else: 
+			if $Player/Sprite.scale.x > -1: 
+				$Player/Sprite.scale.x -= flip_speed * delta
+	else: 
+		if is_right:
+			$Player/Sprite.flip_h = false
+		else: 
+			$Player/Sprite.flip_h = true
 
 func camera_drift_settings(): 
 	if Input.is_action_just_pressed("drift_camera"):
@@ -41,9 +61,9 @@ func drift_camera(delta):
 		$Player/CameraNode.position.x = 0
 		return
 	
-	if $Player/Sprite.flip_h: 
-		if $Player/CameraNode.position.x > -max_camera_drift:
-			$Player/CameraNode.position.x -= still_camera_drift_speed*delta
-	else: 
+	if is_right: 
 		if $Player/CameraNode.position.x < max_camera_drift:
 			$Player/CameraNode.position.x += still_camera_drift_speed*delta	
+	else: 
+		if $Player/CameraNode.position.x > -max_camera_drift:
+			$Player/CameraNode.position.x -= still_camera_drift_speed*delta
