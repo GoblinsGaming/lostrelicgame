@@ -18,23 +18,25 @@ func _ready():
 
 
 func _process(delta):
+	camera_drift_settings()
+	
 	if Input.is_action_pressed("right"): 
 		$Player.position.x += player_speed*delta
 		$Player/Sprite.flip_h = false
 	elif Input.is_action_pressed("left"): 
 		$Player.position.x -= player_speed*delta
 		$Player/Sprite.flip_h = true
-	else: 
-		drift_camera(delta)
+	drift_camera(delta)
 
-func drift_camera(delta): 
+func camera_drift_settings(): 
 	if Input.is_action_just_pressed("drift_camera"):
 		is_camera_drifting = not is_camera_drifting
 	if Input.is_action_just_pressed("camera_drift_up"):
 		still_camera_drift_speed *= sqrt(2) 
 	if Input.is_action_just_pressed("camera_drift_down"):
 		still_camera_drift_speed /= sqrt(2)
-			
+
+func drift_camera(delta): 
 	if not is_camera_drifting: 
 		$Player/CameraNode.position.x = 0
 		return

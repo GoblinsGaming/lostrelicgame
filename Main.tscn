@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://placeholders/train.png" type="Texture" id=1]
 [ext_resource path="res://placeholders/mountains.png" type="Texture" id=2]
@@ -10,80 +10,109 @@
 [ext_resource path="res://placeholders/mainchar.png" type="Texture" id=8]
 [ext_resource path="res://placeholders/windows.png" type="Texture" id=9]
 [ext_resource path="res://placeholders/chairs.png" type="Texture" id=10]
+[ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
+[ext_resource path="res://GameController.gd" type="Script" id=12]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.141176, 0.92549, 0.835294, 1 )
 
 [node name="Main" type="Node2D"]
 
-[node name="background" type="Node2D" parent="."]
+[node name="GameController" type="Node2D" parent="."]
+script = ExtResource( 12 )
 
-[node name="WildernessBackground" type="ParallaxBackground" parent="background"]
+[node name="background" type="Node2D" parent="GameController"]
+
+[node name="WildernessBackground" type="ParallaxBackground" parent="GameController/background"]
 script = ExtResource( 6 )
 train_speed = 200
 
-[node name="Sprite" type="Sprite" parent="background/WildernessBackground"]
+[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground"]
 texture = ExtResource( 5 )
 centered = false
 
-[node name="CloudLayer" type="ParallaxLayer" parent="background/WildernessBackground"]
+[node name="CloudLayer" type="ParallaxLayer" parent="GameController/background/WildernessBackground"]
 motion_mirroring = Vector2( 5120, 0 )
 
-[node name="Sprite" type="Sprite" parent="background/WildernessBackground/CloudLayer"]
+[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground/CloudLayer"]
 texture = ExtResource( 3 )
 centered = false
 
-[node name="MountainLayer" type="ParallaxLayer" parent="background/WildernessBackground"]
+[node name="MountainLayer" type="ParallaxLayer" parent="GameController/background/WildernessBackground"]
 motion_scale = Vector2( 0.01, 1 )
 motion_mirroring = Vector2( 5120, 0 )
 
-[node name="Sprite" type="Sprite" parent="background/WildernessBackground/MountainLayer"]
+[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground/MountainLayer"]
 texture = ExtResource( 2 )
 centered = false
 
-[node name="TreeLayer" type="ParallaxLayer" parent="background/WildernessBackground"]
+[node name="TreeLayer" type="ParallaxLayer" parent="GameController/background/WildernessBackground"]
 motion_mirroring = Vector2( 5120, 0 )
 
-[node name="Sprite" type="Sprite" parent="background/WildernessBackground/TreeLayer"]
+[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground/TreeLayer"]
 texture = ExtResource( 4 )
 centered = false
 
-[node name="train" type="Node2D" parent="."]
+[node name="train" type="Node2D" parent="GameController"]
 
-[node name="windows" type="Sprite" parent="train"]
+[node name="windows" type="Sprite" parent="GameController/train"]
 modulate = Color( 0, 0.858824, 1, 0.509804 )
 texture = ExtResource( 9 )
 centered = false
 
-[node name="Sprite" type="Sprite" parent="train"]
+[node name="Sprite" type="Sprite" parent="GameController/train"]
 texture = ExtResource( 1 )
 centered = false
 
-[node name="chairs" type="Node2D" parent="train"]
+[node name="chairs" type="Node2D" parent="GameController/train"]
 
-[node name="Sprite" type="Sprite" parent="train/chairs"]
+[node name="Sprite" type="Sprite" parent="GameController/train/chairs"]
 position = Vector2( 1021, 308 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="Sprite2" type="Sprite" parent="train/chairs"]
+[node name="Sprite2" type="Sprite" parent="GameController/train/chairs"]
 position = Vector2( 2870, 332 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="PlayerController" type="Node2D" parent="."]
+[node name="PlayerController" type="Node2D" parent="GameController"]
 script = ExtResource( 7 )
 
-[node name="Player" type="Node2D" parent="PlayerController"]
+[node name="Player" type="Node2D" parent="GameController/PlayerController"]
 position = Vector2( 670, 488 )
 
-[node name="Sprite" type="Sprite" parent="PlayerController/Player"]
-position = Vector2( -12, 33 )
+[node name="Sprite" type="Sprite" parent="GameController/PlayerController/Player"]
+position = Vector2( -9, 16 )
 texture = ExtResource( 8 )
 
-[node name="CameraNode" type="Node2D" parent="PlayerController/Player"]
+[node name="CameraNode" type="Node2D" parent="GameController/PlayerController/Player"]
 
-[node name="Camera2D" type="Camera2D" parent="PlayerController/Player/CameraNode"]
+[node name="Camera2D" type="Camera2D" parent="GameController/PlayerController/Player/CameraNode"]
 position = Vector2( -678, -486 )
 anchor_mode = 0
 current = true
 limit_left = 0
 limit_right = 5120
 smoothing_speed = 1.0
+
+[node name="SignalPoint" type="Node2D" parent="GameController"]
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 2699, 431 )
+
+[node name="Sprite" type="Sprite" parent="GameController/SignalPoint"]
+texture = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameController"]
+
+[node name="SignalBar" type="Node2D" parent="GameController/CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="GameController/CanvasLayer/SignalBar"]
+margin_left = 39.0
+margin_top = 35.0
+margin_right = 284.0
+margin_bottom = 76.0
+custom_styles/fg = SubResource( 1 )
+step = 0.0
+value = 50.0
+percent_visible = false
