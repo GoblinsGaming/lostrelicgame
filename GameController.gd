@@ -12,9 +12,13 @@ export var signal_threshold = 80
 export var convo_fill_speed = 8
 export var convo_reduction_speed = 2
 
+export var signal_move_mult = 1
+var signal_move_start 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	signal_move_start = $SignalPoint.position.x
+
 
 func _process(delta):
 	var player_x = $PlayerController/Player.position.x
@@ -38,10 +42,12 @@ func _process(delta):
 		styleBox.bg_color = Color(1, 0, 0)
 		convo_bar.value -= convo_reduction_speed*delta
 		
+	var back = $background/WildernessBackground	
+	$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
+	if $SignalPoint.position.x < -250: 
+		$SignalPoint.position.x = signal_move_start
 	
-	
-	
-	var back = $background/WildernessBackground
+
 	if Input.is_action_just_pressed("train_up"): 
 		back.train_speed *= sqrt(2)
 	elif Input.is_action_just_pressed("train_down"): 
