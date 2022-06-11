@@ -101,7 +101,7 @@ smoothing_speed = 1.0
 
 [node name="SignalPoint" type="Node2D" parent="GameController"]
 modulate = Color( 1, 1, 1, 0.443137 )
-position = Vector2( 2699, 431 )
+position = Vector2( 5345, 428 )
 
 [node name="Sprite" type="Sprite" parent="GameController/SignalPoint"]
 texture = ExtResource( 11 )

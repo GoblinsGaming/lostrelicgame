@@ -7,7 +7,9 @@ extends Node2D
 
 export var is_camera_drifting = false
 
-export var player_speed = 1000
+export var player_left_speed = 1200
+export var player_right_speed = 800
+
 export var still_camera_drift_speed = 200
 #export var moving_camera_drift_speed = 500
 export var max_camera_drift = 500
@@ -25,10 +27,12 @@ func _process(delta):
 	camera_drift_settings()
 	
 	if Input.is_action_pressed("right"): 
-		$Player.position.x += player_speed*delta
+		if $Player.position.x < 4920: 
+			$Player.position.x += player_right_speed*delta
 		is_right = true
 	elif Input.is_action_pressed("left"): 
-		$Player.position.x -= player_speed*delta
+		if $Player.position.x > 200: 
+			$Player.position.x -= player_left_speed*delta
 		is_right = false
 	
 	flip_sprite(delta)
