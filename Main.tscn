@@ -161,6 +161,24 @@ position = Vector2( 2860, 161 )
 [node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold6"]
 texture = ExtResource( 19 )
 
+[node name="Handhold7" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 4353, 155 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold7"]
+texture = ExtResource( 19 )
+
+[node name="Handhold8" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 4588, 161 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold8"]
+texture = ExtResource( 19 )
+
+[node name="Handhold9" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 4791, 161 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold9"]
+texture = ExtResource( 19 )
+
 [node name="NpcController" type="Node2D" parent="GameController"]
 script = ExtResource( 23 )
 
@@ -206,6 +224,48 @@ position = Vector2( 2179, 472 )
 script = ExtResource( 24 )
 
 [node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating6"]
+texture = ExtResource( 20 )
+
+[node name="Seating7" type="Node2D" parent="GameController/NpcController/Seating"]
+position = Vector2( 3113, 502 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating7"]
+texture = ExtResource( 20 )
+
+[node name="Seating8" type="Node2D" parent="GameController/NpcController/Seating"]
+position = Vector2( 3292, 504 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating8"]
+texture = ExtResource( 20 )
+
+[node name="Seating9" type="Node2D" parent="GameController/NpcController/Seating"]
+position = Vector2( 3500, 507 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating9"]
+texture = ExtResource( 20 )
+
+[node name="Seating10" type="Node2D" parent="GameController/NpcController/Seating"]
+position = Vector2( 3706, 507 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating10"]
+texture = ExtResource( 20 )
+
+[node name="Seating11" type="Node2D" parent="GameController/NpcController/Seating"]
+position = Vector2( 3895, 496 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating11"]
+texture = ExtResource( 20 )
+
+[node name="Seating12" type="Node2D" parent="GameController/NpcController/Seating"]
+position = Vector2( 4053, 499 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/NpcController/Seating/Seating12"]
 texture = ExtResource( 20 )
 
 [node name="Handholds" type="Node2D" parent="GameController/NpcController"]
@@ -256,6 +316,30 @@ script = ExtResource( 24 )
 target_type = 1
 
 [node name="HandholdSpace" type="Sprite" parent="GameController/NpcController/Handholds/Handhold6"]
+texture = ExtResource( 20 )
+
+[node name="Handhold7" type="Node2D" parent="GameController/NpcController/Handholds"]
+position = Vector2( 4348, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/NpcController/Handholds/Handhold7"]
+texture = ExtResource( 20 )
+
+[node name="Handhold8" type="Node2D" parent="GameController/NpcController/Handholds"]
+position = Vector2( 4583, 164 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/NpcController/Handholds/Handhold8"]
+texture = ExtResource( 20 )
+
+[node name="Handhold9" type="Node2D" parent="GameController/NpcController/Handholds"]
+position = Vector2( 4786, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/NpcController/Handholds/Handhold9"]
 texture = ExtResource( 20 )
 
 [node name="Npcs" type="Node2D" parent="GameController/NpcController"]

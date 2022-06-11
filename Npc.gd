@@ -36,7 +36,6 @@ func walk_to_target(new_target):
 
 	target = new_target
 	target_x = target.position.x
-	print("NPC walking to target " + str(new_target) + " with position " + str(target_x))
 	npc_state = NPCState.WALK
 	reset_wait()
 	
