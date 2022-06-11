@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://placeholders/train.png" type="Texture" id=1]
 [ext_resource path="res://placeholders/mountains.png" type="Texture" id=2]
@@ -14,7 +14,10 @@
 [ext_resource path="res://GameController.gd" type="Script" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.141176, 0.92549, 0.835294, 1 )
+bg_color = Color( 0.141176, 0.698039, 0.92549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0509804, 0.290196, 0.92549, 1 )
 
 [node name="Main" type="Node2D"]
 
@@ -113,6 +116,19 @@ margin_top = 35.0
 margin_right = 284.0
 margin_bottom = 76.0
 custom_styles/fg = SubResource( 1 )
+step = 0.0
+value = 50.0
+percent_visible = false
+
+[node name="ConvoBar" type="Node2D" parent="GameController/CanvasLayer"]
+position = Vector2( 0, 60 )
+
+[node name="ProgressBar" type="ProgressBar" parent="GameController/CanvasLayer/ConvoBar"]
+margin_left = 39.0
+margin_top = 33.0
+margin_right = 284.0
+margin_bottom = 74.0
+custom_styles/fg = SubResource( 2 )
 step = 0.0
 value = 50.0
 percent_visible = false
