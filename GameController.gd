@@ -7,7 +7,7 @@ extends Node2D
 
 export var signal_half_width = 275
 export var signal_fill_speed = 20
-export var signal_reduction_speed = 20
+export var signal_reduction_speed = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,3 +26,9 @@ func _process(delta):
 	else: 
 		if signal_bar.value >= 0: 
 			signal_bar.value = signal_bar.value - signal_reduction_speed*delta
+
+	var back = $background/WildernessBackground
+	if Input.is_action_just_pressed("train_up"): 
+		back.train_speed *= sqrt(2)
+	elif Input.is_action_just_pressed("train_down"): 
+		back.train_speed /= sqrt(2)
