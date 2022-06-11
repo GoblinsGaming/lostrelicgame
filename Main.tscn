@@ -78,8 +78,11 @@ position = Vector2( 670, 488 )
 position = Vector2( -12, 33 )
 texture = ExtResource( 8 )
 
-[node name="Camera2D" type="Camera2D" parent="PlayerController/Player"]
-position = Vector2( -109, -87 )
+[node name="CameraNode" type="Node2D" parent="PlayerController/Player"]
+
+[node name="Camera2D" type="Camera2D" parent="PlayerController/Player/CameraNode"]
+position = Vector2( -678, -486 )
+anchor_mode = 0
 current = true
 limit_left = 0
 limit_right = 5120
