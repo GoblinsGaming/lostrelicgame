@@ -271,7 +271,7 @@ offset = Vector2( 90, -25 )
 [node name="BodyWhole" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 4 )
 animation = "run"
-frame = 19
+frame = 46
 playing = true
 offset = Vector2( 20, 143 )
 
