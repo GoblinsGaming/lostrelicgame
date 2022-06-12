@@ -1,9 +1,9 @@
 extends Node2D
 signal stop_using_target(this)
 
-var NpcTarget = preload("res://NpcTarget.gd")
+var PassengerTarget = preload("res://PassengerTarget.gd")
 
-enum NPCState {
+enum PassengerState {
 	IDLE,
 	WALK,
 	HANDHOLD,
@@ -12,7 +12,7 @@ enum NPCState {
 	TRIP
 }
 
-export var npc_speed = 300
+export var passenger_speed = 300
 export var seating_half_width = 20
 
 
@@ -20,7 +20,7 @@ var rng = RandomNumberGenerator.new()
 var target
 var target_x
 
-var npc_state = NPCState.IDLE
+var passenger_state = PassengerState.IDLE
 
 export var min_time_for_state_change = 3
 export var max_time_for_state_change = 6
@@ -33,40 +33,39 @@ func _ready():
 	# target_seating_x = seating.position.x
 	
 func walk_to_target(new_target): 
-
 	target = new_target
 	target_x = target.position.x
-	npc_state = NPCState.WALK
+	passenger_state = PassengerState.WALK
 	reset_wait()
 	
 func _process(delta): 
-	if npc_state == NPCState.WALK: 
+	if passenger_state == PassengerState.WALK: 
 		$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
-			position.x += npc_speed * delta
+			position.x += passenger_speed * delta
 			$AnimatedSprite.flip_h = false
 		elif position.x > target_x + seating_half_width:
-			position.x -= npc_speed * delta
+			position.x -= passenger_speed * delta
 			$AnimatedSprite.flip_h = true
 		else: 
-			if target.target_type == NpcTarget.TargetType.SEAT:
-				npc_state = NPCState.SIT
+			if target.target_type == PassengerTarget.TargetType.SEAT:
+				passenger_state = PassengerState.SIT
 				position.x = target_x
 				$AnimatedSprite.play("sit")
 				reset_wait()
-			elif target.target_type == NpcTarget.TargetType.HANDHOLD:
-				npc_state = NPCState.HANDHOLD
+			elif target.target_type == PassengerTarget.TargetType.HANDHOLD:
+				passenger_state = PassengerState.HANDHOLD
 				position.x = target_x
 				$AnimatedSprite.play("handhold")
 				reset_wait()
 			else: 
-				npc_state = NPCState.IDLE
+				passenger_state = PassengerState.IDLE
 				printerr("Unexpected target type: " + str(target.target_type) + " for NPC")
 				position.x = target_x
 				$AnimatedSprite.play("idle")
 				reset_wait()
 				
-	elif npc_state in [NPCState.SIT, NPCState.HANDHOLD] : 
+	elif passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD] : 
 		if time_since_last_state_change >= time_til_next_state_change: 
 			emit_signal("stop_using_target", self)
 		else: 
