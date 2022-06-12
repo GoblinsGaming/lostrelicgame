@@ -313,6 +313,27 @@ texture = ExtResource( 20 )
 [node name="Passenger" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
 position = Vector2( 2437, 499 )
 
+[node name="Passenger2" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 2619, 502 )
+
+[node name="Passenger3" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 2794, 499 )
+
+[node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 2976, 502 )
+
+[node name="Passenger5" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 3136, 509 )
+
+[node name="Passenger6" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 3318, 512 )
+
+[node name="Passenger7" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 3493, 509 )
+
+[node name="Passenger8" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 3675, 512 )
+
 [node name="PlayerController" type="Node2D" parent="GameController"]
 script = ExtResource( 7 )
 

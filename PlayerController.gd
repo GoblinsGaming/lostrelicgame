@@ -32,7 +32,7 @@ func _ready():
 
 func _process(delta):
 	calculate_player_input_forces(delta)
-	if position.x < 0 or position.x > 1350:
+	if $Player.position.x < 200 or $Player.position.x > 5000:
 		player_force = -player_force
 	calculate_friction()
 	player_velocity = player_net_force * (delta / PLAYER_WEIGHT)

@@ -1,5 +1,6 @@
 extends Node2D
 
+export var TARGET_VELOCITY = -20
 var velocity = 0
 const FRICTION = 200
 const INVINCIBILITY_TIME = 1
@@ -13,14 +14,14 @@ func _ready():
 
 func _process(delta):
 	position.x += velocity * delta
-	if velocity > 0:
+	if velocity > TARGET_VELOCITY:
 		velocity -= FRICTION * delta
-		if velocity < 0:
-			velocity = 0
+#		if velocity < 0:
+#			velocity = 0
 	else:
 		velocity += FRICTION * delta
-		if velocity > 0:
-			velocity = 0
+#		if velocity > 0:
+#			velocity = 0
 	invincibility_timer -= delta
 	if invincibility_timer > 0:
 		$Sprite2.visible = true

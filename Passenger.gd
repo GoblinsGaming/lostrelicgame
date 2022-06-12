@@ -14,7 +14,8 @@ enum PassengerState {
 	TRIP
 }
 
-export var passenger_speed = 300
+const WALK_SPEED = 200
+export var target_velocity = WALK_SPEED
 export var seating_half_width = 20
 
 var rng = RandomNumberGenerator.new()
@@ -50,10 +51,10 @@ func _process(delta):
 	if passenger_state == PassengerState.WALK: 
 		$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
-			position.x += passenger_speed * delta
+			target_velocity = WALK_SPEED
 			$AnimatedSprite.flip_h = false
 		elif position.x > target_x + seating_half_width:
-			position.x -= passenger_speed * delta
+			target_velocity = -WALK_SPEED
 			$AnimatedSprite.flip_h = true
 		else: 
 			if target.target_type == PassengerTarget.TargetType.SEAT:
@@ -78,19 +79,21 @@ func _process(delta):
 			emit_signal("stop_using_target", self)
 		else: 
 			time_since_last_state_change += delta
-
+			
+	velocity_calculations(delta) 
+	
 func velocity_calculations(delta): 
 	if passenger_state != PassengerState.WALK:
 		return
-	position.x += velocity * delta
-	if velocity > 0:
+
+	if velocity > target_velocity:
 		velocity -= FRICTION * delta
-		if velocity < 0:
-			velocity = 0
+#		if velocity < target_velocity:
+#			velocity = target_velocity
 	else:
 		velocity += FRICTION * delta
-		if velocity > 0:
-			velocity = 0
+#		if velocity > target_velocity:
+#			velocity = target_velocity
 	invincibility_timer -= delta
 	if invincibility_timer > 0:
 		$Sprite2.visible = true
@@ -98,9 +101,9 @@ func velocity_calculations(delta):
 	else:
 		$Sprite2.visible = false
 		is_invincible = false
-	if position.x < 0 or position.x > 1350:
+	if position.x < 0 or position.x > 5000:
 		velocity = -velocity
-	
+	position.x += velocity * delta
 		
 func reset_wait(): 
 	time_til_next_state_change = rng.randf_range(min_time_for_state_change, max_time_for_state_change)
@@ -112,7 +115,7 @@ func impact(player_velocity):
 	if passenger_state != PassengerState.WALK:
 		return
 
-	velocity += player_velocity * 20
+	velocity += player_velocity * 100
 	invincibility_timer = INVINCIBILITY_TIME
 
 func _on_Area2D_area_entered(enemy_area):
