@@ -45,18 +45,19 @@ func walk_npc_to_random_target(npc):
 		return
 	var target_index
 	
-	var get_random = rng.randi_range(0,3) == 0
+	var get_random = rng.randi_range(0,3)
 	
-	if get_random: 
+	if get_random == 0: 
 		target_index = rng.randi_range(0, unassigned_targets.size()-1)
 	else: 
 		var closest_dist = INF 
-		var signal_pos_x = self.get_parent().get_node("SignalPoint").position.x
+		var get_close_to
+		get_close_to = self.get_parent().get_node("PlayerController").get_node("Player").position.x
 		for new_target_index in range(0, unassigned_targets.size()-1):
 			var new_target = unassigned_targets[new_target_index]
-			var dist_to_signal = abs(new_target.position.x - signal_pos_x)
-			if dist_to_signal < closest_dist:
-				closest_dist = dist_to_signal
+			var dist_to_close = abs(new_target.position.x - get_close_to)
+			if dist_to_close < closest_dist:
+				closest_dist = dist_to_close
 				target_index = new_target_index
 
 	var target = unassigned_targets[target_index]
