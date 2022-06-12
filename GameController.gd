@@ -9,8 +9,8 @@ export var signal_half_width = 275
 export var signal_fill_speed = 50
 export var signal_reduction_speed = 20
 export var signal_threshold = 80
-export var convo_fill_speed = 8
-export var convo_reduction_speed = 2
+export var convo_fill_speed = 2
+export var convo_reduction_speed = 0.5
 
 export var signal_move_mult = 1
 var signal_move_start 
@@ -33,10 +33,15 @@ var is_train_accelerating = false
 var time_since_last_train_speed_change = 0
 var time_to_next_train_speed_change = 0 
 
+onready var signal_bar = $CanvasLayer/SignalBar/ProgressBar
+onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
+
 func _ready():
 	signal_move_start = $SignalPoint.position.x
 	back.train_speed = 0
 	time_to_next_train_speed_change = rng.randf_range(2,20)
+	signal_bar.value = 0
+	convo_bar.value = 20
 
 func _process(delta):
 	signal_processing(delta)
@@ -167,8 +172,7 @@ func accelerate_train(delta):
 func signal_processing(delta): 
 	var player_x = $PlayerController/Player.position.x
 	var signal_x = $SignalPoint.position.x
-	var signal_bar = $CanvasLayer/SignalBar/ProgressBar
-	var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
+
 	
 	if abs(signal_x - player_x) <= signal_half_width: 
 		if signal_bar.value <= 100: 
