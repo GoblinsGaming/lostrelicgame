@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://WildernessBackground.gd" type="Script" id=1]
+[ext_resource path="res://placeholders/sky.png" type="Texture" id=2]
+[ext_resource path="res://placeholders/mountains.png" type="Texture" id=3]
+[ext_resource path="res://placeholders/trees.png" type="Texture" id=4]
+[ext_resource path="res://placeholders/clouds.png" type="Texture" id=5]
+
+[node name="background" type="Node2D"]
+
+[node name="WildernessBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 1 )
+train_speed = 200
+
+[node name="Sprite" type="Sprite" parent="WildernessBackground"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CloudLayer" type="ParallaxLayer" parent="WildernessBackground"]
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Sprite" type="Sprite" parent="WildernessBackground/CloudLayer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="MountainLayer" type="ParallaxLayer" parent="WildernessBackground"]
+motion_scale = Vector2( 0.01, 1 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Sprite" type="Sprite" parent="WildernessBackground/MountainLayer"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="TreeLayer" type="ParallaxLayer" parent="WildernessBackground"]
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Sprite" type="Sprite" parent="WildernessBackground/TreeLayer"]
+texture = ExtResource( 4 )
+centered = false
