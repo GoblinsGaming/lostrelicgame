@@ -34,7 +34,13 @@ const FRICTION = 200
 const INVINCIBILITY_TIME = 1
 var invincibility_timer = 0
 var is_invincible
+
+const MAX_VELOCITY = 1000
+const COMFORT_VELOCITY = 500
+
 var is_npc = true
+
+var is_bumped = true
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -48,6 +54,20 @@ func walk_to_target(new_target):
 	reset_wait()
 
 func _process(delta): 
+	if passenger_state == PassengerState.SHOVE and abs(velocity) < COMFORT_VELOCITY:
+		passenger_state = PassengerState.WALK
+		$AnimatedSprite.play("walk")
+	elif passenger_state == PassengerState.WALK and abs(velocity) > COMFORT_VELOCITY: 
+		passenger_state = PassengerState.SHOVE
+		$AnimatedSprite.play("shove")
+	
+	if passenger_state == PassengerState.SHOVE:
+		if velocity > 0: 
+			$AnimatedSprite.flip_h = false
+		else: 
+			$AnimatedSprite.flip_h = true	
+	
+		
 	if passenger_state == PassengerState.WALK: 
 		$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
@@ -83,9 +103,11 @@ func _process(delta):
 	velocity_calculations(delta) 
 	
 func velocity_calculations(delta): 
-	if passenger_state != PassengerState.WALK:
+	if passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD]:
 		return
-
+	if velocity > MAX_VELOCITY: 
+		velocity = MAX_VELOCITY
+		
 	if velocity > target_velocity:
 		velocity -= FRICTION * delta
 #		if velocity < target_velocity:
@@ -94,6 +116,7 @@ func velocity_calculations(delta):
 		velocity += FRICTION * delta
 #		if velocity > target_velocity:
 #			velocity = target_velocity
+		
 	invincibility_timer -= delta
 	if invincibility_timer > 0:
 		$Sprite2.visible = true
@@ -103,6 +126,7 @@ func velocity_calculations(delta):
 		is_invincible = false
 	if position.x < 0 or position.x > 5000:
 		velocity = -velocity
+		
 	position.x += velocity * delta
 		
 func reset_wait(): 
@@ -115,11 +139,21 @@ func impact(player_velocity):
 	if passenger_state != PassengerState.WALK:
 		return
 
-	velocity += player_velocity * 100
+	velocity += player_velocity * 170
 	invincibility_timer = INVINCIBILITY_TIME
+
+func impact_enemy(enemy_velocity):
+	if is_invincible:
+		return
+	if passenger_state != PassengerState.WALK:
+		return
+
+	velocity += enemy_velocity
+	invincibility_timer = INVINCIBILITY_TIME
+
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
 	if enemy.get("is_npc") != null:
 		if is_invincible:
-			enemy.impact(velocity / 16)
+			enemy.impact_enemy(velocity)

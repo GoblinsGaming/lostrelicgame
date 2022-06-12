@@ -37,7 +37,7 @@ func _process(delta):
 	calculate_friction()
 	player_velocity = player_net_force * (delta / PLAYER_WEIGHT)
 	is_right = (player_velocity >= 0)
-	print(player_velocity)
+	# print(player_velocity)
 	$Player.position.x += player_velocity
 	calculate_lean_indicator()
 	

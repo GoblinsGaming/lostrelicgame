@@ -63,3 +63,5 @@ shape = SubResource( 4 )
 visible = false
 position = Vector2( -1, -221 )
 texture = ExtResource( 8 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
