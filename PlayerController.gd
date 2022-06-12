@@ -15,7 +15,6 @@ export var flip_speed = 10
 
 var is_right = true
 
-
 var player_velocity = 0
 const PLAYER_WEIGHT = 1 
 const PLAYER_MAX_FORCE = 1000
@@ -28,16 +27,20 @@ const LEAN_SPEED = 50
 
 var Passenger = preload("res://Passenger.gd")
 
+var train_acceleration = 0
+
 func _ready():
 	pass
 
 func _process(delta):
 	calculate_player_input_forces(delta)
+	player_velocity -= delta*train_acceleration*2
+
 	if $Player.position.x < 200:
-		player_velocity = -player_velocity * 2
+		player_velocity = -player_velocity
 		$Player.position.x = 210
 	if $Player.position.x > 5000:
-		player_velocity = -player_velocity * 2
+		player_velocity = -player_velocity
 		$Player.position.x = 4990
 	if player_velocity == 0:
 		$Player/Animations/BodyUpper.play("idle")
@@ -62,7 +65,6 @@ func _process(delta):
 	elif player_velocity < 0: 
 		is_right = false
 		
-	# print(player_velocity)
 	player_velocity = clamp(player_velocity, -PLAYER_MAX_VELOCITY, PLAYER_MAX_VELOCITY)
 	$Player.position.x += player_velocity * (delta / PLAYER_WEIGHT)
 	calculate_lean_indicator(delta)
@@ -71,6 +73,8 @@ func _process(delta):
 	flip_sprite(delta)
 	drift_camera(delta)
 
+func set_train_acceleration(new_train_acceleration): 
+	train_acceleration = new_train_acceleration
 
 func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("right"): 
@@ -87,16 +91,18 @@ func calculate_player_input_forces(delta):
 		calculate_friction()
 	if Input.is_action_pressed("ui_down"):
 		player_velocity = 0
+	
 
 func calculate_friction():
-	if player_velocity > 0:
+	var target_velocity = -train_acceleration
+	if player_velocity > target_velocity:
 		player_velocity -= PLAYER_FRICTION
-		if player_velocity < 0:
-			player_velocity = 0
-	if player_velocity < 0:
+		if player_velocity < target_velocity:
+			player_velocity = target_velocity
+	if player_velocity < target_velocity:
 		player_velocity += PLAYER_FRICTION
-		if player_velocity > 0:
-			player_velocity = 0
+		if player_velocity > target_velocity:
+			player_velocity = target_velocity
 
 func calculate_lean_indicator(delta):
 	var lean_perc = player_velocity / PLAYER_MAX_FORCE
@@ -107,10 +113,8 @@ func calculate_lean_indicator(delta):
 		$Player/Animations/BodyUpper.rotation_degrees += delta * LEAN_SPEED
 	elif $Player/Animations/BodyUpper.rotation_degrees > abs(lean_angle):
 		$Player/Animations/BodyUpper.rotation_degrees -= delta * LEAN_SPEED
-	#$Player/Animations/BodyUpper.rotation_degrees = abs(lean_angle)
 	$Player/Animations/BodyUpper.speed_scale = abs(lean_perc)
 	$Player/Animations/BodyLower.speed_scale = abs(lean_perc)
-	print(abs(lean_perc))
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
@@ -118,17 +122,12 @@ func _on_Area2D_area_entered(enemy_area):
 		return
 	if enemy.is_invincible:
 		return
-	if player_velocity > 0:
-		player_velocity *= 0.6
-		if player_velocity < 0:
-			player_velocity = 0
-		enemy.impact(player_velocity)
-	else:
-		player_velocity *= 0.6
-		if player_velocity > 0:
-			player_velocity = 0
-		enemy.impact(player_velocity)
-
+	
+	var enemy_velocity = enemy.velocity
+	enemy.impact(player_velocity)
+	player_velocity += enemy_velocity*enemy.shove_strength
+	# player_velocity += (100 + enemy_velocity * (abs(player_velocity)/PLAYER_MAX_FORCE) * enemy.shove_strength)	
+	
 func _on_Area2D_area_exited(enemy_area):
 	pass
 
