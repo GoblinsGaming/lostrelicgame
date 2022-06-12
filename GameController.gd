@@ -22,15 +22,113 @@ var mist_increase = true
 var mist_change_rate = 1
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	signal_move_start = $SignalPoint.position.x
-
+	back.train_speed = 0
 
 func _process(delta):
+	signal_processing(delta)
+	adjust_mist(delta)
+	accelerate_train(delta)
+
+var train_target_speed = 0
+
+var train_acceleration = 500
+
+var is_train_moving = false
+
+var train_jutter_speed = 50
+var train_jutter_acceleration = train_acceleration * 1.5
+var is_train_juttering = false
+var is_train_juttering_back = true
+
+var is_train_speeding_up = false
+var is_train_accelerating = false
+
+
+func accelerate_train(delta): 
+	if Input.is_action_just_pressed("train_up"): 
+		train_target_speed = 800
+		train_acceleration = 300
+		train_jutter_acceleration =  train_acceleration * 1.5
+		is_train_juttering = true
+		is_train_juttering_back = true
+		is_train_accelerating = true
+		is_train_speeding_up = true
 	
+	if Input.is_action_just_pressed("train_double_up"): 
+		train_target_speed = 1200
+		train_acceleration = 500
+		train_jutter_acceleration =  train_acceleration * 1.5
+		is_train_juttering = true
+		is_train_juttering_back = true
+		is_train_accelerating = true
+		is_train_speeding_up = true
+		
+	if Input.is_action_just_pressed("train_down"): 
+		train_target_speed = 0
+		train_acceleration = 300
+		train_jutter_acceleration =  train_acceleration * 1.5
+		is_train_juttering = false
+		is_train_juttering_back = false
+		is_train_accelerating = true
+		is_train_speeding_up = false
+			
+	if Input.is_action_just_pressed("train_double_down"): 
+		train_target_speed = 0
+		train_acceleration = 500
+		train_jutter_acceleration =  train_acceleration * 1.5
+		is_train_juttering = false
+		is_train_juttering_back = false
+		is_train_accelerating = true
+		is_train_speeding_up = false
+		
+	if not is_train_accelerating: 
+		return
+		
+	if is_train_juttering: 
+		if back.train_speed > train_jutter_speed:
+			is_train_juttering = false
+			return
+		if is_train_juttering_back:
+			if back.train_speed > -train_jutter_speed:
+				back.train_speed -= train_jutter_acceleration * delta
+				$PlayerController.set_train_acceleration(-train_jutter_acceleration)
+			else:
+				is_train_juttering_back = false
+		else: 
+			if back.train_speed < train_jutter_speed:
+				back.train_speed += train_jutter_acceleration * delta
+				$PlayerController.set_train_acceleration(train_jutter_acceleration)
+			else:
+				is_train_juttering = false
+	else:
+		if is_train_speeding_up:
+			if back.train_speed < train_target_speed:
+				back.train_speed += train_acceleration * delta
+				$PlayerController.set_train_acceleration(train_acceleration)
+			else: 
+				$PlayerController.set_train_acceleration(0)
+				is_train_accelerating = false
+		else: 
+			if back.train_speed > train_target_speed:
+				back.train_speed -= train_acceleration * delta
+				$PlayerController.set_train_acceleration(-train_acceleration)
+			else: 
+				$PlayerController.set_train_acceleration(0)
+				is_train_accelerating = false
+
+	return
 	
+	if Input.is_action_just_pressed("train_up"): 
+		back.train_speed *= sqrt(2)
+	elif Input.is_action_just_pressed("train_down"): 
+		back.train_speed /= sqrt(2)
+		
+	
+
+func signal_processing(delta): 
 	var player_x = $PlayerController/Player.position.x
 	var signal_x = $SignalPoint.position.x
 	var signal_bar = $CanvasLayer/SignalBar/ProgressBar
@@ -55,11 +153,6 @@ func _process(delta):
 	$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
 	if $SignalPoint.position.x < -250: 
 		$SignalPoint.position.x = signal_move_start
-	adjust_mist(delta)
-	if Input.is_action_just_pressed("train_up"): 
-		back.train_speed *= sqrt(2)
-	elif Input.is_action_just_pressed("train_down"): 
-		back.train_speed /= sqrt(2)
 
 func adjust_mist(delta):
 	if mist_increase:
