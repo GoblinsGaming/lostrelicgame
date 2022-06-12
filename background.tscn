@@ -20,6 +20,14 @@ script = ExtResource( 6 )
 texture = ExtResource( 4 )
 centered = false
 
+[node name="CloudsVeryFar" type="ParallaxLayer" parent="WildernessBackground"]
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Sprite" type="Sprite" parent="WildernessBackground/CloudsVeryFar"]
+position = Vector2( 8, 102 )
+texture = ExtResource( 7 )
+centered = false
+
 [node name="MountainFar" type="ParallaxLayer" parent="WildernessBackground"]
 motion_mirroring = Vector2( 5120, 0 )
 

@@ -25,10 +25,8 @@ script = ExtResource( 12 )
 [node name="background" parent="GameController" instance=ExtResource( 2 )]
 
 [node name="train" parent="GameController" instance=ExtResource( 1 )]
-visible = false
 
 [node name="Handholds" type="Node2D" parent="GameController"]
-visible = false
 
 [node name="Handhold" type="Node2D" parent="GameController/Handholds"]
 position = Vector2( 552, 149 )
@@ -85,93 +83,36 @@ position = Vector2( 4791, 161 )
 texture = ExtResource( 19 )
 
 [node name="PassengerController" type="Node2D" parent="GameController"]
-visible = false
 script = ExtResource( 23 )
 
 [node name="Seating" type="Node2D" parent="GameController/PassengerController"]
 
 [node name="Seating1" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 1239, 475 )
+position = Vector2( 766, 550 )
 script = ExtResource( 24 )
 
 [node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating1"]
 texture = ExtResource( 20 )
 
 [node name="Seating2" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 1418, 477 )
+position = Vector2( 888, 555 )
 script = ExtResource( 24 )
 
 [node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating2"]
 texture = ExtResource( 20 )
 
 [node name="Seating3" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 1626, 480 )
+position = Vector2( 1012, 558 )
 script = ExtResource( 24 )
 
 [node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating3"]
 texture = ExtResource( 20 )
 
 [node name="Seating4" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 1832, 480 )
+position = Vector2( 1128, 564 )
 script = ExtResource( 24 )
 
 [node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating4"]
-texture = ExtResource( 20 )
-
-[node name="Seating5" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 2021, 469 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating5"]
-texture = ExtResource( 20 )
-
-[node name="Seating6" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 2179, 472 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating6"]
-texture = ExtResource( 20 )
-
-[node name="Seating7" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 3113, 502 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating7"]
-texture = ExtResource( 20 )
-
-[node name="Seating8" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 3292, 504 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating8"]
-texture = ExtResource( 20 )
-
-[node name="Seating9" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 3500, 507 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating9"]
-texture = ExtResource( 20 )
-
-[node name="Seating10" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 3706, 507 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating10"]
-texture = ExtResource( 20 )
-
-[node name="Seating11" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 3895, 496 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating11"]
-texture = ExtResource( 20 )
-
-[node name="Seating12" type="Node2D" parent="GameController/PassengerController/Seating"]
-position = Vector2( 4053, 499 )
-script = ExtResource( 24 )
-
-[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating12"]
 texture = ExtResource( 20 )
 
 [node name="Handholds" type="Node2D" parent="GameController/PassengerController"]
@@ -275,7 +216,6 @@ position = Vector2( 3493, 509 )
 position = Vector2( 3675, 512 )
 
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
-visible = false
 
 [node name="SignalPoint" type="Node2D" parent="GameController"]
 modulate = Color( 1, 1, 1, 0.443137 )
