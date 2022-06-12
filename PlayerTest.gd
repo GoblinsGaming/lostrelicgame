@@ -20,6 +20,7 @@ func _process(delta):
 		player_force = -player_force
 	calculate_friction()
 	player_velocity = player_net_force * (delta / PLAYER_WEIGHT)
+	print(player_velocity)
 	position.x += player_velocity
 	calculate_lean_indicator()
 
@@ -67,3 +68,6 @@ func _on_Area2D_area_entered(enemy_area):
 		if player_force > 0:
 			player_force = 0
 		enemy.impact(player_velocity)
+
+func _on_Area2D_area_exited(enemy_area):
+	player_force *= 1.3

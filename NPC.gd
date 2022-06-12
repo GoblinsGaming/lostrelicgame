@@ -1,7 +1,7 @@
 extends Node2D
 
 var velocity = 0
-const FRICTION = 100
+const FRICTION = 200
 const INVINCIBILITY_TIME = 1
 var invincibility_timer = 0
 var is_invincible
@@ -35,7 +35,6 @@ func impact(player_velocity):
 	if is_invincible:
 		return
 	else:
-		print("MOVE")
 		velocity += player_velocity * 20
 		invincibility_timer = INVINCIBILITY_TIME
 
