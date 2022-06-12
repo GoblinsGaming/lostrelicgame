@@ -72,7 +72,7 @@ func randomize_train_acceleration(delta):
 		
 	print("time_since_last_train_speed_change " + str(time_since_last_train_speed_change))
 	time_since_last_train_speed_change = 0
-	time_to_next_train_speed_change = rng.randf_range(2,10)
+	time_to_next_train_speed_change = rng.randf_range(6,20)
 	print("time_to_next_train_speed_change " + str(time_to_next_train_speed_change))
 	
 	var acc_mult = rng.randf_range(0.2, 0.8)
@@ -149,25 +149,22 @@ func accelerate_train(delta):
 			if back.train_speed < train_target_speed:
 				back.train_speed += train_acceleration * delta
 				$PlayerController.set_train_acceleration(train_acceleration)
+				$PassengerController.set_train_acceleration(train_acceleration)
 			else: 
 				$PlayerController.set_train_acceleration(0)
+				$PassengerController.set_train_acceleration(0)
 				is_train_accelerating = false
 	else: 
 		if back.train_speed > train_target_speed:
 			back.train_speed += train_acceleration * delta
 			$PlayerController.set_train_acceleration(train_acceleration)
+			$PassengerController.set_train_acceleration(train_acceleration)
 		else: 
 			$PlayerController.set_train_acceleration(0)
+			$PassengerController.set_train_acceleration(0)
 			is_train_accelerating = false
 
 	return
-	
-	if Input.is_action_just_pressed("train_up"): 
-		back.train_speed *= sqrt(2)
-	elif Input.is_action_just_pressed("train_down"): 
-		back.train_speed /= sqrt(2)
-		
-	
 
 func signal_processing(delta): 
 	var player_x = $PlayerController/Player.position.x

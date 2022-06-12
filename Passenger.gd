@@ -42,6 +42,7 @@ const COMFORT_VELOCITY = 500
 var is_npc = true
 
 var is_bumped = true
+var train_acceleration = 0
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -73,10 +74,10 @@ func _process(delta):
 	if passenger_state == PassengerState.WALK: 
 		$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
-			target_velocity = WALK_SPEED
+			target_velocity = WALK_SPEED - train_acceleration
 			$AnimatedSprite.flip_h = false
 		elif position.x > target_x + seating_half_width:
-			target_velocity = -WALK_SPEED
+			target_velocity = -WALK_SPEED + train_acceleration
 			$AnimatedSprite.flip_h = true
 		else: 
 			if target.target_type == PassengerTarget.TargetType.SEAT:
@@ -103,12 +104,15 @@ func _process(delta):
 			time_since_last_state_change += delta
 			
 	velocity_calculations(delta) 
-	
+
+func set_train_acceleration(new_train_acceleration): 
+	train_acceleration = new_train_acceleration
+
 func velocity_calculations(delta): 
 	if passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD]:
 		return
 	velocity = clamp(velocity, -MAX_VELOCITY, MAX_VELOCITY)
-		
+	
 	if velocity > target_velocity:
 		velocity -= FRICTION * delta
 	else:
@@ -147,7 +151,6 @@ func impact_enemy(enemy_velocity):
 
 	velocity += enemy_velocity
 	invincibility_timer = INVINCIBILITY_TIME
-
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
