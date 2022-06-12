@@ -51,6 +51,7 @@ func walk_to_target(new_target):
 	target = new_target
 	target_x = target.position.x
 	passenger_state = PassengerState.WALK
+	
 	reset_wait()
 
 func _process(delta): 

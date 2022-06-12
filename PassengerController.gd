@@ -25,14 +25,6 @@ func _ready():
 		if passenger.passenger_state == Passenger.PassengerState.IDLE:
 			walk_passenger_to_random_target(passenger)
 
-func _on_passenger_stop_sitting(passenger): 
-	if unassigned_targets.empty(): 
-		passenger.reset_wait()
-		return
-	var last_target = passenger.target
-	walk_passenger_to_random_target(passenger)
-	unassigned_targets.append(last_target)
-
 func _on_passenger_stop_using_target(passenger): 
 	if unassigned_targets.empty(): 
 		passenger.reset_wait()
