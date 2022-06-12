@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://GameController.gd" type="Script" id=12]
 [ext_resource path="res://placeholders/handhold.png" type="Texture" id=19]
 [ext_resource path="res://placeholders/seating_space.png" type="Texture" id=20]
-[ext_resource path="res://Passenger.tscn" type="PackedScene" id=22]
 [ext_resource path="res://PassengerController.gd" type="Script" id=23]
 [ext_resource path="res://PassengerTarget.gd" type="Script" id=24]
 
@@ -190,30 +189,6 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
-
-[node name="Passenger" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 2437, 499 )
-
-[node name="Passenger2" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 2619, 502 )
-
-[node name="Passenger3" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 2794, 499 )
-
-[node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 2976, 502 )
-
-[node name="Passenger5" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 3136, 509 )
-
-[node name="Passenger6" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 3318, 512 )
-
-[node name="Passenger7" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 3493, 509 )
-
-[node name="Passenger8" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
-position = Vector2( 3675, 512 )
 
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
 

@@ -140,7 +140,7 @@ func impact(player_velocity):
 	if passenger_state != PassengerState.WALK:
 		return
 
-	velocity += player_velocity * 170
+	velocity += player_velocity
 	invincibility_timer = INVINCIBILITY_TIME
 
 func impact_enemy(enemy_velocity):
