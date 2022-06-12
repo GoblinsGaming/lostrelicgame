@@ -19,12 +19,6 @@ script = ExtResource( 6 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="Field" type="Sprite" parent="WildernessBackground"]
-position = Vector2( -2, -22 )
-scale = Vector2( 1.00135, 1.04334 )
-texture = ExtResource( 9 )
-centered = false
-
 [node name="CloudsClose" type="ParallaxLayer" parent="WildernessBackground"]
 motion_mirroring = Vector2( 5120, 0 )
 
@@ -35,34 +29,65 @@ centered = false
 [node name="Mountain" type="ParallaxLayer" parent="WildernessBackground"]
 motion_mirroring = Vector2( 5120, 0 )
 
-[node name="Sprite" type="Sprite" parent="WildernessBackground/Mountain"]
+[node name="Mountain" type="Sprite" parent="WildernessBackground/Mountain"]
 texture = ExtResource( 5 )
 centered = false
 
 [node name="GrassFar" type="ParallaxLayer" parent="WildernessBackground"]
 motion_mirroring = Vector2( 5120, 0 )
 
-[node name="Sprite" type="Sprite" parent="WildernessBackground/GrassFar"]
+[node name="Grass" type="Sprite" parent="WildernessBackground/GrassFar"]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Field" type="Sprite" parent="WildernessBackground/GrassFar"]
+position = Vector2( -2, -22 )
+scale = Vector2( 1.00135, 1.04334 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Grass2" type="Sprite" parent="WildernessBackground/GrassFar"]
 texture = ExtResource( 8 )
 centered = false
 
 [node name="GrassMidFar" type="ParallaxLayer" parent="WildernessBackground"]
+visible = false
 motion_mirroring = Vector2( 5120, 0 )
 
+[node name="Field" type="Sprite" parent="WildernessBackground/GrassMidFar"]
+visible = false
+position = Vector2( 11, 54 )
+scale = Vector2( 1.00135, 1.04334 )
+texture = ExtResource( 9 )
+centered = false
+
 [node name="Sprite" type="Sprite" parent="WildernessBackground/GrassMidFar"]
+visible = false
 texture = ExtResource( 1 )
 centered = false
 
 [node name="GrassMidClose" type="ParallaxLayer" parent="WildernessBackground"]
+visible = false
 motion_mirroring = Vector2( 5120, 0 )
 
+[node name="Field" type="Sprite" parent="WildernessBackground/GrassMidClose"]
+visible = false
+position = Vector2( 13, 107 )
+scale = Vector2( 1.00135, 1.04334 )
+texture = ExtResource( 9 )
+centered = false
+
 [node name="Sprite" type="Sprite" parent="WildernessBackground/GrassMidClose"]
+visible = false
 texture = ExtResource( 3 )
 centered = false
 
 [node name="GrassClose" type="ParallaxLayer" parent="WildernessBackground"]
+visible = false
 motion_mirroring = Vector2( 5120, 0 )
 
 [node name="Sprite" type="Sprite" parent="WildernessBackground/GrassClose"]
+visible = false
 texture = ExtResource( 2 )
 centered = false

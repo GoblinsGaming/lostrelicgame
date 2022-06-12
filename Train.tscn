@@ -1,28 +1,71 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://placeholders/train.png" type="Texture" id=1]
-[ext_resource path="res://placeholders/chairs.png" type="Texture" id=2]
-[ext_resource path="res://placeholders/windows.png" type="Texture" id=3]
+[ext_resource path="res://Train-Interior/Seats.png" type="Texture" id=1]
+[ext_resource path="res://Train-Interior/Train-Window-Pane-BG.png" type="Texture" id=4]
+[ext_resource path="res://Train-Interior/Train-Window-Frame-BG.png" type="Texture" id=5]
+[ext_resource path="res://Train-Interior/Train-Wall-Plain.png" type="Texture" id=6]
+[ext_resource path="res://Train-Interior/Train-End-L-BG-Open.png" type="Texture" id=7]
+[ext_resource path="res://Train-Interior/Train-End-L-BG.png" type="Texture" id=8]
 
 [node name="train" type="Node2D"]
 
-[node name="windows" type="Sprite" parent="."]
-modulate = Color( 0, 0.858824, 1, 0.509804 )
-texture = ExtResource( 3 )
+[node name="TrainBody" type="Node2D" parent="."]
+
+[node name="Train-End-L-Bg-Open" type="Sprite" parent="TrainBody"]
+visible = false
+texture = ExtResource( 7 )
 centered = false
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Train-End-L-Bg" type="Sprite" parent="TrainBody"]
+position = Vector2( 320, 424 )
+texture = ExtResource( 8 )
+
+[node name="Train-End-L-Bg2" type="Sprite" parent="TrainBody"]
+position = Vector2( 4816, 424 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 8 )
+
+[node name="Train-Wall-Plain" type="Sprite" parent="TrainBody"]
+position = Vector2( 960, 424 )
+texture = ExtResource( 6 )
+
+[node name="Train-Window-Frame-Bg" type="Sprite" parent="TrainBody"]
+position = Vector2( 1600, 424 )
+texture = ExtResource( 5 )
+
+[node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg"]
+modulate = Color( 1, 1, 1, 0.196078 )
+texture = ExtResource( 4 )
+
+[node name="Train-Window-Frame-Bg2" type="Sprite" parent="TrainBody"]
+position = Vector2( 2240, 424 )
+texture = ExtResource( 5 )
+
+[node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg2"]
+self_modulate = Color( 1, 1, 1, 0.196078 )
+texture = ExtResource( 4 )
+
+[node name="Train-Window-Frame-Bg3" type="Sprite" parent="TrainBody"]
+position = Vector2( 2880, 424 )
+texture = ExtResource( 5 )
+
+[node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg3"]
+modulate = Color( 1, 1, 1, 0.196078 )
+texture = ExtResource( 4 )
+
+[node name="Train-Window-Frame-Bg4" type="Sprite" parent="TrainBody"]
+position = Vector2( 3520, 424 )
+texture = ExtResource( 5 )
+
+[node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg4"]
+modulate = Color( 1, 1, 1, 0.196078 )
+texture = ExtResource( 4 )
+
+[node name="Train-Wall-Plain2" type="Sprite" parent="TrainBody"]
+position = Vector2( 4168, 424 )
+texture = ExtResource( 6 )
+
+[node name="Seats" type="Sprite" parent="."]
+position = Vector2( 960, 424 )
 texture = ExtResource( 1 )
-centered = false
-
-[node name="chairs" type="Node2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="chairs"]
-position = Vector2( 1021, 308 )
-texture = ExtResource( 2 )
-centered = false
-
-[node name="Sprite2" type="Sprite" parent="chairs"]
-position = Vector2( 2870, 332 )
-texture = ExtResource( 2 )
-centered = false

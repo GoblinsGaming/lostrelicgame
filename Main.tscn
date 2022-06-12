@@ -25,9 +25,9 @@ script = ExtResource( 12 )
 [node name="background" parent="GameController" instance=ExtResource( 2 )]
 
 [node name="train" parent="GameController" instance=ExtResource( 1 )]
-visible = false
 
 [node name="Handholds" type="Node2D" parent="GameController"]
+visible = false
 
 [node name="Handhold" type="Node2D" parent="GameController/Handholds"]
 position = Vector2( 552, 149 )
@@ -84,6 +84,7 @@ position = Vector2( 4791, 161 )
 texture = ExtResource( 19 )
 
 [node name="PassengerController" type="Node2D" parent="GameController"]
+visible = false
 script = ExtResource( 23 )
 
 [node name="Seating" type="Node2D" parent="GameController/PassengerController"]
@@ -273,6 +274,7 @@ position = Vector2( 3493, 509 )
 position = Vector2( 3675, 512 )
 
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
+visible = false
 
 [node name="SignalPoint" type="Node2D" parent="GameController"]
 modulate = Color( 1, 1, 1, 0.443137 )
