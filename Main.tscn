@@ -25,6 +25,7 @@ script = ExtResource( 12 )
 [node name="background" parent="GameController" instance=ExtResource( 2 )]
 
 [node name="train" parent="GameController" instance=ExtResource( 1 )]
+visible = false
 
 [node name="Handholds" type="Node2D" parent="GameController"]
 visible = false
