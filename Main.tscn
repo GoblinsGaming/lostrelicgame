@@ -1,11 +1,7 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
-[ext_resource path="res://placeholders/mountains.png" type="Texture" id=2]
-[ext_resource path="res://placeholders/clouds.png" type="Texture" id=3]
-[ext_resource path="res://placeholders/trees.png" type="Texture" id=4]
-[ext_resource path="res://placeholders/sky.png" type="Texture" id=5]
-[ext_resource path="res://WildernessBackground.gd" type="Script" id=6]
+[ext_resource path="res://background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
 [ext_resource path="res://GameController.gd" type="Script" id=12]
@@ -26,37 +22,7 @@ bg_color = Color( 0.0509804, 0.290196, 0.92549, 1 )
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource( 12 )
 
-[node name="background" type="Node2D" parent="GameController"]
-
-[node name="WildernessBackground" type="ParallaxBackground" parent="GameController/background"]
-script = ExtResource( 6 )
-train_speed = 200
-
-[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground"]
-texture = ExtResource( 5 )
-centered = false
-
-[node name="CloudLayer" type="ParallaxLayer" parent="GameController/background/WildernessBackground"]
-motion_mirroring = Vector2( 5120, 0 )
-
-[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground/CloudLayer"]
-texture = ExtResource( 3 )
-centered = false
-
-[node name="MountainLayer" type="ParallaxLayer" parent="GameController/background/WildernessBackground"]
-motion_scale = Vector2( 0.01, 1 )
-motion_mirroring = Vector2( 5120, 0 )
-
-[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground/MountainLayer"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="TreeLayer" type="ParallaxLayer" parent="GameController/background/WildernessBackground"]
-motion_mirroring = Vector2( 5120, 0 )
-
-[node name="Sprite" type="Sprite" parent="GameController/background/WildernessBackground/TreeLayer"]
-texture = ExtResource( 4 )
-centered = false
+[node name="background" parent="GameController" instance=ExtResource( 2 )]
 
 [node name="train" parent="GameController" instance=ExtResource( 1 )]
 

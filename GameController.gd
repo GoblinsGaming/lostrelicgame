@@ -43,7 +43,7 @@ func _process(delta):
 		styleBox.bg_color = Color(1, 0, 0)
 		convo_bar.value -= convo_reduction_speed*delta
 		
-	var back = $background/WildernessBackground	
+	var back = $background
 	$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
 	if $SignalPoint.position.x < -250: 
 		$SignalPoint.position.x = signal_move_start
