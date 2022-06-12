@@ -24,6 +24,8 @@ const PLAYER_STRENGTH = 5000
 const LEAN_INDICATOR_MAX = 75
 const PLAYER_FRICTION = 5
 
+const LEAN_SPEED = 50
+
 var Passenger = preload("res://Passenger.gd")
 
 func _ready():
@@ -53,11 +55,17 @@ func _process(delta):
 		$Player/Animations/BodyUpper.visible = true
 		$Player/Animations/BodyLower.visible = true
 		$Player/Animations/BodyWhole.visible = false
-	is_right = (player_velocity >= 0)
+		
+	# Note, we specifically don't check equality here
+	if player_velocity > 0: 
+		is_right = true
+	elif player_velocity < 0: 
+		is_right = false
+		
 	# print(player_velocity)
 	player_velocity = clamp(player_velocity, -PLAYER_MAX_VELOCITY, PLAYER_MAX_VELOCITY)
 	$Player.position.x += player_velocity * (delta / PLAYER_WEIGHT)
-	calculate_lean_indicator()
+	calculate_lean_indicator(delta)
 	
 	camera_drift_settings()
 	flip_sprite(delta)
@@ -90,11 +98,16 @@ func calculate_friction():
 		if player_velocity > 0:
 			player_velocity = 0
 
-func calculate_lean_indicator():
+func calculate_lean_indicator(delta):
 	var lean_perc = player_velocity / PLAYER_MAX_FORCE
 	var lean_angle = lean_perc * LEAN_INDICATOR_MAX
 	$Player/LeanIndicator.rotation_degrees = lean_angle
-	$Player/Animations/BodyUpper.rotation_degrees = abs(lean_angle)
+	
+	if $Player/Animations/BodyUpper.rotation_degrees < abs(lean_angle):
+		$Player/Animations/BodyUpper.rotation_degrees += delta * LEAN_SPEED
+	elif $Player/Animations/BodyUpper.rotation_degrees > abs(lean_angle):
+		$Player/Animations/BodyUpper.rotation_degrees -= delta * LEAN_SPEED
+	#$Player/Animations/BodyUpper.rotation_degrees = abs(lean_angle)
 	$Player/Animations/BodyUpper.speed_scale = abs(lean_perc)
 	$Player/Animations/BodyLower.speed_scale = abs(lean_perc)
 	print(abs(lean_perc))
@@ -106,12 +119,12 @@ func _on_Area2D_area_entered(enemy_area):
 	if enemy.is_invincible:
 		return
 	if player_velocity > 0:
-		player_velocity /= 2
+		player_velocity *= 0.6
 		if player_velocity < 0:
 			player_velocity = 0
 		enemy.impact(player_velocity)
 	else:
-		player_velocity /= 2
+		player_velocity *= 0.6
 		if player_velocity > 0:
 			player_velocity = 0
 		enemy.impact(player_velocity)
