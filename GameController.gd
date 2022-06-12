@@ -16,12 +16,21 @@ export var signal_move_mult = 1
 var signal_move_start 
 var rng = RandomNumberGenerator.new()
 
+onready var back = $background
+var mistiness = 0
+var mist_increase = true
+var mist_change_rate = 1
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	signal_move_start = $SignalPoint.position.x
 
 
 func _process(delta):
+	
+	
 	var player_x = $PlayerController/Player.position.x
 	var signal_x = $SignalPoint.position.x
 	var signal_bar = $CanvasLayer/SignalBar/ProgressBar
@@ -43,12 +52,24 @@ func _process(delta):
 		styleBox.bg_color = Color(1, 0, 0)
 		convo_bar.value -= convo_reduction_speed*delta
 		
-	var back = $background/WildernessBackground	
 	$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
 	if $SignalPoint.position.x < -250: 
 		$SignalPoint.position.x = signal_move_start
-	
+	adjust_mist(delta)
 	if Input.is_action_just_pressed("train_up"): 
 		back.train_speed *= sqrt(2)
 	elif Input.is_action_just_pressed("train_down"): 
 		back.train_speed /= sqrt(2)
+
+func adjust_mist(delta):
+	if mist_increase:
+		if mistiness < 270:
+			mistiness += mist_change_rate * delta
+		else: 
+			mist_increase = false
+	else: 
+		if mistiness > 90:
+			mistiness -= mist_change_rate * delta
+		else: 
+			mist_increase = true
+	back.set_mistiness(sin(deg2rad(mistiness)))
