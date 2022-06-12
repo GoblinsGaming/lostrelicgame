@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PlayerController.gd" type="Script" id=1]
+[ext_resource path="res://placeholders/mainchar.png" type="Texture" id=2]
+[ext_resource path="res://placeholders/blue.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 82.0
+height = 304.0
+
+[node name="PlayerController" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 1719, 491 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( -9, 16 )
+texture = ExtResource( 2 )
+
+[node name="CameraNode" type="Node2D" parent="Player"]
+
+[node name="Camera2D" type="Camera2D" parent="Player/CameraNode"]
+position = Vector2( -678, -486 )
+anchor_mode = 0
+current = true
+limit_left = 0
+limit_right = 5120
+smoothing_speed = 1.0
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2( 22, 33 )
+shape = SubResource( 4 )
+
+[node name="LeanIndicator" type="Sprite" parent="Player"]
+position = Vector2( 21, -210 )
+scale = Vector2( 1, 7 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -7 )
+
+[connection signal="area_entered" from="Player/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Player/Area2D" to="." method="_on_Area2D_area_exited"]
