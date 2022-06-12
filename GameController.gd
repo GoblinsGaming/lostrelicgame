@@ -14,6 +14,7 @@ export var convo_reduction_speed = 2
 
 export var signal_move_mult = 1
 var signal_move_start 
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,7 +48,6 @@ func _process(delta):
 	if $SignalPoint.position.x < -250: 
 		$SignalPoint.position.x = signal_move_start
 	
-
 	if Input.is_action_just_pressed("train_up"): 
 		back.train_speed *= sqrt(2)
 	elif Input.is_action_just_pressed("train_down"): 

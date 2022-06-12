@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://placeholders/train.png" type="Texture" id=1]
 [ext_resource path="res://placeholders/mountains.png" type="Texture" id=2]
@@ -12,6 +12,50 @@
 [ext_resource path="res://placeholders/chairs.png" type="Texture" id=10]
 [ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
 [ext_resource path="res://GameController.gd" type="Script" id=12]
+[ext_resource path="res://placeholders/npc-handhold.png" type="Texture" id=13]
+[ext_resource path="res://placeholders/npc-sit.png" type="Texture" id=14]
+[ext_resource path="res://placeholders/npc-walk.png" type="Texture" id=15]
+[ext_resource path="res://placeholders/npc-trip.png" type="Texture" id=16]
+[ext_resource path="res://placeholders/npc-shove.png" type="Texture" id=17]
+[ext_resource path="res://Passenger.gd" type="Script" id=18]
+[ext_resource path="res://placeholders/handhold.png" type="Texture" id=19]
+[ext_resource path="res://placeholders/seating_space.png" type="Texture" id=20]
+[ext_resource path="res://placeholders/npc-idle.png" type="Texture" id=21]
+[ext_resource path="res://PassengerController.gd" type="Script" id=23]
+[ext_resource path="res://PassengerTarget.gd" type="Script" id=24]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "trip",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "shove",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "handhold",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "sit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.141176, 0.698039, 0.92549, 1 )
@@ -78,6 +122,299 @@ centered = false
 position = Vector2( 2870, 332 )
 texture = ExtResource( 10 )
 centered = false
+
+[node name="Handholds" type="Node2D" parent="GameController"]
+
+[node name="Handhold" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 552, 149 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold"]
+texture = ExtResource( 19 )
+
+[node name="Handhold2" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 787, 155 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold2"]
+texture = ExtResource( 19 )
+
+[node name="Handhold3" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 990, 155 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold3"]
+texture = ExtResource( 19 )
+
+[node name="Handhold4" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 2422, 155 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold4"]
+texture = ExtResource( 19 )
+
+[node name="Handhold5" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 2657, 161 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold5"]
+texture = ExtResource( 19 )
+
+[node name="Handhold6" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 2860, 161 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold6"]
+texture = ExtResource( 19 )
+
+[node name="Handhold7" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 4353, 155 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold7"]
+texture = ExtResource( 19 )
+
+[node name="Handhold8" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 4588, 161 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold8"]
+texture = ExtResource( 19 )
+
+[node name="Handhold9" type="Node2D" parent="GameController/Handholds"]
+position = Vector2( 4791, 161 )
+
+[node name="Sprite" type="Sprite" parent="GameController/Handholds/Handhold9"]
+texture = ExtResource( 19 )
+
+[node name="PassengerController" type="Node2D" parent="GameController"]
+script = ExtResource( 23 )
+
+[node name="Seating" type="Node2D" parent="GameController/PassengerController"]
+
+[node name="Seating1" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 1239, 475 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating1"]
+texture = ExtResource( 20 )
+
+[node name="Seating2" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 1418, 477 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating2"]
+texture = ExtResource( 20 )
+
+[node name="Seating3" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 1626, 480 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating3"]
+texture = ExtResource( 20 )
+
+[node name="Seating4" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 1832, 480 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating4"]
+texture = ExtResource( 20 )
+
+[node name="Seating5" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 2021, 469 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating5"]
+texture = ExtResource( 20 )
+
+[node name="Seating6" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 2179, 472 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating6"]
+texture = ExtResource( 20 )
+
+[node name="Seating7" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 3113, 502 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating7"]
+texture = ExtResource( 20 )
+
+[node name="Seating8" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 3292, 504 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating8"]
+texture = ExtResource( 20 )
+
+[node name="Seating9" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 3500, 507 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating9"]
+texture = ExtResource( 20 )
+
+[node name="Seating10" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 3706, 507 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating10"]
+texture = ExtResource( 20 )
+
+[node name="Seating11" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 3895, 496 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating11"]
+texture = ExtResource( 20 )
+
+[node name="Seating12" type="Node2D" parent="GameController/PassengerController/Seating"]
+position = Vector2( 4053, 499 )
+script = ExtResource( 24 )
+
+[node name="SeatingSpace" type="Sprite" parent="GameController/PassengerController/Seating/Seating12"]
+texture = ExtResource( 20 )
+
+[node name="Handholds" type="Node2D" parent="GameController/PassengerController"]
+
+[node name="Handhold1" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 550, 158 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold1"]
+texture = ExtResource( 20 )
+
+[node name="Handhold2" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 785, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold2"]
+texture = ExtResource( 20 )
+
+[node name="Handhold3" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 988, 158 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold3"]
+texture = ExtResource( 20 )
+
+[node name="Handhold4" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 2420, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold4"]
+texture = ExtResource( 20 )
+
+[node name="Handhold5" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 2655, 164 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold5"]
+texture = ExtResource( 20 )
+
+[node name="Handhold6" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 2858, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold6"]
+texture = ExtResource( 20 )
+
+[node name="Handhold7" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 4348, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold7"]
+texture = ExtResource( 20 )
+
+[node name="Handhold8" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 4583, 164 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold8"]
+texture = ExtResource( 20 )
+
+[node name="Handhold9" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 4786, 161 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold9"]
+texture = ExtResource( 20 )
+
+[node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
+
+[node name="Npc" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 2439, 455 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc2" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 2642, 450 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc2"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc3" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 2826, 447 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc3"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc4" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 3015, 442 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc4"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc5" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 3218, 437 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc5"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc6" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 3402, 434 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc6"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc7" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 3596, 434 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc7"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc8" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 3799, 429 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc8"]
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Npc9" type="Node2D" parent="GameController/PassengerController/Passengers"]
+position = Vector2( 3983, 426 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/PassengerController/Passengers/Npc9"]
+frames = SubResource( 3 )
+animation = "idle"
 
 [node name="PlayerController" type="Node2D" parent="GameController"]
 script = ExtResource( 7 )
