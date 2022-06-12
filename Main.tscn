@@ -311,12 +311,13 @@ texture = ExtResource( 20 )
 [node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
 
 [node name="Passenger" parent="GameController/PassengerController/Passengers" instance=ExtResource( 22 )]
+position = Vector2( 2437, 499 )
 
 [node name="PlayerController" type="Node2D" parent="GameController"]
 script = ExtResource( 7 )
 
 [node name="Player" type="Node2D" parent="GameController/PlayerController"]
-position = Vector2( 670, 488 )
+position = Vector2( 1719, 491 )
 
 [node name="Sprite" type="Sprite" parent="GameController/PlayerController/Player"]
 position = Vector2( -9, 16 )
@@ -377,3 +378,6 @@ custom_styles/fg = SubResource( 2 )
 step = 0.0
 value = 50.0
 percent_visible = false
+
+[connection signal="area_entered" from="GameController/PlayerController/Player/Area2D" to="GameController/PlayerController" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="GameController/PlayerController/Player/Area2D" to="GameController/PlayerController" method="_on_Area2D_area_exited"]

@@ -25,6 +25,8 @@ const PLAYER_STRENGTH = 1000
 const LEAN_INDICATOR_MAX = 45
 const PLAYER_FRICTION = 50
 
+var Passenger = preload("res://Passenger.gd")
+
 func _ready():
 	pass
 
@@ -74,6 +76,8 @@ func calculate_lean_indicator():
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
+	if enemy.passenger_state != Passenger.PassengerState.WALK:
+		return
 	if enemy.is_invincible:
 		return
 	if player_force > 0:
@@ -89,24 +93,6 @@ func _on_Area2D_area_entered(enemy_area):
 
 func _on_Area2D_area_exited(enemy_area):
 	player_force *= 1.3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 func flip_sprite(delta): 
 	if does_flip:
