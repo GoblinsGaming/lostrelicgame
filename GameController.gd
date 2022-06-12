@@ -87,37 +87,38 @@ func accelerate_train(delta):
 	if not is_train_accelerating: 
 		return
 		
-	if is_train_juttering: 
-		if back.train_speed > train_jutter_speed:
-			is_train_juttering = false
-			return
-		if is_train_juttering_back:
-			if back.train_speed > -train_jutter_speed:
-				back.train_speed -= train_jutter_acceleration * delta
-				$PlayerController.set_train_acceleration(-train_jutter_acceleration)
-			else:
-				is_train_juttering_back = false
-		else: 
-			if back.train_speed < train_jutter_speed:
-				back.train_speed += train_jutter_acceleration * delta
-				$PlayerController.set_train_acceleration(train_jutter_acceleration)
-			else:
+	
+	if is_train_speeding_up:
+		if is_train_juttering: 
+			if back.train_speed > train_jutter_speed:
 				is_train_juttering = false
-	else:
-		if is_train_speeding_up:
+				return
+			if is_train_juttering_back:
+				if back.train_speed > -train_jutter_speed:
+					back.train_speed -= train_jutter_acceleration * delta
+					$PlayerController.set_train_acceleration(-train_jutter_acceleration)
+				else:
+					is_train_juttering_back = false
+			else: 
+				if back.train_speed < train_jutter_speed:
+					back.train_speed += train_jutter_acceleration * delta
+					$PlayerController.set_train_acceleration(train_jutter_acceleration)
+				else:
+					is_train_juttering = false
+		else:
 			if back.train_speed < train_target_speed:
 				back.train_speed += train_acceleration * delta
 				$PlayerController.set_train_acceleration(train_acceleration)
 			else: 
 				$PlayerController.set_train_acceleration(0)
 				is_train_accelerating = false
+	else: 
+		if back.train_speed > train_target_speed:
+			back.train_speed -= train_acceleration * delta
+			$PlayerController.set_train_acceleration(-train_acceleration)
 		else: 
-			if back.train_speed > train_target_speed:
-				back.train_speed -= train_acceleration * delta
-				$PlayerController.set_train_acceleration(-train_acceleration)
-			else: 
-				$PlayerController.set_train_acceleration(0)
-				is_train_accelerating = false
+			$PlayerController.set_train_acceleration(0)
+			is_train_accelerating = false
 
 	return
 	
