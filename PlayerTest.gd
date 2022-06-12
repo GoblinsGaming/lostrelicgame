@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var player_force = 0
 var player_net_force = 0
 var player_velocity = 0
