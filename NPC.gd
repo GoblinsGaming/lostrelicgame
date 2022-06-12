@@ -1,58 +1,46 @@
 extends Node2D
 
 var velocity = 0
-const STRENGTH = 20000
-const NORMAL_FRICTION = 500
-const MAX_FRICTION = 2000
-var friction = 0
-const WEIGHT = 1
-const FORCE_DECAY = 100
-const BARRIER = 5
-var enemies = []
+const FRICTION = 100
+const INVINCIBILITY_TIME = 1
+var invincibility_timer = 0
+var is_invincible
+var is_npc = true
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 func _process(delta):
-	calculate_friction(delta)
-	position.x += velocity * delta * 10
-	if friction > NORMAL_FRICTION:
-		friction -= 100 * delta
-	if friction > MAX_FRICTION:
-		friction = MAX_FRICTION
-	if velocity > BARRIER:
-		velocity -= FORCE_DECAY * delta
-	if velocity < -BARRIER:
-		velocity += FORCE_DECAY * delta
-	for enemy in enemies:
-		if enemy.position.x > position.x:
-			enemy.velocity += delta * 100
-		else:
-			enemy.velocity -= delta * 100
-	if position.x > 1350 or position.x < 0:
-		velocity *= -1
-		
-
-func calculate_friction(delta):
-	friction += velocity * delta
+	position.x += velocity * delta
 	if velocity > 0:
-		velocity -= friction * delta
+		velocity -= FRICTION * delta
 		if velocity < 0:
 			velocity = 0
-	if velocity < 0:
-		velocity += friction * delta
+	else:
+		velocity += FRICTION * delta
 		if velocity > 0:
 			velocity = 0
+	invincibility_timer -= delta
+	if invincibility_timer > 0:
+		$Sprite2.visible = true
+		is_invincible = true
+	else:
+		$Sprite2.visible = false
+		is_invincible = false
+	if position.x < 0 or position.x > 1350:
+		velocity = -velocity
+
+func impact(player_velocity):
+	if is_invincible:
+		return
+	else:
+		print("MOVE")
+		velocity += player_velocity * 20
+		invincibility_timer = INVINCIBILITY_TIME
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
-	if enemy.get("velocity") != null:
-		#is not player
-		if not enemies.has(enemy):
-			enemies.append(enemy)
-
-func _on_Area2D_area_exited(enemy_area):
-	var enemy = enemy_area.get_parent()
-	enemies.erase(enemy)
-
+	if enemy.get("is_npc") != null:
+		if is_invincible:
+			enemy.impact(velocity / 16)

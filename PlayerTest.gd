@@ -4,13 +4,11 @@ extends Node2D
 var player_force = 0
 var player_net_force = 0
 var player_velocity = 0
-var enemies = []
-var current_friction = 0
-const PLAYER_WEIGHT = 10
-const PLAYER_MAX_FORCE = 1000
+const PLAYER_WEIGHT = 1 
+const PLAYER_MAX_FORCE = 500
 const PLAYER_STRENGTH = 1000
 const LEAN_INDICATOR_MAX = 45
-const PLAYER_FRICTION = 500
+const PLAYER_FRICTION = 50
 
 func _ready():
 	pass # Replace with function body.
@@ -18,14 +16,12 @@ func _ready():
 
 func _process(delta):
 	calculate_player_input_forces(delta)
-	calculate_net_forces(delta)
-	calculate_friction(delta)
-	player_velocity += player_net_force * (delta / PLAYER_WEIGHT)
-	print(player_velocity)
-	position.x += player_velocity * delta * 10
+	if position.x < 0 or position.x > 1350:
+		player_force = -player_force
+	calculate_friction()
+	player_velocity = player_net_force * (delta / PLAYER_WEIGHT)
+	position.x += player_velocity
 	calculate_lean_indicator()
-	if position.x > 1350 or position.x < 0:
-		player_velocity *= -1
 
 
 func calculate_player_input_forces(delta):
@@ -40,26 +36,15 @@ func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("ui_down"):
 		player_force = 0
 
-func calculate_net_forces(delta):
-	player_net_force = player_force
-	for enemy in enemies:
-		var distance_mult = abs(position.x - enemy.position.x)
-		if distance_mult < 15:
-			distance_mult = 1.0
-		var enemy_force_mult = 1.0 / sqrt(distance_mult)
-		if position.x > enemy.position.x:
-			player_net_force += enemy.STRENGTH * enemy_force_mult * delta
-		else:
-			player_net_force -= enemy.STRENGTH * enemy_force_mult * delta
 	
-func calculate_friction(delta):
-	current_friction = player_velocity * player_velocity
+func calculate_friction():
+	player_net_force = player_force
 	if player_net_force > 0:
-		player_net_force -= current_friction
+		player_net_force -= PLAYER_FRICTION
 		if player_net_force < 0:
 			player_net_force = 0
 	if player_net_force < 0:
-		player_net_force += current_friction
+		player_net_force += PLAYER_FRICTION
 		if player_net_force > 0:
 			player_net_force = 0
 
@@ -70,15 +55,15 @@ func calculate_lean_indicator():
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
-	if position.x > enemy.position.x:
-		enemy.velocity = -20
+	if enemy.is_invincible:
+		return
+	if player_force > 0:
+		player_force -= 500
+		if player_force < 0:
+			player_force = 0
+		enemy.impact(player_velocity)
 	else:
-		enemy.velocity = 20
-	enemy.friction += 6
-	if not enemies.has(enemy):
-		enemies.append(enemy)
-
-func _on_Area2D_area_exited(enemy_area):
-	var enemy = enemy_area.get_parent()
-	enemies.erase(enemy)
-
+		player_force += 500
+		if player_force > 0:
+			player_force = 0
+		enemy.impact(player_velocity)
