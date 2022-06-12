@@ -17,54 +17,64 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Train-End-L-Bg" type="Sprite" parent="TrainBody"]
-position = Vector2( 320, 424 )
 texture = ExtResource( 8 )
+centered = false
 
 [node name="Train-End-L-Bg2" type="Sprite" parent="TrainBody"]
-position = Vector2( 4816, 424 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
+position = Vector2( 4480, 0 )
 texture = ExtResource( 8 )
+centered = false
+flip_h = true
 
 [node name="Train-Wall-Plain" type="Sprite" parent="TrainBody"]
-position = Vector2( 960, 424 )
+position = Vector2( 640, 0 )
 texture = ExtResource( 6 )
+centered = false
 
 [node name="Train-Window-Frame-Bg" type="Sprite" parent="TrainBody"]
-position = Vector2( 1600, 424 )
+position = Vector2( 1280, 0 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg"]
 modulate = Color( 1, 1, 1, 0.196078 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="Train-Window-Frame-Bg2" type="Sprite" parent="TrainBody"]
-position = Vector2( 2240, 424 )
+position = Vector2( 1920, 0 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg2"]
 self_modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 320, 424 )
 texture = ExtResource( 4 )
 
 [node name="Train-Window-Frame-Bg3" type="Sprite" parent="TrainBody"]
-position = Vector2( 2880, 424 )
+position = Vector2( 2560, 0 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg3"]
 modulate = Color( 1, 1, 1, 0.196078 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="Train-Window-Frame-Bg4" type="Sprite" parent="TrainBody"]
-position = Vector2( 3520, 424 )
+position = Vector2( 3200, 0 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg4"]
 modulate = Color( 1, 1, 1, 0.196078 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="Train-Wall-Plain2" type="Sprite" parent="TrainBody"]
-position = Vector2( 4168, 424 )
+position = Vector2( 3840, 0 )
 texture = ExtResource( 6 )
+centered = false
 
 [node name="Seats" type="Sprite" parent="."]
 position = Vector2( 960, 424 )
