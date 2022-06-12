@@ -122,17 +122,12 @@ func _on_Area2D_area_entered(enemy_area):
 		return
 	if enemy.is_invincible:
 		return
-	if player_velocity > 0:
-		player_velocity *= 0.3
-		if player_velocity < 0:
-			player_velocity = 0
-		enemy.impact(player_velocity)
-	else:
-		player_velocity *= 0.3
-		if player_velocity > 0:
-			player_velocity = 0
-		enemy.impact(player_velocity)
-
+	
+	var enemy_velocity = enemy.velocity
+	enemy.impact(player_velocity)
+	player_velocity += enemy_velocity*enemy.shove_strength
+	# player_velocity += (100 + enemy_velocity * (abs(player_velocity)/PLAYER_MAX_FORCE) * enemy.shove_strength)	
+	
 func _on_Area2D_area_exited(enemy_area):
 	pass
 

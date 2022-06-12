@@ -29,6 +29,7 @@ export var max_time_for_state_change = 6
 var time_since_last_state_change = 0
 var time_til_next_state_change = 0
 
+export var shove_strength = 2.5
 var velocity = 0
 const FRICTION = 200
 const INVINCIBILITY_TIME = 1
@@ -106,17 +107,12 @@ func _process(delta):
 func velocity_calculations(delta): 
 	if passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD]:
 		return
-	if velocity > MAX_VELOCITY: 
-		velocity = MAX_VELOCITY
+	velocity = clamp(velocity, -MAX_VELOCITY, MAX_VELOCITY)
 		
 	if velocity > target_velocity:
 		velocity -= FRICTION * delta
-#		if velocity < target_velocity:
-#			velocity = target_velocity
 	else:
 		velocity += FRICTION * delta
-#		if velocity > target_velocity:
-#			velocity = target_velocity
 		
 	invincibility_timer -= delta
 	if invincibility_timer > 0:
