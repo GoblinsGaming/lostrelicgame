@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_foley_clothing_jacket_hit_punch_sweetner_003_52780.mp3-2142a5ca38b971fd26d63c12c3e6b3d3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/Hit/zapsplat_foley_clothing_jacket_hit_punch_sweetner_003_52780.mp3"
+dest_files=[ "res://.import/zapsplat_foley_clothing_jacket_hit_punch_sweetner_003_52780.mp3-2142a5ca38b971fd26d63c12c3e6b3d3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Train-Interior/Doorway-Rail-BG.png" type="Texture" id=1]
+[ext_resource path="res://Train-Interior/Door-R.png" type="Texture" id=2]
+[ext_resource path="res://Train-Interior/Door-L.png" type="Texture" id=3]
+[ext_resource path="res://Train-Interior/Door.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sounds/Train/Door_Sliding_Open.wav" type="AudioStream" id=5]
+
+[node name="Door" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="DoorL" type="Sprite" parent="."]
+position = Vector2( 1277.66, -6.11224 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="DoorR" type="Sprite" parent="."]
+position = Vector2( 1600, 416 )
+texture = ExtResource( 2 )
+
+[node name="Doorway-Rail-Bg" type="Sprite" parent="."]
+position = Vector2( 1280, 0 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1598.92, 451.172 )
+stream = ExtResource( 5 )

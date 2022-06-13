@@ -51,6 +51,10 @@ var slide_velocity_change_rate = 0.5
 
 func _ready():
 	$AnimatedSprite.play("idle")
+	var children = $Sound/Hit.get_children()
+	for child in children:
+		child.stream.loop = false
+	
 	# var seating = get_parent().get_node("train").get_node("chairs").get_node("Seating").get_node("Seating1")
 	# target_seating_x = seating.position.x
 	
@@ -170,6 +174,7 @@ func impact(player_velocity):
 
 	velocity += player_velocity
 	invincibility_timer = INVINCIBILITY_TIME
+	hit_sound()
 
 func impact_enemy(enemy_velocity):
 	if is_invincible:
@@ -179,6 +184,12 @@ func impact_enemy(enemy_velocity):
 
 	velocity += enemy_velocity
 	invincibility_timer = INVINCIBILITY_TIME
+	hit_sound()
+
+func hit_sound():
+	var children = $Sound/Hit.get_children()
+	var sound = children[randi() % children.size()]
+	sound.play()
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()

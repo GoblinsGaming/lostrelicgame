@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Train-Interior/Seats.png" type="Texture" id=1]
 [ext_resource path="res://Train-Interior/Rail-Mid.png" type="Texture" id=2]
@@ -8,16 +8,18 @@
 [ext_resource path="res://Train-Interior/Train-Wall-Plain.png" type="Texture" id=6]
 [ext_resource path="res://Train-Interior/Train-End-L-BG-Open.png" type="Texture" id=7]
 [ext_resource path="res://Train-Interior/Train-End-L-BG.png" type="Texture" id=8]
-[ext_resource path="res://Train-Interior/Doorway-Rail-BG.png" type="Texture" id=9]
-[ext_resource path="res://Train-Interior/Door-L.png" type="Texture" id=10]
+[ext_resource path="res://Train-Interior/Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Train.gd" type="Script" id=10]
 [ext_resource path="res://Train-Interior/Standle-Handle.png" type="Texture" id=11]
-[ext_resource path="res://Train-Interior/Door-R.png" type="Texture" id=12]
 [ext_resource path="res://Train-Interior/Rail-End-L.png" type="Texture" id=13]
 [ext_resource path="res://Train-Interior/Overhead Bins.png" type="Texture" id=14]
 
 [node name="train" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="TrainBody" type="Node2D" parent="."]
+
+[node name="Door" parent="TrainBody" instance=ExtResource( 9 )]
 
 [node name="Train-End-L-Bg-Open" type="Sprite" parent="TrainBody"]
 visible = false
@@ -37,20 +39,6 @@ flip_h = true
 [node name="Train-Wall-Plain" type="Sprite" parent="TrainBody"]
 position = Vector2( 640, 0 )
 texture = ExtResource( 6 )
-centered = false
-
-[node name="Door-L" type="Sprite" parent="TrainBody"]
-position = Vector2( 1272, -8 )
-texture = ExtResource( 10 )
-centered = false
-
-[node name="Door-R" type="Sprite" parent="TrainBody"]
-position = Vector2( 1600, 416 )
-texture = ExtResource( 12 )
-
-[node name="Doorway-Rail-Bg" type="Sprite" parent="TrainBody"]
-position = Vector2( 1280, 0 )
-texture = ExtResource( 9 )
 centered = false
 
 [node name="Train-Window-Frame-Bg2" type="Sprite" parent="TrainBody"]

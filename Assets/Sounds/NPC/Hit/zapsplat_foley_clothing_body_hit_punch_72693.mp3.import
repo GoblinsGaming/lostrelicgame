@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_foley_clothing_body_hit_punch_72693.mp3-3d61cd24d29ff61a7359143254e6fa5e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/Hit/zapsplat_foley_clothing_body_hit_punch_72693.mp3"
+dest_files=[ "res://.import/zapsplat_foley_clothing_body_hit_punch_72693.mp3-3d61cd24d29ff61a7359143254e6fa5e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

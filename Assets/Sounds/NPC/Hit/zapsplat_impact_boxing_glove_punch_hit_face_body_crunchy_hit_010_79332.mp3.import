@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_impact_boxing_glove_punch_hit_face_body_crunchy_hit_010_79332.mp3-4af592204615a6f29bd1940dbf158db6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/NPC/Hit/zapsplat_impact_boxing_glove_punch_hit_face_body_crunchy_hit_010_79332.mp3"
+dest_files=[ "res://.import/zapsplat_impact_boxing_glove_punch_hit_face_body_crunchy_hit_010_79332.mp3-4af592204615a6f29bd1940dbf158db6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
