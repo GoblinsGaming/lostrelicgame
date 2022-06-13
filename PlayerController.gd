@@ -43,12 +43,12 @@ func _process(delta):
 	$Player.position.x += player_velocity * (delta / PLAYER_WEIGHT)	
 
 	if player_velocity > 0 and train_acceleration > 0 or player_velocity < 0  and train_acceleration <0:
-		player_velocity += train_acceleration*delta*slide_velocity_change_rate
+		player_velocity += train_acceleration*delta*slide_velocity_change_rate*1.5
 		if abs(slide_velocity - train_acceleration) > 4: 
-			slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate/2
+			slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate*0.3
 			$Player.position.x += delta*slide_velocity*slide_velocity_mult
 	else:		
-		player_velocity += train_acceleration*delta*slide_velocity_change_rate/2
+		player_velocity += train_acceleration*delta*slide_velocity_change_rate*0.5
 		if abs(slide_velocity - train_acceleration) > 4: 
 			slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate
 			$Player.position.x += delta*slide_velocity*slide_velocity_mult
@@ -60,11 +60,11 @@ func _process(delta):
 		is_right = false
 	
 	if $Player.position.x < 200:
-		player_velocity = -player_velocity + abs(slide_velocity)
-		$Player.position.x = 210
+		player_velocity = abs(player_velocity) + abs(slide_velocity)*2
+		$Player.position.x = 250
 	if $Player.position.x > 5000:
-		player_velocity = -player_velocity - abs(slide_velocity)
-		$Player.position.x = 4990
+		player_velocity = -abs(player_velocity) - abs(slide_velocity)*2
+		$Player.position.x = 4950
 	
 	if player_velocity == 0:
 		$Player/Animations/BodyUpper.play("idle")
@@ -94,7 +94,7 @@ func _process(delta):
 	drift_camera(delta)
 
 func set_train_acceleration(new_train_acceleration): 
-	train_acceleration = -new_train_acceleration
+	train_acceleration = -3* new_train_acceleration
 
 func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("right"): 

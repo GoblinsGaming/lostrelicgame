@@ -116,7 +116,7 @@ func _process(delta):
 	velocity_calculations(delta) 
 
 func set_train_acceleration(new_train_acceleration): 
-	train_acceleration = new_train_acceleration
+	train_acceleration = -3*new_train_acceleration
 
 func velocity_calculations(delta): 
 	if passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD]:
@@ -143,7 +143,14 @@ func velocity_calculations(delta):
 		is_invincible = false
 	if position.x < 200 or position.x > 5000:
 		velocity = -velocity
-		
+	
+	if position.x < 200:
+		velocity = abs(velocity) + abs(velocity)*2
+		position.x = 250
+	if position.x > 5000:
+		velocity = -abs(velocity) - abs(velocity)*2
+		position.x = 4950
+	
 	position.x += velocity * delta
 	if abs(slide_velocity - train_acceleration) > 4: 
 		slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate
