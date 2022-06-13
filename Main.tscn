@@ -269,6 +269,9 @@ position = Vector2( 4191, 502 )
 [node name="Passenger16" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
 position = Vector2( 4389, 497 )
 
+[node name="PassengerBackup" type="Node2D" parent="GameController/PassengerController"]
+visible = false
+
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
 position = Vector2( 20, 44 )
 

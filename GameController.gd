@@ -39,7 +39,7 @@ onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
 func _ready():
 	signal_move_start = $SignalPoint.position.x
 	back.train_speed = 0
-	time_to_next_train_speed_change = rng.randf_range(2,20)
+	time_to_next_train_speed_change = rng.randf_range(1,5)
 	signal_bar.value = 0
 	convo_bar.value = 20
 

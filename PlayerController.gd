@@ -28,13 +28,16 @@ const LEAN_SPEED = 50
 var Passenger = preload("res://Passenger.gd")
 
 var train_acceleration = 0
+var slide_velocity_mult = 2
+var slide_velocity = 0
+var slide_velocity_change_rate = 0.5
 
 func _ready():
 	pass
 
 func _process(delta):
 	calculate_player_input_forces(delta)
-	player_velocity -= delta*train_acceleration*2
+	# player_velocity -= delta*train_acceleration*2
 
 	if $Player.position.x < 200:
 		player_velocity = -player_velocity
@@ -69,6 +72,12 @@ func _process(delta):
 	$Player.position.x += player_velocity * (delta / PLAYER_WEIGHT)
 	calculate_lean_indicator(delta)
 	
+	if abs(slide_velocity - train_acceleration) > 4: 
+		slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate
+
+	$Player.position.x += delta*slide_velocity*slide_velocity_mult
+
+	
 	camera_drift_settings()
 	flip_sprite(delta)
 	drift_camera(delta)
@@ -94,7 +103,8 @@ func calculate_player_input_forces(delta):
 	
 
 func calculate_friction():
-	var target_velocity = -train_acceleration
+	# var target_velocity = -train_acceleration
+	var target_velocity = 0
 	if player_velocity > target_velocity:
 		player_velocity -= PLAYER_FRICTION
 		if player_velocity < target_velocity:
