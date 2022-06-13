@@ -46,7 +46,7 @@ func _ready():
 func _process(delta):
 	signal_processing(delta)
 	adjust_mist(delta)
-	randomize_train_acceleration(delta)
+	# randomize_train_acceleration(delta)
 	accelerate_train(delta)
 
 func randomize_train_acceleration(delta): 

@@ -221,56 +221,56 @@ texture = ExtResource( 20 )
 
 [node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
 
-[node name="Passenger" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 1495, 539 )
-
-[node name="Passenger2" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 1693, 534 )
-
-[node name="Passenger3" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 1890, 528 )
-
-[node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2088, 523 )
-
-[node name="Passenger5" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2253, 534 )
-
-[node name="Passenger6" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2451, 529 )
-
-[node name="Passenger7" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2648, 523 )
-
-[node name="Passenger8" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2846, 518 )
-
-[node name="Passenger9" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 3038, 518 )
-
-[node name="Passenger10" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 3236, 513 )
-
-[node name="Passenger11" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 3433, 507 )
-
-[node name="Passenger12" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 3631, 502 )
-
-[node name="Passenger13" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 3796, 513 )
-
-[node name="Passenger14" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 3994, 508 )
-
-[node name="Passenger15" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 4191, 502 )
-
-[node name="Passenger16" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 4389, 497 )
-
 [node name="PassengerBackup" type="Node2D" parent="GameController/PassengerController"]
 visible = false
+
+[node name="Passenger" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 1495, 539 )
+
+[node name="Passenger2" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 1693, 534 )
+
+[node name="Passenger3" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 1890, 528 )
+
+[node name="Passenger4" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 2088, 523 )
+
+[node name="Passenger5" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 2253, 534 )
+
+[node name="Passenger6" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 2451, 529 )
+
+[node name="Passenger7" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 2648, 523 )
+
+[node name="Passenger8" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 2846, 518 )
+
+[node name="Passenger9" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 3038, 518 )
+
+[node name="Passenger10" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 3236, 513 )
+
+[node name="Passenger11" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 3433, 507 )
+
+[node name="Passenger12" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 3631, 502 )
+
+[node name="Passenger13" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 3796, 513 )
+
+[node name="Passenger14" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 3994, 508 )
+
+[node name="Passenger15" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 4191, 502 )
+
+[node name="Passenger16" parent="GameController/PassengerController/PassengerBackup" instance=ExtResource( 3 )]
+position = Vector2( 4389, 497 )
 
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
 position = Vector2( 20, 44 )
