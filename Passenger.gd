@@ -43,7 +43,11 @@ const COMFORT_VELOCITY = 500
 var is_npc = true
 
 var is_bumped = true
+
 var train_acceleration = 0
+var slide_velocity_mult = 2
+var slide_velocity = 0
+var slide_velocity_change_rate = 0.5
 
 func _ready():
 	$AnimatedSprite.play("idle")
@@ -80,10 +84,10 @@ func _process(delta):
 	if passenger_state == PassengerState.WALK: 
 		$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
-			target_velocity = WALK_SPEED - train_acceleration
+			target_velocity = WALK_SPEED#  - train_acceleration
 			$AnimatedSprite.flip_h = false
 		elif position.x > target_x + seating_half_width:
-			target_velocity = -WALK_SPEED + train_acceleration
+			target_velocity = -WALK_SPEED#  + train_acceleration
 			$AnimatedSprite.flip_h = true
 		else: 
 			if target.target_type == PassengerTarget.TargetType.SEAT:
@@ -112,7 +116,7 @@ func _process(delta):
 	velocity_calculations(delta) 
 
 func set_train_acceleration(new_train_acceleration): 
-	train_acceleration = new_train_acceleration
+	train_acceleration = -3*new_train_acceleration
 
 func velocity_calculations(delta): 
 	if passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD]:
@@ -139,9 +143,21 @@ func velocity_calculations(delta):
 		is_invincible = false
 	if position.x < 200 or position.x > 5000:
 		velocity = -velocity
-		
+	
+	if position.x < 200:
+		velocity = abs(velocity) + abs(velocity)*2
+		position.x = 250
+	if position.x > 5000:
+		velocity = -abs(velocity) - abs(velocity)*2
+		position.x = 4950
+	
 	position.x += velocity * delta
-		
+	if abs(slide_velocity - train_acceleration) > 4: 
+		slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate
+
+	position.x += delta*slide_velocity*slide_velocity_mult
+	
+	
 func reset_wait(): 
 	time_til_next_state_change = rng.randf_range(min_time_for_state_change, max_time_for_state_change)
 	time_since_last_state_change = 0

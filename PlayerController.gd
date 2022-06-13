@@ -28,20 +28,44 @@ const LEAN_SPEED = 50
 var Passenger = preload("res://Passenger.gd")
 
 var train_acceleration = 0
+var slide_velocity_mult = 2
+var slide_velocity = 0
+var slide_velocity_change_rate = 0.5
 
 func _ready():
 	pass
 
 func _process(delta):
 	calculate_player_input_forces(delta)
-	player_velocity -= delta*train_acceleration*2
+	# player_velocity -= delta*train_acceleration*2
+			
+	player_velocity = clamp(player_velocity, -PLAYER_MAX_VELOCITY, PLAYER_MAX_VELOCITY)
+	$Player.position.x += player_velocity * (delta / PLAYER_WEIGHT)	
 
+	if player_velocity > 0 and train_acceleration > 0 or player_velocity < 0  and train_acceleration <0:
+		player_velocity += train_acceleration*delta*slide_velocity_change_rate*1.5
+		if abs(slide_velocity - train_acceleration) > 4: 
+			slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate*0.3
+			$Player.position.x += delta*slide_velocity*slide_velocity_mult
+	else:		
+		player_velocity += train_acceleration*delta*slide_velocity_change_rate*0.5
+		if abs(slide_velocity - train_acceleration) > 4: 
+			slide_velocity += (train_acceleration - slide_velocity)*delta*slide_velocity_change_rate
+			$Player.position.x += delta*slide_velocity*slide_velocity_mult
+			
+	# Note, we specifically don't check equality here
+	if player_velocity > 0: 
+		is_right = true
+	elif player_velocity < 0: 
+		is_right = false
+	
 	if $Player.position.x < 200:
-		player_velocity = -player_velocity
-		$Player.position.x = 210
+		player_velocity = abs(player_velocity) + abs(slide_velocity)*2
+		$Player.position.x = 250
 	if $Player.position.x > 5000:
-		player_velocity = -player_velocity
-		$Player.position.x = 4990
+		player_velocity = -abs(player_velocity) - abs(slide_velocity)*2
+		$Player.position.x = 4950
+	
 	if player_velocity == 0:
 		$Player/Animations/BodyUpper.play("idle")
 		$Player/Animations/BodyLower.play("idle")
@@ -59,22 +83,18 @@ func _process(delta):
 		$Player/Animations/BodyLower.visible = true
 		$Player/Animations/BodyWhole.visible = false
 		
-	# Note, we specifically don't check equality here
-	if player_velocity > 0: 
-		is_right = true
-	elif player_velocity < 0: 
-		is_right = false
-		
-	player_velocity = clamp(player_velocity, -PLAYER_MAX_VELOCITY, PLAYER_MAX_VELOCITY)
-	$Player.position.x += player_velocity * (delta / PLAYER_WEIGHT)
-	calculate_lean_indicator(delta)
+
+
+	calculate_lean_indicator(player_velocity, delta)
+
+
 	
 	camera_drift_settings()
 	flip_sprite(delta)
 	drift_camera(delta)
 
 func set_train_acceleration(new_train_acceleration): 
-	train_acceleration = new_train_acceleration
+	train_acceleration = -3* new_train_acceleration
 
 func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("right"): 
@@ -94,7 +114,8 @@ func calculate_player_input_forces(delta):
 	
 
 func calculate_friction():
-	var target_velocity = -train_acceleration
+	# var target_velocity = -train_acceleration
+	var target_velocity = 0
 	if player_velocity > target_velocity:
 		player_velocity -= PLAYER_FRICTION
 		if player_velocity < target_velocity:
@@ -104,8 +125,8 @@ func calculate_friction():
 		if player_velocity > target_velocity:
 			player_velocity = target_velocity
 
-func calculate_lean_indicator(delta):
-	var lean_perc = player_velocity / PLAYER_MAX_FORCE
+func calculate_lean_indicator(player_net_velocity, delta):
+	var lean_perc = player_net_velocity / PLAYER_MAX_FORCE
 	var lean_angle = lean_perc * LEAN_INDICATOR_MAX
 	$Player/LeanIndicator.rotation_degrees = lean_angle
 	

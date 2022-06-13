@@ -22,7 +22,7 @@ var mist_increase = true
 var mist_change_rate = 1
 
 var train_target_speed = 0
-var train_acceleration = 500
+var train_acceleration = 100
 var is_train_moving = false
 var train_jutter_speed = 50
 var train_jutter_acceleration = train_acceleration * 1.5
@@ -39,7 +39,7 @@ onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
 func _ready():
 	signal_move_start = $SignalPoint.position.x
 	back.train_speed = 0
-	time_to_next_train_speed_change = rng.randf_range(2,20)
+	time_to_next_train_speed_change = rng.randf_range(1,5)
 	signal_bar.value = 0
 	convo_bar.value = 20
 
@@ -75,7 +75,7 @@ func randomize_train_acceleration(delta):
 	time_to_next_train_speed_change = rng.randf_range(6,20)
 	print("time_to_next_train_speed_change " + str(time_to_next_train_speed_change))
 	
-	var acc_mult = rng.randf_range(0.2, 0.8)
+	var acc_mult = rng.randf_range(0.05, 0.2)
 	train_acceleration = (train_target_speed - back.train_speed) * acc_mult
 	train_jutter_acceleration =  train_acceleration * 1.5
 
