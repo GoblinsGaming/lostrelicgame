@@ -69,23 +69,12 @@ func randomize_train_acceleration(delta):
 		is_train_juttering_back = false
 		is_train_accelerating = true
 		is_train_speeding_up = false
-		
-	print("time_since_last_train_speed_change " + str(time_since_last_train_speed_change))
 	time_since_last_train_speed_change = 0
 	time_to_next_train_speed_change = rng.randf_range(6,20)
-	print("time_to_next_train_speed_change " + str(time_to_next_train_speed_change))
 	
 	var acc_mult = rng.randf_range(0.05, 0.2)
 	train_acceleration = (train_target_speed - back.train_speed) * acc_mult
 	train_jutter_acceleration =  train_acceleration * 1.5
-
-	print("Train speed started " + str(back.train_speed))
-	print("Changing train speed to " + str(train_target_speed))
-	print("Difference in speed: " + str(train_target_speed - back.train_speed))
-	print("acceleration multiplier " + str(acc_mult))
-	print("train_acceleration " + str(train_acceleration))
-	print("train_jutter_acceleration " + str(train_jutter_acceleration))
-	print("----")
 		
 func accelerate_train(delta): 
 	if Input.is_action_just_pressed("train_up"): 

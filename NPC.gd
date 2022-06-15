@@ -13,9 +13,6 @@ func _ready():
 
 
 func _process(delta):
-	passenger_potato(delta)
-
-func passenger_potato(delta): 
 	position.x += velocity * delta
 	if velocity > TARGET_VELOCITY:
 		velocity -= FRICTION * delta

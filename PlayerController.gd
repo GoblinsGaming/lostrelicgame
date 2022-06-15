@@ -36,10 +36,9 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	player_potato(delta)
+	player_main_process(delta)
 
-func player_potato(delta): 
-
+func player_main_process(delta): 
 	calculate_player_input_forces(delta)
 	# player_velocity -= delta*train_acceleration*2
 			
