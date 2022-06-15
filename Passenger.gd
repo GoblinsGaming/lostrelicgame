@@ -4,6 +4,9 @@ extends Node2D
 signal stop_using_target(this)
 
 var PassengerTarget = preload("res://PassengerTarget.gd")
+var BodyUpper
+var BodyLower
+var rng = RandomNumberGenerator.new()
 
 enum PassengerState {
 	IDLE,
@@ -18,7 +21,6 @@ const WALK_SPEED = 200
 export var target_velocity = WALK_SPEED
 export var seating_half_width = 20
 
-var rng = RandomNumberGenerator.new()
 var target
 var target_x
 
@@ -50,10 +52,13 @@ var slide_velocity = 0
 var slide_velocity_change_rate = 0.5
 
 func _ready():
+	rng.randomize()
 	$AnimatedSprite.play("idle")
 	var children = $Sound/Hit.get_children()
 	for child in children:
 		child.stream.loop = false
+	invisibilize()
+	generate_npc()
 	
 	# var seating = get_parent().get_node("train").get_node("chairs").get_node("Seating").get_node("Seating1")
 	# target_seating_x = seating.position.x
@@ -196,3 +201,27 @@ func _on_Area2D_area_entered(enemy_area):
 	if enemy.get("is_npc") != null:
 		if is_invincible:
 			enemy.impact_enemy(velocity)
+
+func invisibilize():
+	var children = $Animations/BodyLower.get_children()
+	for child in children:
+		child.visible = false
+	children = $Animations/BodyUpper/Jeans.get_children()
+	for child in children:
+		child.visible = false
+	children = $Animations/BodyUpper/Chinos.get_children()
+	for child in children:
+		child.visible = false
+	
+
+func generate_npc():
+	if randi() % 2 == 0:
+		BodyLower = $Animations/BodyLower/Jeans
+		var children = $Animations/BodyUpper/Jeans.get_children()
+		BodyUpper = children[randi() % children.size()]
+	else:
+		BodyLower = $Animations/BodyLower/Chinos
+		var children = $Animations/BodyUpper/Chinos.get_children()
+		BodyUpper = children[randi() % children.size()]
+	BodyLower.visible = true
+	BodyUpper.visible = true
