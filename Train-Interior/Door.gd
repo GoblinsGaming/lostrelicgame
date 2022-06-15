@@ -23,9 +23,7 @@ func _process(delta):
 		$DoorL.position.x += delta * DOOR_SPEED_MULT
 		$DoorR.position.x -= delta * DOOR_SPEED_MULT
 		if pos_diff <= 0:
-			$Sound.play()
-	print(pos_diff)
-	
+			$Sound.play()	
 
 func open():
 	is_opening = true
