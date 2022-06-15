@@ -35,7 +35,11 @@ var slide_velocity_change_rate = 0.5
 func _ready():
 	pass
 
-func _process(delta):
+func _physics_process(delta):
+	player_potato(delta)
+
+func player_potato(delta): 
+
 	calculate_player_input_forces(delta)
 	# player_velocity -= delta*train_acceleration*2
 			
@@ -86,12 +90,13 @@ func _process(delta):
 
 
 	calculate_lean_indicator(player_velocity, delta)
-
-
-	
-	camera_drift_settings()
 	flip_sprite(delta)
-	drift_camera(delta)
+	train_accelerate_drift_camera(delta)
+	
+	# camera_drift_settings()
+	#drift_camera(delta)
+	
+
 
 func set_train_acceleration(new_train_acceleration): 
 	train_acceleration = -3* new_train_acceleration
@@ -174,6 +179,8 @@ func flip_sprite(delta):
 			$Player/Animations/BodyUpper.flip_h = true
 			$Player/Animations/BodyLower.flip_h = true
 
+
+
 func camera_drift_settings(): 
 	if Input.is_action_just_pressed("drift_camera"):
 		is_camera_drifting = not is_camera_drifting
@@ -194,4 +201,14 @@ func drift_camera(delta):
 		if $Player/CameraNode.position.x > -max_camera_drift:
 			$Player/CameraNode.position.x -= still_camera_drift_speed*delta
 
+var train_acc_camera_drift = 300
+var train_acc_cam_drift_spd = 0.2
 
+func train_accelerate_drift_camera(delta): 
+	var train_acc_camera_drift = -train_acceleration
+	if $Player/CameraNode.position.x < train_acc_camera_drift - 4:
+		var diff = train_acc_camera_drift - $Player/CameraNode.position.x 
+		$Player/CameraNode.position.x += diff*delta*train_acc_cam_drift_spd
+	elif $Player/CameraNode.position.x > train_acc_camera_drift - 4:
+		var diff = train_acc_camera_drift - $Player/CameraNode.position.x 
+		$Player/CameraNode.position.x += diff*delta*train_acc_cam_drift_spd

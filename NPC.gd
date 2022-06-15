@@ -13,6 +13,9 @@ func _ready():
 
 
 func _process(delta):
+	passenger_potato(delta)
+
+func passenger_potato(delta): 
 	position.x += velocity * delta
 	if velocity > TARGET_VELOCITY:
 		velocity -= FRICTION * delta
@@ -30,7 +33,7 @@ func _process(delta):
 		$Sprite2.visible = false
 		is_invincible = false
 	if position.x < 0 or position.x > 1350:
-		velocity = -velocity
+		velocity = -velocity	
 
 func impact(player_velocity):
 	if is_invincible:
