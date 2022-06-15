@@ -702,7 +702,7 @@ stream = ExtResource( 10 )
 [node name="WhiteShirt" type="AnimatedSprite" parent="Animations/BodyUpper"]
 frames = SubResource( 3 )
 animation = "walk"
-frame = 15
+frame = 16
 playing = true
 offset = Vector2( 100, 70 )
 
@@ -712,7 +712,7 @@ offset = Vector2( 100, 70 )
 visible = false
 frames = SubResource( 4 )
 animation = "walk"
-frame = 39
+frame = 32
 playing = true
 offset = Vector2( 100, 65 )
 
