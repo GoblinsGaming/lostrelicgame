@@ -44,6 +44,7 @@ func _ready():
 	signal_bar.value = 0
 	quiet_bar.value = 50
 	convo_bar.value = 20
+	start_tunnel()
 	
 func _process(delta):
 	signal_processing(delta)
@@ -51,6 +52,27 @@ func _process(delta):
 	randomize_train_acceleration(delta)
 	accelerate_train(delta)
 	process_noise(delta)
+	process_tunnel(delta)
+
+
+var is_tunnel = false
+
+func start_tunnel(): 
+	$Tunnel.visible = true
+	$TunnelBlack.visible = true
+	$Tunnel.position.x = 5982
+	$TunnelBlack.position.x = 934
+	is_tunnel = true
+
+func process_tunnel(delta): 
+	if is_tunnel: 
+		$Tunnel.position.x -= 500*delta
+		$TunnelBlack.position.x -= 500*delta
+		if $Tunnel.position.x <= -7500: 
+			is_tunnel = false
+			$Tunnel.visible = false
+			$TunnelBlack.visible = false
+
 
 const NOISE_DIST = 300
 const SHUSH_DIST = 800

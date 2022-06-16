@@ -21,7 +21,6 @@ func close_doors():
 	pass
 
 func set_train_acceleration(new_acceleration):
-	print(sqrt(abs(new_acceleration))*5)
 	target_rot = sqrt(abs(new_acceleration))*5
 	if new_acceleration <0: 
 		target_rot = -target_rot
