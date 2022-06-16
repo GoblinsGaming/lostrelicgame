@@ -32,8 +32,6 @@ var slide_velocity_mult = 2
 var slide_velocity = 0
 var slide_velocity_change_rate = 0.5
 
-func _ready():
-	pass
 
 func _physics_process(delta):
 	player_main_process(delta)
@@ -85,16 +83,10 @@ func player_main_process(delta):
 		$Player/Animations/BodyUpper.visible = true
 		$Player/Animations/BodyLower.visible = true
 		$Player/Animations/BodyWhole.visible = false
-		
-
 
 	calculate_lean_indicator(player_velocity, delta)
 	flip_sprite(delta)
 	train_accelerate_drift_camera(delta)
-	
-	# camera_drift_settings()
-	#drift_camera(delta)
-	
 
 
 func set_train_acceleration(new_train_acceleration): 
@@ -179,35 +171,59 @@ func flip_sprite(delta):
 			$Player/Animations/BodyLower.flip_h = true
 
 
-
-func camera_drift_settings(): 
-	if Input.is_action_just_pressed("drift_camera"):
-		is_camera_drifting = not is_camera_drifting
-	if Input.is_action_just_pressed("camera_drift_up"):
-		still_camera_drift_speed *= sqrt(2) 
-	if Input.is_action_just_pressed("camera_drift_down"):
-		still_camera_drift_speed /= sqrt(2)
-
-func drift_camera(delta): 
-	if not is_camera_drifting: 
-		$Player/CameraNode.position.x = 0
-		return
-	
-	if is_right: 
-		if $Player/CameraNode.position.x < max_camera_drift:
-			$Player/CameraNode.position.x += still_camera_drift_speed*delta	
-	else: 
-		if $Player/CameraNode.position.x > -max_camera_drift:
-			$Player/CameraNode.position.x -= still_camera_drift_speed*delta
-
 var train_acc_camera_drift = 300
 var train_acc_cam_drift_spd = 0.2
 
 func train_accelerate_drift_camera(delta): 
 	var train_acc_camera_drift = -train_acceleration
-	if $Player/CameraNode.position.x < train_acc_camera_drift - 4:
-		var diff = train_acc_camera_drift - $Player/CameraNode.position.x 
-		$Player/CameraNode.position.x += diff*delta*train_acc_cam_drift_spd
-	elif $Player/CameraNode.position.x > train_acc_camera_drift - 4:
-		var diff = train_acc_camera_drift - $Player/CameraNode.position.x 
-		$Player/CameraNode.position.x += diff*delta*train_acc_cam_drift_spd
+	if camera_node_pos.x < train_acc_camera_drift - 4:
+		var diff = train_acc_camera_drift - camera_node_pos.x 
+		camera_node_pos.x += diff*delta*train_acc_cam_drift_spd
+	elif camera_node_pos.x > train_acc_camera_drift - 4:
+		var diff = train_acc_camera_drift - camera_node_pos.x 
+		camera_node_pos.x += diff*delta*train_acc_cam_drift_spd
+
+
+# Camera shake taken from https://kidscancode.org/godot_recipes/2d/screen_shake/
+
+export var decay = 0.8  # How quickly the shaking stops [0, 1].
+export var max_offset = Vector2(100, 75)  # Maximum hor/ver shake in pixels.
+export var max_roll = 0 # Maximum rotation in radians (use sparingly).
+export (NodePath) var target  # Assign the node this camera will follow.
+var rng = RandomNumberGenerator.new()
+
+var trauma = 0.0  # Current shake strength.
+var trauma_power = 2  # Trauma exponent. Use [2, 3].
+onready var noise = OpenSimplexNoise.new()
+var noise_y = 0
+	
+var camera_node_pos
+
+func _ready():
+	camera_node_pos = $Player/CameraNode.position
+	noise.seed = rng.randi()
+	noise.period = 4
+	noise.octaves = 2
+	
+func _process(delta):
+#	if Input.is_action_pressed("screenshake"):
+#		trauma += delta
+		
+	if Input.is_action_just_pressed("screenshake"):
+		trauma = 0.5
+		
+	if target:
+		global_position = get_node(target).global_position
+	if trauma:
+		trauma = max(trauma - decay * delta, 0)
+		shake()
+	else: 
+		$Player/CameraNode.position = camera_node_pos
+
+func shake():
+	var amount = pow(trauma, trauma_power)
+	noise_y += 1
+	rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
+	$Player/CameraNode.position.x = camera_node_pos.x + max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
+	$Player/CameraNode.position.y = camera_node_pos.y + max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
+	
