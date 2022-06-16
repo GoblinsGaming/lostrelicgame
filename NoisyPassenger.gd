@@ -25,3 +25,8 @@ func _process(delta):
 		noise_level = clamp(noise_level, 0, MAX_NOISE_LEVEL)
 		$NoiseLevel.text = str(floor(noise_level))
 		time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
+
+func shush(): 
+	noise_level = 0
+	$NoiseLevel.text = str(floor(noise_level))
+	time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)

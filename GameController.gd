@@ -53,20 +53,27 @@ func _process(delta):
 	process_noise(delta)
 
 const NOISE_DIST = 300
+const SHUSH_DIST = 800
 const QUIET_DEC = 50
 const QUIET_INC = 50
 const NOISE_THRESH = 50
 
+
 func process_noise(delta): 
 	var total_noise = 0
 	var player_pos = $PlayerController.get_player_x_position()
-	
+
 	if is_train_accelerating:
 		total_noise = sqrt(abs(train_acceleration))*2
-
+		
+	if Input.is_action_just_pressed("shush"):
+		# TODO timer on shushing to apply to the train noise as well
+		for passenger in $PassengerController/NoisyPassengers.get_children():
+			if abs(passenger.position.x - player_pos) < SHUSH_DIST:
+				passenger.shush()
+				
 	for passenger in $PassengerController/NoisyPassengers.get_children():
 		# TODO use variable noise distances? 
-
 		if abs(passenger.position.x - player_pos) < NOISE_DIST:
 			total_noise += passenger.noise_level * (1.0 - abs(player_pos - passenger.position.x)/NOISE_DIST)
 	
