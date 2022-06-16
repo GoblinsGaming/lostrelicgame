@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=2]
+[gd_scene load_steps=230 format=2]
 
 [ext_resource path="res://PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://placeholders/mainchar.png" type="Texture" id=2]
@@ -186,6 +186,45 @@
 [ext_resource path="res://Assets/Player/DevilmanCrybabyRun/MaincharDCBRun098.png" type="Texture" id=184]
 [ext_resource path="res://Assets/Player/DevilmanCrybabyRun/MaincharDCBRun087.png" type="Texture" id=185]
 [ext_resource path="res://CameraNode.gd" type="Script" id=186]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top06.png" type="Texture" id=187]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top10.png" type="Texture" id=188]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top11.png" type="Texture" id=189]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top18.png" type="Texture" id=190]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top25.png" type="Texture" id=191]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top01.png" type="Texture" id=192]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top07.png" type="Texture" id=193]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top26.png" type="Texture" id=194]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top27.png" type="Texture" id=195]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top28.png" type="Texture" id=196]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top31.png" type="Texture" id=197]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top32.png" type="Texture" id=198]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top35.png" type="Texture" id=199]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top09.png" type="Texture" id=200]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top20.png" type="Texture" id=201]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top14.png" type="Texture" id=202]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top23.png" type="Texture" id=203]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top24.png" type="Texture" id=204]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top12.png" type="Texture" id=205]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top30.png" type="Texture" id=206]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top16.png" type="Texture" id=207]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top03.png" type="Texture" id=208]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top22.png" type="Texture" id=209]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top15.png" type="Texture" id=210]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top00.png" type="Texture" id=211]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top19.png" type="Texture" id=212]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top29.png" type="Texture" id=213]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top33.png" type="Texture" id=214]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top37.png" type="Texture" id=215]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top08.png" type="Texture" id=216]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top17.png" type="Texture" id=217]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top34.png" type="Texture" id=218]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top13.png" type="Texture" id=219]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top36.png" type="Texture" id=220]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top04.png" type="Texture" id=221]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top02.png" type="Texture" id=222]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top05.png" type="Texture" id=223]
+[ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top21.png" type="Texture" id=224]
+[ext_resource path="res://Assets/Sounds/Player/Phone_Noise_Final.mp3" type="AudioStream" id=225]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 46.9275
@@ -202,6 +241,11 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 211 ), ExtResource( 192 ), ExtResource( 222 ), ExtResource( 208 ), ExtResource( 221 ), ExtResource( 223 ), ExtResource( 187 ), ExtResource( 193 ), ExtResource( 216 ), ExtResource( 200 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 205 ), ExtResource( 219 ), ExtResource( 202 ), ExtResource( 210 ), ExtResource( 207 ), ExtResource( 217 ), ExtResource( 190 ), ExtResource( 212 ), ExtResource( 201 ), ExtResource( 224 ), ExtResource( 209 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 191 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 196 ), ExtResource( 213 ), ExtResource( 206 ), ExtResource( 197 ), ExtResource( 198 ), ExtResource( 214 ), ExtResource( 218 ), ExtResource( 199 ), ExtResource( 220 ), ExtResource( 215 ) ],
+"loop": true,
+"name": "shush",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -263,20 +307,26 @@ offset = Vector2( 0, -7 )
 
 [node name="BodyUpper" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 2 )
-animation = "idle"
+animation = "shush"
 offset = Vector2( 103, -20 )
 
 [node name="BodyLower" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 3 )
-animation = "idle"
+animation = "shush"
+frame = 1
+playing = true
 offset = Vector2( 90, -25 )
 
 [node name="BodyWhole" type="AnimatedSprite" parent="Player/Animations"]
+visible = false
 frames = SubResource( 4 )
 animation = "run"
-frame = 40
+frame = 17
 playing = true
 offset = Vector2( 20, 143 )
+
+[node name="ShushSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource( 225 )
 
 [connection signal="area_entered" from="Player/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Player/Area2D" to="." method="_on_Area2D_area_exited"]

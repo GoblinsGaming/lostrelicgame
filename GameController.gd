@@ -79,6 +79,7 @@ func process_noise(delta):
 		$CanvasLayer/ShushIndicator.update_reset_time(shush_reset_time)
 	else:
 		if Input.is_action_just_pressed("shush"):
+			$PlayerController.shush()
 			can_shush = false
 			shush_reset_time = 5
 			$CanvasLayer/ShushIndicator.set_to_greyscale()
