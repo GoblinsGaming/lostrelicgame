@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
@@ -8,8 +8,12 @@
 [ext_resource path="res://ShushIndicator.gd" type="Script" id=6]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/UI/Shhh.png" type="Texture" id=8]
+[ext_resource path="res://objects/basketball-outline.png" type="Texture" id=9]
+[ext_resource path="res://objects/basketball-shading.png" type="Texture" id=10]
 [ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
 [ext_resource path="res://GameController.gd" type="Script" id=12]
+[ext_resource path="res://Basketball.gd" type="Script" id=13]
+[ext_resource path="res://ObjectsController.gd" type="Script" id=14]
 [ext_resource path="res://placeholders/seating_space.png" type="Texture" id=20]
 [ext_resource path="res://PassengerController.gd" type="Script" id=23]
 [ext_resource path="res://PassengerTarget.gd" type="Script" id=24]
@@ -299,6 +303,19 @@ position = Vector2( 2256, 528 )
 
 [node name="NoisyPassenger4" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
 position = Vector2( 2440, 528 )
+
+[node name="ObjectsController" type="Node2D" parent="GameController"]
+script = ExtResource( 14 )
+
+[node name="Basketball" type="Node2D" parent="GameController/ObjectsController"]
+position = Vector2( 1299, 741 )
+script = ExtResource( 13 )
+
+[node name="Shading" type="Sprite" parent="GameController/ObjectsController/Basketball"]
+texture = ExtResource( 10 )
+
+[node name="Outline" type="Sprite" parent="GameController/ObjectsController/Basketball"]
+texture = ExtResource( 9 )
 
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
 position = Vector2( 20, 44 )
