@@ -211,7 +211,7 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Handhold4" type="Node2D" parent="GameController/PassengerController/Handholds"]
-position = Vector2( 2726, 252 )
+position = Vector2( 2526, 290 )
 script = ExtResource( 24 )
 target_type = 1
 
@@ -219,7 +219,7 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Handhold5" type="Node2D" parent="GameController/PassengerController/Handholds"]
-position = Vector2( 2874, 247 )
+position = Vector2( 2674, 285 )
 script = ExtResource( 24 )
 target_type = 1
 
@@ -227,7 +227,7 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Handhold6" type="Node2D" parent="GameController/PassengerController/Handholds"]
-position = Vector2( 3017, 244 )
+position = Vector2( 2817, 282 )
 script = ExtResource( 24 )
 target_type = 1
 
@@ -235,7 +235,7 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Handhold7" type="Node2D" parent="GameController/PassengerController/Handholds"]
-position = Vector2( 3884, 248 )
+position = Vector2( 2938, 270 )
 script = ExtResource( 24 )
 target_type = 1
 
@@ -243,7 +243,7 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Handhold8" type="Node2D" parent="GameController/PassengerController/Handholds"]
-position = Vector2( 4028, 251 )
+position = Vector2( 3082, 273 )
 script = ExtResource( 24 )
 target_type = 1
 
@@ -251,11 +251,35 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Handhold9" type="Node2D" parent="GameController/PassengerController/Handholds"]
-position = Vector2( 4174, 252 )
+position = Vector2( 3228, 274 )
 script = ExtResource( 24 )
 target_type = 1
 
 [node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold9"]
+texture = ExtResource( 20 )
+
+[node name="Handhold10" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 3840, 270 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold10"]
+texture = ExtResource( 20 )
+
+[node name="Handhold11" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 3984, 273 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold11"]
+texture = ExtResource( 20 )
+
+[node name="Handhold12" type="Node2D" parent="GameController/PassengerController/Handholds"]
+position = Vector2( 4130, 274 )
+script = ExtResource( 24 )
+target_type = 1
+
+[node name="HandholdSpace" type="Sprite" parent="GameController/PassengerController/Handholds/Handhold12"]
 texture = ExtResource( 20 )
 
 [node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
