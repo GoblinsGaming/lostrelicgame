@@ -18,9 +18,9 @@ func activate():
 	$Sprite.material.set_shader_param("should_highlight", false)
 
 func _on_ButtonArea2D_mouse_entered():
-	if not is_active: 
+	if is_active: 
 		$Sprite.material.set_shader_param("should_highlight", true)
 
 func _on_ButtonArea2D_mouse_exited():
-	if not is_active: 
+	if is_active: 
 		$Sprite.material.set_shader_param("should_highlight", false)

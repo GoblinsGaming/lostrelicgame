@@ -1,5 +1,6 @@
 extends Node2D
 
+signal start_game
 
 export var signal_move_mult = 1
 var signal_move_start 
@@ -20,11 +21,7 @@ var is_train_juttering_back = true
 var is_train_speeding_up = false
 var is_train_accelerating = false
 var time_since_last_train_speed_change = 0
-var time_to_next_train_speed_change = 0 
-
-func _ready():
-	back.train_speed = 0
-	time_to_next_train_speed_change = rng.randf_range(1,5)
+var time_to_next_train_speed_change = 15
 
 func _process(delta):
 	adjust_mist(delta)
@@ -82,6 +79,7 @@ func accelerate_train(delta):
 		else:
 			if back.train_speed < train_target_speed:
 				back.train_speed += train_acceleration * delta
+
 				$train.set_train_acceleration(train_acceleration)
 				$ObjectsController.set_train_acceleration(train_acceleration)
 			else: 
@@ -97,8 +95,7 @@ func accelerate_train(delta):
 			$train.set_train_acceleration(0)
 			$ObjectsController.set_train_acceleration(0)
 			is_train_accelerating = false
-			
-	return
+	$Title.train_speed = back.train_speed
 
 func adjust_mist(delta):
 	if mist_increase:
@@ -114,21 +111,101 @@ func adjust_mist(delta):
 	back.set_mistiness(sin(deg2rad(mistiness)))
 
 
+onready var start_button = $ButtonsLayer/StartButton
+onready var help_button = $ButtonsLayer/HelpButton
+onready var credits_button = $ButtonsLayer/CreditsButton
+onready var exit_button = $ButtonsLayer/ExitButton
+
+onready var start_layer = $StartLayer/StartScreen
+
+onready var help_layer = $HelpLayer/HelpScreen
+onready var close_help_button = $HelpLayer/HelpScreen/CloseHelpButton
+
+onready var credits_layer = $CreditsLayer/CreditsScreen
+onready var close_credits_button = $CreditsLayer/CreditsScreen/CloseCreditsButton
+
+onready var exit_layer = $ExitLayer/ExitScreen
+onready var close_exit_button = $ExitLayer/ExitScreen/CloseExitButton
+
+var is_help_open = false
+var is_credits_open = false
+var is_exit_open = false
+
+func _ready():
+	back.train_speed = 0
+	time_to_next_train_speed_change = 10
+	start_layer.visible = false
+	help_layer.visible = false
+	credits_layer.visible = false
+	exit_layer.visible = false
+	activate_menu_buttons()
+	close_help_button.deactivate()
+	close_credits_button.deactivate()
+	close_exit_button.deactivate()
+		
+func activate_menu_buttons(): 
+	start_button.activate()
+	help_button.activate()
+	credits_button.activate()
+	exit_button.activate()
+
+func deactivate_menu_buttons(): 
+	start_button.deactivate()
+	help_button.deactivate()
+	credits_button.deactivate()
+	exit_button.deactivate()
+
 func _on_StartButtonArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		print("Start")
+		if not is_help_open and not is_credits_open and not is_exit_open:
+			start_layer.visible = true
+			yield(get_tree().create_timer(0.2), "timeout")
+			emit_signal("start_game")
 		
 func _on_HelpButtonArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		print("Help")
+		if not is_help_open and not is_credits_open and not is_exit_open:
+			is_help_open = true
+			help_layer.visible = true
+			close_help_button.activate()
+			deactivate_menu_buttons()
 		
 func _on_CreditsButtonArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		print("Credits")
+		if not is_help_open and not is_credits_open and not is_exit_open:
+			is_credits_open = true
+			credits_layer.visible = true
+			close_credits_button.activate()
+			deactivate_menu_buttons()
 		
 func _on_ExitButtonArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		print("Exit")
+		if not is_help_open and not is_credits_open and not is_exit_open:
+			is_exit_open = true
+			exit_layer.visible = true
+			close_exit_button.activate()
+			deactivate_menu_buttons()
 
-func _on_CloseButtonArea2D_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
+func _on_CloseHelpButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		if is_help_open:
+			is_help_open = false
+			help_layer.visible = false
+			close_help_button.deactivate()
+			activate_menu_buttons()
+
+func _on_CloseCreditsButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		if is_credits_open:
+			is_credits_open = false
+			credits_layer.visible = false
+			close_credits_button.deactivate()
+			activate_menu_buttons()
+
+func _on_CloseExitButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		if is_exit_open:
+			is_exit_open = false
+			exit_layer.visible = false
+			close_exit_button.deactivate()
+			activate_menu_buttons()
