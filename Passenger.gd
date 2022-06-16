@@ -6,6 +6,7 @@ signal stop_using_target(this)
 var PassengerTarget = preload("res://PassengerTarget.gd")
 var BodyUpper
 var BodyLower
+var Accessories
 var rng = RandomNumberGenerator.new()
 
 enum PassengerState {
@@ -73,19 +74,31 @@ func walk_to_target(new_target):
 func _process(delta): 
 	if passenger_state == PassengerState.SHOVE and abs(velocity) < COMFORT_VELOCITY:
 		passenger_state = PassengerState.WALK
-		$AnimatedSprite.play("walk")
+		BodyUpper.play("walk")
+		BodyLower.play("walk")
+		Accessories.position.x = 0
+		Accessories.position.y = 0
+		Accessories.rotation_degrees = 0
 	if passenger_state in [PassengerState.WALK, PassengerState.SHOVE] and abs(velocity) > TRIP_VELOCITY: 
 		passenger_state = PassengerState.TRIP
-		$AnimatedSprite.play("trip")
+		BodyUpper.play("dmcrun")
+		BodyLower.play("dmcrun")
+		Accessories.position.x = 40
+		Accessories.position.y = 106
+		Accessories.rotation_degrees = 44
 	elif passenger_state == PassengerState.WALK and abs(velocity) > COMFORT_VELOCITY: 
 		passenger_state = PassengerState.SHOVE
-		$AnimatedSprite.play("shove")
+		BodyUpper.play("run")
+		BodyLower.play("run")
+		Accessories.position.x = 0
+		Accessories.position.y = 0
+		Accessories.rotation_degrees = 0
 
 	if passenger_state == PassengerState.SHOVE:
 		if velocity > 0: 
-			$AnimatedSprite.flip_h = false
+			$Animations.scale.x = 1
 		else: 
-			$AnimatedSprite.flip_h = true
+			$Animations.scale.x = -1
 		
 		# randomly trip
 
@@ -94,10 +107,10 @@ func _process(delta):
 		$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
 			target_velocity = WALK_SPEED#  - train_acceleration
-			$AnimatedSprite.flip_h = false
+			$Animations.scale.x = 1
 		elif position.x > target_x + seating_half_width:
 			target_velocity = -WALK_SPEED#  + train_acceleration
-			$AnimatedSprite.flip_h = true
+			$Animations.scale.x = -1
 		else: 
 			if target.target_type == PassengerTarget.TargetType.SEAT:
 				passenger_state = PassengerState.SIT
@@ -212,6 +225,11 @@ func invisibilize():
 	children = $Animations/BodyUpper/Chinos.get_children()
 	for child in children:
 		child.visible = false
+	children = $Animations/BodyUpper/Accessories/Static.get_children()
+	for child in children:
+		var grandchildren = child.get_children()
+		for grandchild in grandchildren:
+			grandchild.visible = false
 	
 
 func generate_npc():
@@ -223,5 +241,34 @@ func generate_npc():
 		BodyLower = $Animations/BodyLower/Chinos
 		var children = $Animations/BodyUpper/Chinos.get_children()
 		BodyUpper = children[randi() % children.size()]
-	BodyLower.visible = true
+	Accessories = $Animations/BodyUpper/Accessories
+	#eyes
+	var children = $Animations/BodyUpper/Accessories/Static/Eyes.get_children()
+	children[randi() % children.size()].visible = true
+
+	#eyewear
+	children = $Animations/BodyUpper/Accessories/Static/Eyewear.get_children()
+	children[randi() % children.size()].visible = true
+
+	#facial_feature
+	children = $Animations/BodyUpper/Accessories/Static/FacialFeature.get_children()
+	children[randi() % children.size()].visible = true
+
+	#hair
+	children = $Animations/BodyUpper/Accessories/Static/Hair.get_children()
+	children[randi() % children.size()].visible = true
+
+	#mouth
+	children = $Animations/BodyUpper/Accessories/Static/Mouth.get_children()
+	children[randi() % children.size()].visible = true
+
+	#nose
+	children = $Animations/BodyUpper/Accessories/Static/Nose.get_children()
+	children[randi() % children.size()].visible = true
+
 	BodyUpper.visible = true
+	BodyLower.visible = true
+	BodyUpper.playing = true
+	BodyLower.playing = true
+	BodyUpper.play("walk")
+	BodyLower.play("walk")
