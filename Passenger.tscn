@@ -734,9 +734,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "sit",
+"name": "trip",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -754,9 +754,9 @@ animations = [ {
 "name": "shove",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "trip",
+"name": "sit",
 "speed": 5.0
 } ]
 
@@ -1023,7 +1023,7 @@ scale = Vector2( 1.005, 1 )
 [node name="ChinosBlackShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Chinos"]
 frames = SubResource( 3 )
 animation = "walk"
-frame = 14
+frame = 19
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1037,7 +1037,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 5 )
 animation = "dmcrun"
-frame = 20
+frame = 23
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1060,7 +1060,6 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 8 )
 animation = "walk"
-frame = 17
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1086,7 +1085,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 12 )
 animation = "dmcrun"
-frame = 24
+frame = 1
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1196,7 +1195,7 @@ offset = Vector2( 95, -25 )
 position = Vector2( -1, 0 )
 frames = SubResource( 13 )
 animation = "walk"
-frame = 5
+frame = 26
 playing = true
 offset = Vector2( 90, -25 )
 
@@ -1204,7 +1203,7 @@ offset = Vector2( 90, -25 )
 visible = false
 frames = SubResource( 14 )
 animation = "run"
-frame = 39
+frame = 19
 playing = true
 offset = Vector2( 90, -25 )
 

@@ -60,6 +60,7 @@ func walk_passenger_to_random_target(passenger):
 func set_train_acceleration(new_acceleration): 
 	for passenger in $Passengers.get_children(): 
 		passenger.set_train_acceleration(new_acceleration)
+	$StevenHawk.set_train_acceleration(new_acceleration)
 	
 func _process(delta):
 	pass

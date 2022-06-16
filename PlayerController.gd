@@ -148,8 +148,11 @@ func calculate_lean_indicator(player_net_velocity, delta):
 
 func _on_Area2D_area_entered(enemy_area):
 	var enemy = enemy_area.get_parent()
-	if enemy.passenger_state != Passenger.PassengerState.WALK:
-		return
+	
+	if enemy.name != "StevenHawk":
+		if enemy.passenger_state != Passenger.PassengerState.WALK:
+			return
+	
 	if enemy.is_invincible:
 		return
 	
