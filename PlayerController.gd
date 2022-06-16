@@ -1,8 +1,5 @@
 extends Node2D
 
-
-
-
 export var player_left_speed = 1200
 export var player_right_speed = 800
 

@@ -65,7 +65,7 @@ func walk_to_target(new_target):
 	
 	reset_wait()
 
-func _process(delta): 
+func _physics_process(delta): 
 	if passenger_state == PassengerState.SHOVE and abs(velocity) < COMFORT_VELOCITY:
 		passenger_state = PassengerState.WALK
 		$AnimatedSprite.play("walk")
