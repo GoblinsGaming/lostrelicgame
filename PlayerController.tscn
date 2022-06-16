@@ -304,6 +304,7 @@ texture = ExtResource( 3 )
 offset = Vector2( 0, -7 )
 
 [node name="Animations" type="Node2D" parent="Player"]
+position = Vector2( 0, -20 )
 
 [node name="BodyUpper" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 2 )
