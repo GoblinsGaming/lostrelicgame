@@ -274,6 +274,7 @@ script = ExtResource( 1 )
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2( 670, 583 )
+z_index = 1000
 
 [node name="Sprite" type="Sprite" parent="Player"]
 visible = false
@@ -313,15 +314,14 @@ offset = Vector2( 103, -20 )
 
 [node name="BodyLower" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 3 )
-frame = 1
+animation = "idle"
 playing = true
 offset = Vector2( 90, -25 )
 
 [node name="BodyWhole" type="AnimatedSprite" parent="Player/Animations"]
-visible = false
 frames = SubResource( 4 )
 animation = "run"
-frame = 81
+frame = 24
 playing = true
 offset = Vector2( 20, 143 )
 

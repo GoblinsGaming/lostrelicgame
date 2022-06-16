@@ -59,19 +59,15 @@ var is_tunnel = false
 
 func start_tunnel(): 
 	$Tunnel.visible = true
-	$TunnelBlack.visible = true
 	$Tunnel.position.x = 5982
-	$TunnelBlack.position.x = 934
 	is_tunnel = true
 
 func process_tunnel(delta): 
 	if is_tunnel: 
 		$Tunnel.position.x -= 500*delta
-		$TunnelBlack.position.x -= 500*delta
 		if $Tunnel.position.x <= -7500: 
 			is_tunnel = false
 			$Tunnel.visible = false
-			$TunnelBlack.visible = false
 
 
 const NOISE_DIST = 300
