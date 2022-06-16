@@ -1,14 +1,10 @@
 extends Node2D
 
 
-export var is_camera_drifting = false
+
 
 export var player_left_speed = 1200
 export var player_right_speed = 800
-
-export var still_camera_drift_speed = 200
-#export var moving_camera_drift_speed = 500
-export var max_camera_drift = 500
 
 export var does_flip = true
 export var flip_speed = 10
@@ -86,11 +82,10 @@ func player_main_process(delta):
 
 	calculate_lean_indicator(player_velocity, delta)
 	flip_sprite(delta)
-	train_accelerate_drift_camera(delta)
-
 
 func set_train_acceleration(new_train_acceleration): 
 	train_acceleration = -3* new_train_acceleration
+	$Player/CameraNode.set_train_acceleration(train_acceleration) 
 
 func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("right"): 
@@ -171,59 +166,4 @@ func flip_sprite(delta):
 			$Player/Animations/BodyLower.flip_h = true
 
 
-var train_acc_camera_drift = 300
-var train_acc_cam_drift_spd = 0.2
 
-func train_accelerate_drift_camera(delta): 
-	var train_acc_camera_drift = -train_acceleration
-	if camera_node_pos.x < train_acc_camera_drift - 4:
-		var diff = train_acc_camera_drift - camera_node_pos.x 
-		camera_node_pos.x += diff*delta*train_acc_cam_drift_spd
-	elif camera_node_pos.x > train_acc_camera_drift - 4:
-		var diff = train_acc_camera_drift - camera_node_pos.x 
-		camera_node_pos.x += diff*delta*train_acc_cam_drift_spd
-
-
-# Camera shake taken from https://kidscancode.org/godot_recipes/2d/screen_shake/
-
-export var decay = 0.8  # How quickly the shaking stops [0, 1].
-export var max_offset = Vector2(100, 75)  # Maximum hor/ver shake in pixels.
-export var max_roll = 0 # Maximum rotation in radians (use sparingly).
-export (NodePath) var target  # Assign the node this camera will follow.
-var rng = RandomNumberGenerator.new()
-
-var trauma = 0.0  # Current shake strength.
-var trauma_power = 2  # Trauma exponent. Use [2, 3].
-onready var noise = OpenSimplexNoise.new()
-var noise_y = 0
-	
-var camera_node_pos
-
-func _ready():
-	camera_node_pos = $Player/CameraNode.position
-	noise.seed = rng.randi()
-	noise.period = 4
-	noise.octaves = 2
-	
-func _process(delta):
-#	if Input.is_action_pressed("screenshake"):
-#		trauma += delta
-		
-	if Input.is_action_just_pressed("screenshake"):
-		trauma = 0.5
-		
-	if target:
-		global_position = get_node(target).global_position
-	if trauma:
-		trauma = max(trauma - decay * delta, 0)
-		shake()
-	else: 
-		$Player/CameraNode.position = camera_node_pos
-
-func shake():
-	var amount = pow(trauma, trauma_power)
-	noise_y += 1
-	rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
-	$Player/CameraNode.position.x = camera_node_pos.x + max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
-	$Player/CameraNode.position.y = camera_node_pos.y + max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
-	
