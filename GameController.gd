@@ -58,6 +58,8 @@ const QUIET_DEC = 50
 const QUIET_INC = 50
 const NOISE_THRESH = 50
 
+var can_shush = true
+var shush_reset_time = 0
 
 func process_noise(delta): 
 	var total_noise = 0
@@ -65,12 +67,27 @@ func process_noise(delta):
 
 	if is_train_accelerating:
 		total_noise = sqrt(abs(train_acceleration))*2
-		
-	if Input.is_action_just_pressed("shush"):
+	
+	if not can_shush: 
+		if Input.is_action_just_pressed("shush"):
+			$CanvasLayer/ShushIndicator.flash()
+		shush_reset_time -= delta
+
+		if shush_reset_time <= 0:
+			can_shush = true
+			$CanvasLayer/ShushIndicator.set_to_color()
+		$CanvasLayer/ShushIndicator.update_reset_time(shush_reset_time)
+	else:
+		if Input.is_action_just_pressed("shush"):
+			can_shush = false
+			shush_reset_time = 5
+			$CanvasLayer/ShushIndicator.set_to_greyscale()
+			$CanvasLayer/ShushIndicator.update_reset_time(shush_reset_time)
+			
 		# TODO timer on shushing to apply to the train noise as well
-		for passenger in $PassengerController/NoisyPassengers.get_children():
-			if abs(passenger.position.x - player_pos) < SHUSH_DIST:
-				passenger.shush()
+			for passenger in $PassengerController/NoisyPassengers.get_children():
+				if abs(passenger.position.x - player_pos) < SHUSH_DIST:
+					passenger.shush()
 				
 	for passenger in $PassengerController/NoisyPassengers.get_children():
 		# TODO use variable noise distances? 
