@@ -7,7 +7,7 @@
 [ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://ShushIndicator.gd" type="Script" id=6]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=7]
-[ext_resource path="res://placeholders/shush-button.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Shhh.png" type="Texture" id=8]
 [ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
 [ext_resource path="res://GameController.gd" type="Script" id=12]
 [ext_resource path="res://placeholders/seating_space.png" type="Texture" id=20]
@@ -336,11 +336,12 @@ margin_bottom = 14.0
 text = "144"
 
 [node name="ShushIndicator" type="Node2D" parent="GameController/CanvasLayer"]
-position = Vector2( 1332, 34 )
+position = Vector2( 1299, 67 )
 script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="GameController/CanvasLayer/ShushIndicator"]
 material = SubResource( 5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
 
 [node name="ShushResetLabel" type="Label" parent="GameController/CanvasLayer/ShushIndicator"]

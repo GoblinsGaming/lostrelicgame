@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Train-Interior/standle-handle-bottom.png" type="Texture" id=1]
+[ext_resource path="res://Train-Interior/Standle-handle-top.png" type="Texture" id=2]
+[ext_resource path="res://Standle.gd" type="Script" id=3]
+
+[node name="Standle" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="StandleHandleBottom" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 2, 140 )
+
+[node name="StandleHandleTop" type="Sprite" parent="."]
+position = Vector2( -32, -64 )
+texture = ExtResource( 2 )
+centered = false

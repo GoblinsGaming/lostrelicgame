@@ -148,12 +148,14 @@ func accelerate_train(delta):
 				if back.train_speed > -train_jutter_speed:
 					back.train_speed -= train_jutter_acceleration * delta
 					$PlayerController.set_train_acceleration(-train_jutter_acceleration)
+					$train.set_train_acceleration(-train_jutter_acceleration)
 				else:
 					is_train_juttering_back = false
 			else: 
 				if back.train_speed < train_jutter_speed:
 					back.train_speed += train_jutter_acceleration * delta
 					$PlayerController.set_train_acceleration(train_jutter_acceleration)
+					$train.set_train_acceleration(train_jutter_acceleration)
 				else:
 					is_train_juttering = false
 		else:
@@ -161,20 +163,24 @@ func accelerate_train(delta):
 				back.train_speed += train_acceleration * delta
 				$PlayerController.set_train_acceleration(train_acceleration)
 				$PassengerController.set_train_acceleration(train_acceleration)
+				$train.set_train_acceleration(train_acceleration)
 			else: 
 				$PlayerController.set_train_acceleration(0)
 				$PassengerController.set_train_acceleration(0)
+				$train.set_train_acceleration(0)
 				is_train_accelerating = false
 	else: 
 		if back.train_speed > train_target_speed:
 			back.train_speed += train_acceleration * delta
 			$PlayerController.set_train_acceleration(train_acceleration)
 			$PassengerController.set_train_acceleration(train_acceleration)
+			$train.set_train_acceleration(train_acceleration)
 		else: 
 			$PlayerController.set_train_acceleration(0)
 			$PassengerController.set_train_acceleration(0)
+			$train.set_train_acceleration(0)
 			is_train_accelerating = false
-
+			
 	return
 
 func signal_processing(delta): 

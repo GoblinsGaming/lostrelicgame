@@ -312,7 +312,6 @@ offset = Vector2( 103, -20 )
 
 [node name="BodyLower" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 3 )
-animation = "shush"
 frame = 1
 playing = true
 offset = Vector2( 90, -25 )
@@ -321,7 +320,7 @@ offset = Vector2( 90, -25 )
 visible = false
 frames = SubResource( 4 )
 animation = "run"
-frame = 17
+frame = 81
 playing = true
 offset = Vector2( 20, 143 )
 
