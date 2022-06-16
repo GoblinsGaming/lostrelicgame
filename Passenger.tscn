@@ -1223,9 +1223,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "sit",
+"name": "trip",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -1243,9 +1243,9 @@ animations = [ {
 "name": "shove",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "walk",
+"name": "sit",
 "speed": 5.0
 } ]
 
@@ -1667,6 +1667,8 @@ scale = Vector2( 1.005, 1 )
 [node name="ChinosBlackShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Chinos"]
 frames = SubResource( 3 )
 animation = "walk"
+frame = 19
+playing = true
 offset = Vector2( 95, -25 )
 
 [node name="ChinosBlueShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Chinos"]

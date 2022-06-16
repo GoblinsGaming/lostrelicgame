@@ -44,7 +44,7 @@ func _ready():
 	signal_bar.value = 0
 	quiet_bar.value = 50
 	convo_bar.value = 20
-	start_tunnel()
+	# start_tunnel()
 	
 func _process(delta):
 	signal_processing(delta)
