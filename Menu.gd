@@ -112,3 +112,20 @@ func adjust_mist(delta):
 		else: 
 			mist_increase = true
 	back.set_mistiness(sin(deg2rad(mistiness)))
+
+
+func _on_StartButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		print("Start")
+		
+func _on_HelpButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		print("Help")
+		
+func _on_CreditsButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		print("Credits")
+		
+func _on_ExitButtonArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		print("Exit")
