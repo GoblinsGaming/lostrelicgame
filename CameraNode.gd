@@ -13,9 +13,6 @@ var trauma_power = 2  # Trauma exponent. Use [2, 3].
 onready var noise = OpenSimplexNoise.new()
 var noise_y = 0
 
-
-
-
 var train_acc_camera_drift = 300
 var train_acc_cam_drift_spd = 0.2
 var train_acceleration = 0
@@ -28,8 +25,6 @@ func _ready():
 
 func _physics_process(delta):
 	train_accelerate_drift_camera(delta)
-	if Input.is_action_just_pressed("screenshake"):
-		shake_screen(1)
 
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
