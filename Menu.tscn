@@ -1,0 +1,454 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MenuTrain.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/UI/Start.png" type="Texture" id=4]
+[ext_resource path="res://Button.gd" type="Script" id=5]
+[ext_resource path="res://Assets/UI/Help.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Exit.png" type="Texture" id=7]
+[ext_resource path="res://Basketball.gd" type="Script" id=8]
+[ext_resource path="res://Assets/UI/Credits.png" type="Texture" id=9]
+[ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=11]
+[ext_resource path="res://ObjectsController.gd" type="Script" id=12]
+[ext_resource path="res://Assets/UI/HelpBack.png" type="Texture" id=13]
+[ext_resource path="res://Title.gd" type="Script" id=14]
+[ext_resource path="res://placeholders/signal_point.png" type="Texture" id=15]
+[ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs00.png" type="Texture" id=16]
+[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso00.png" type="Texture" id=17]
+[ext_resource path="res://placeholders/shush-button.png" type="Texture" id=18]
+[ext_resource path="res://objects/basketball-shading.png" type="Texture" id=20]
+[ext_resource path="res://objects/basketball-outline.png" type="Texture" id=21]
+
+[sub_resource type="DynamicFont" id=16]
+size = 50
+outline_size = 4
+font_data = ExtResource( 10 )
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform bool should_highlight = false;
+
+void fragment() {
+	if(should_highlight) {
+	    COLOR = texture(TEXTURE, UV);
+	    // float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	    COLOR.rgb = vec3(1.0-COLOR.g, 1.0-COLOR.b, 1.0-COLOR.r);
+	} else { 
+		COLOR = texture(TEXTURE, UV);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/should_highlight = false
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform bool should_highlight = false;
+
+void fragment() {
+	if(should_highlight) {
+	    COLOR = texture(TEXTURE, UV);
+	    // float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	    COLOR.rgb = vec3(1.0-COLOR.g, 1.0-COLOR.b, 1.0-COLOR.r);
+	} else { 
+		COLOR = texture(TEXTURE, UV);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/should_highlight = false
+
+[sub_resource type="Shader" id=9]
+code = "shader_type canvas_item;
+
+uniform bool should_highlight = false;
+
+void fragment() {
+	if(should_highlight) {
+	    COLOR = texture(TEXTURE, UV);
+	    // float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	    COLOR.rgb = vec3(1.0-COLOR.g, 1.0-COLOR.b, 1.0-COLOR.r);
+	} else { 
+		COLOR = texture(TEXTURE, UV);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
+shader_param/should_highlight = false
+
+[sub_resource type="Shader" id=11]
+code = "shader_type canvas_item;
+
+uniform bool should_highlight = false;
+
+void fragment() {
+	if(should_highlight) {
+	    COLOR = texture(TEXTURE, UV);
+	    // float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	    COLOR.rgb = vec3(1.0-COLOR.g, 1.0-COLOR.b, 1.0-COLOR.r);
+	} else { 
+		COLOR = texture(TEXTURE, UV);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 11 )
+shader_param/should_highlight = false
+
+[sub_resource type="DynamicFont" id=18]
+size = 64
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform bool should_highlight = false;
+
+void fragment() {
+	if(should_highlight) {
+	    COLOR = texture(TEXTURE, UV);
+	    // float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	    COLOR.rgb = vec3(1.0-COLOR.g, 1.0-COLOR.b, 1.0-COLOR.r);
+	} else { 
+		COLOR = texture(TEXTURE, UV);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
+shader_param/should_highlight = false
+
+[sub_resource type="DynamicFont" id=15]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 128
+outline_size = 16
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2204, -3 )
+player_move_scale = 100.0
+
+[node name="Title" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="Title" type="Label" parent="Title"]
+margin_left = 408.0
+margin_top = 312.0
+margin_right = 978.0
+margin_bottom = 400.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "SUBWAY CELLULAR"
+align = 1
+valign = 1
+
+[node name="train" parent="." instance=ExtResource( 3 )]
+position = Vector2( -238, 3 )
+
+[node name="ObjectsController" type="Node2D" parent="."]
+position = Vector2( -2204, -3 )
+script = ExtResource( 12 )
+
+[node name="Basketball" type="Node2D" parent="ObjectsController"]
+position = Vector2( 3045, 728 )
+script = ExtResource( 8 )
+
+[node name="Shading" type="Sprite" parent="ObjectsController/Basketball"]
+texture = ExtResource( 20 )
+
+[node name="Outline" type="Sprite" parent="ObjectsController/Basketball"]
+texture = ExtResource( 21 )
+
+[node name="ButtonsLayer" type="CanvasLayer" parent="."]
+
+[node name="StartButton" type="Node2D" parent="ButtonsLayer"]
+position = Vector2( 384, 600 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/StartButton"]
+material = SubResource( 8 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/StartButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/StartButton/ButtonArea2D"]
+position = Vector2( 0, -20 )
+shape = SubResource( 1 )
+
+[node name="HelpButton" type="Node2D" parent="ButtonsLayer"]
+position = Vector2( 576, 600 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/HelpButton"]
+material = SubResource( 6 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/HelpButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/HelpButton/ButtonArea2D"]
+position = Vector2( 0, -20 )
+shape = SubResource( 1 )
+
+[node name="CreditsButton" type="Node2D" parent="ButtonsLayer"]
+position = Vector2( 768, 600 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/CreditsButton"]
+material = SubResource( 10 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/CreditsButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/CreditsButton/ButtonArea2D"]
+position = Vector2( 0, -20 )
+shape = SubResource( 1 )
+
+[node name="ExitButton" type="Node2D" parent="ButtonsLayer"]
+position = Vector2( 960, 600 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/ExitButton"]
+material = SubResource( 12 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/ExitButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/ExitButton/ButtonArea2D"]
+position = Vector2( 0, -20 )
+shape = SubResource( 1 )
+
+[node name="StartLayer" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="StartScreen" type="Node2D" parent="StartLayer"]
+
+[node name="Background" type="Sprite" parent="StartLayer/StartScreen"]
+modulate = Color( 1, 1, 0.639216, 0.85098 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Text" type="Node2D" parent="StartLayer/StartScreen"]
+
+[node name="Label" type="Label" parent="StartLayer/StartScreen/Text"]
+margin_left = 104.0
+margin_top = 48.0
+margin_right = 1272.0
+margin_bottom = 717.0
+custom_fonts/font = SubResource( 18 )
+text = "Loading game
+
+Please wait..."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HelpLayer" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="HelpScreen" type="Node2D" parent="HelpLayer"]
+visible = false
+
+[node name="Background" type="Sprite" parent="HelpLayer/HelpScreen"]
+modulate = Color( 1, 1, 0.639216, 0.85098 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="CloseHelpButton" type="Node2D" parent="HelpLayer/HelpScreen"]
+position = Vector2( 1280, 88 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="HelpLayer/HelpScreen/CloseHelpButton"]
+material = SubResource( 14 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 11 )
+
+[node name="ButtonArea2D" type="Area2D" parent="HelpLayer/HelpScreen/CloseHelpButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HelpLayer/HelpScreen/CloseHelpButton/ButtonArea2D"]
+shape = SubResource( 1 )
+
+[node name="Text" type="Node2D" parent="HelpLayer/HelpScreen"]
+
+[node name="Label" type="Label" parent="HelpLayer/HelpScreen/Text"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 1200.0
+margin_bottom = 701.0
+custom_fonts/font = SubResource( 15 )
+text = "Welcome to Subway Cellular!
+
+The aim of the game is to have a conversation on your phone on the train on your way to work. However, the train is a dangerous place. It speeds up and slows down at its own whim, and the other subway passengers are noisy and get in your way. 
+
+Move around using WASD or the Arrow keys
+
+Follow the 5G signal cone to keep your signal bar high
+
+Stay out of noisy areas to keep your quiet bar low. Press X to shush noisy passengers. Watch the shush indicator in the top-right. 
+
+Fill the conversation bar and don't let it empty"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Pictures" type="Node2D" parent="HelpLayer/HelpScreen"]
+scale = Vector2( 0.890945, 1.18252 )
+
+[node name="SignalPoint" type="Sprite" parent="HelpLayer/HelpScreen/Pictures"]
+position = Vector2( 987.716, 419.444 )
+scale = Vector2( 0.119463, 0.119463 )
+texture = ExtResource( 15 )
+
+[node name="Shush-button" type="Sprite" parent="HelpLayer/HelpScreen/Pictures"]
+position = Vector2( 1005.67, 541.218 )
+scale = Vector2( 1.1224, 0.845653 )
+texture = ExtResource( 18 )
+
+[node name="NpcChinoWalkCycleLegs00" type="Sprite" parent="HelpLayer/HelpScreen/Pictures"]
+position = Vector2( 356.924, 262.152 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 16 )
+
+[node name="NpcWalkCycleJeansBlackShirtTorso00" type="Sprite" parent="HelpLayer/HelpScreen/Pictures"]
+position = Vector2( 358.439, 267.365 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 17 )
+
+[node name="CreditsLayer" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="CreditsScreen" type="Node2D" parent="CreditsLayer"]
+visible = false
+
+[node name="Background" type="Sprite" parent="CreditsLayer/CreditsScreen"]
+modulate = Color( 1, 1, 0.639216, 0.85098 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="CloseCreditsButton" type="Node2D" parent="CreditsLayer/CreditsScreen"]
+position = Vector2( 1280, 88 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="CreditsLayer/CreditsScreen/CloseCreditsButton"]
+material = SubResource( 14 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 11 )
+
+[node name="ButtonArea2D" type="Area2D" parent="CreditsLayer/CreditsScreen/CloseCreditsButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreditsLayer/CreditsScreen/CloseCreditsButton/ButtonArea2D"]
+shape = SubResource( 1 )
+
+[node name="Text" type="Node2D" parent="CreditsLayer/CreditsScreen"]
+
+[node name="Label" type="Label" parent="CreditsLayer/CreditsScreen/Text"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 1200.0
+margin_bottom = 701.0
+custom_fonts/font = SubResource( 15 )
+text = "Credits
+
+Game created in a week for the Lost Relic Games game jam https://itch.io/jam/lost-relic-games-1
+
+Team
+Liam \"Stunbrick\" Chimes: Team Lead, Programmer
+Mark \"PureAwesome\" Chimes: Programmer
+Daniel \"Mossy\" Jonker: Art (Mossiebirch@gmail.com)
+Malcolm \"Cujo26\" Erskine: Animation/Sound design"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ExitLayer" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="ExitScreen" type="Node2D" parent="ExitLayer"]
+visible = false
+
+[node name="Background" type="Sprite" parent="ExitLayer/ExitScreen"]
+modulate = Color( 1, 1, 0.639216, 0.85098 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="CloseExitButton" type="Node2D" parent="ExitLayer/ExitScreen"]
+position = Vector2( 1280, 88 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="ExitLayer/ExitScreen/CloseExitButton"]
+material = SubResource( 14 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 11 )
+
+[node name="ButtonArea2D" type="Area2D" parent="ExitLayer/ExitScreen/CloseExitButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitLayer/ExitScreen/CloseExitButton/ButtonArea2D"]
+shape = SubResource( 1 )
+
+[node name="Text" type="Node2D" parent="ExitLayer/ExitScreen"]
+
+[node name="Label" type="Label" parent="ExitLayer/ExitScreen/Text"]
+margin_left = 96.0
+margin_top = 48.0
+margin_right = 1264.0
+margin_bottom = 717.0
+custom_fonts/font = SubResource( 17 )
+text = "Please Close your Browser Tab"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="input_event" from="ButtonsLayer/StartButton/ButtonArea2D" to="." method="_on_StartButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/StartButton/ButtonArea2D" to="ButtonsLayer/StartButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/StartButton/ButtonArea2D" to="ButtonsLayer/StartButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ButtonsLayer/HelpButton/ButtonArea2D" to="." method="_on_HelpButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/HelpButton/ButtonArea2D" to="ButtonsLayer/HelpButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/HelpButton/ButtonArea2D" to="ButtonsLayer/HelpButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ButtonsLayer/CreditsButton/ButtonArea2D" to="." method="_on_CreditsButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/CreditsButton/ButtonArea2D" to="ButtonsLayer/CreditsButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/CreditsButton/ButtonArea2D" to="ButtonsLayer/CreditsButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ButtonsLayer/ExitButton/ButtonArea2D" to="." method="_on_ExitButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/ExitButton/ButtonArea2D" to="ButtonsLayer/ExitButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/ExitButton/ButtonArea2D" to="ButtonsLayer/ExitButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="HelpLayer/HelpScreen/CloseHelpButton/ButtonArea2D" to="." method="_on_CloseHelpButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="HelpLayer/HelpScreen/CloseHelpButton/ButtonArea2D" to="HelpLayer/HelpScreen/CloseHelpButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="HelpLayer/HelpScreen/CloseHelpButton/ButtonArea2D" to="HelpLayer/HelpScreen/CloseHelpButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="CreditsLayer/CreditsScreen/CloseCreditsButton/ButtonArea2D" to="." method="_on_CloseCreditsButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="CreditsLayer/CreditsScreen/CloseCreditsButton/ButtonArea2D" to="CreditsLayer/CreditsScreen/CloseCreditsButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="CreditsLayer/CreditsScreen/CloseCreditsButton/ButtonArea2D" to="CreditsLayer/CreditsScreen/CloseCreditsButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ExitLayer/ExitScreen/CloseExitButton/ButtonArea2D" to="." method="_on_CloseExitButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ExitLayer/ExitScreen/CloseExitButton/ButtonArea2D" to="ExitLayer/ExitScreen/CloseExitButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ExitLayer/ExitScreen/CloseExitButton/ButtonArea2D" to="ExitLayer/ExitScreen/CloseExitButton" method="_on_ButtonArea2D_mouse_exited"]

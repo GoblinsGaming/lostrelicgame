@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Train-Interior/Seats.png" type="Texture" id=1]
 [ext_resource path="res://Train-Interior/Rail-Mid.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Train-Interior/Train-End-L-BG.png" type="Texture" id=8]
 [ext_resource path="res://Train-Interior/Door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Train.gd" type="Script" id=10]
+[ext_resource path="res://Train-Interior/Train-Window-Pane-BG.png" type="Texture" id=11]
 [ext_resource path="res://Train-Interior/Rail-End-L.png" type="Texture" id=13]
 [ext_resource path="res://Train-Interior/Overhead Bins.png" type="Texture" id=14]
 
@@ -50,13 +51,31 @@ centered = false
 position = Vector2( 2240, 420 )
 texture = ExtResource( 5 )
 
+[node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg"]
+modulate = Color( 1, 1, 1, 0.45098 )
+position = Vector2( -320, -420 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="Train-Window-Frame-Bg2" type="Sprite" parent="TrainBody"]
 position = Vector2( 2880, 420 )
 texture = ExtResource( 5 )
 
+[node name="Train-Window-Pane-Bg2" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg2"]
+modulate = Color( 1, 1, 1, 0.45098 )
+position = Vector2( -320, -420 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="Train-Window-Frame-Bg3" type="Sprite" parent="TrainBody"]
 position = Vector2( 3520, 420 )
 texture = ExtResource( 5 )
+
+[node name="Train-Window-Pane-Bg3" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg3"]
+modulate = Color( 1, 1, 1, 0.45098 )
+position = Vector2( -320, -420 )
+texture = ExtResource( 11 )
+centered = false
 
 [node name="Seats" type="Node2D" parent="."]
 

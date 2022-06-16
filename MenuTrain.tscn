@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Standle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Train-Interior/Train-Window-Pane-BG.png" type="Texture" id=2]
+[ext_resource path="res://Train-Interior/Rail-Mid.png" type="Texture" id=4]
+[ext_resource path="res://Train-Interior/Train-Window-Frame-BG.png" type="Texture" id=5]
+[ext_resource path="res://Train.gd" type="Script" id=11]
+[ext_resource path="res://Train-Interior/Seats.png" type="Texture" id=12]
+
+[node name="train" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="TrainBody" type="Node2D" parent="."]
+
+[node name="Train-Window-Frame-Bg2" type="Sprite" parent="TrainBody"]
+position = Vector2( 608, -8 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Train-Window-Pane-Bg" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg2"]
+modulate = Color( 1, 1, 1, 0.219608 )
+position = Vector2( -640, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Train-Window-Frame-Bg3" type="Sprite" parent="TrainBody"]
+position = Vector2( 1248, -8 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Train-Window-Pane-Bg2" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg3"]
+modulate = Color( 1, 1, 1, 0.219608 )
+position = Vector2( -640, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Train-Window-Frame-Bg" type="Sprite" parent="TrainBody"]
+position = Vector2( -32, -8 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Train-Window-Pane-Bg3" type="Sprite" parent="TrainBody/Train-Window-Frame-Bg"]
+modulate = Color( 1, 1, 1, 0.219608 )
+position = Vector2( 1280, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Seats" type="Node2D" parent="."]
+
+[node name="Seats2" type="Sprite" parent="Seats"]
+position = Vector2( 279.5, 420 )
+texture = ExtResource( 12 )
+
+[node name="Seats3" type="Sprite" parent="Seats"]
+position = Vector2( 1567.5, 412 )
+texture = ExtResource( 12 )
+
+[node name="Rails" type="Node2D" parent="."]
+position = Vector2( -1976, -32 )
+
+[node name="Rail-Mid2" type="Sprite" parent="Rails"]
+position = Vector2( 1904, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Rail-Mid3" type="Sprite" parent="Rails"]
+position = Vector2( 2544, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Rail-Mid4" type="Sprite" parent="Rails"]
+position = Vector2( 3176, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Standles" type="Node2D" parent="."]
+position = Vector2( -1976, -32 )
+
+[node name="Standle4" parent="Standles" instance=ExtResource( 1 )]
+position = Vector2( 2536, 64 )
+
+[node name="Standle5" parent="Standles" instance=ExtResource( 1 )]
+position = Vector2( 2680, 64 )
+
+[node name="Standle6" parent="Standles" instance=ExtResource( 1 )]
+position = Vector2( 2824, 64 )
+
+[node name="Standle7" parent="Standles" instance=ExtResource( 1 )]
+position = Vector2( 2944, 64 )
+
+[node name="Standle8" parent="Standles" instance=ExtResource( 1 )]
+position = Vector2( 3088, 64 )
+
+[node name="Standle9" parent="Standles" instance=ExtResource( 1 )]
+position = Vector2( 3232, 64 )
