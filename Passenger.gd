@@ -54,7 +54,7 @@ var slide_velocity_change_rate = 0.5
 
 func _ready():
 	rng.randomize()
-	$AnimatedSprite.play("idle")
+	# $AnimatedSprite.play("idle")
 	var children = $Sound/Hit.get_children()
 	for child in children:
 		child.stream.loop = false
@@ -104,7 +104,7 @@ func _physics_process(delta):
 
 			
 	if passenger_state == PassengerState.WALK: 
-		$AnimatedSprite.play("walk")
+		#$AnimatedSprite.play("walk")
 		if position.x < target_x - seating_half_width:
 			target_velocity = WALK_SPEED#  - train_acceleration
 			$Animations.scale.x = 1
@@ -115,18 +115,18 @@ func _physics_process(delta):
 			if target.target_type == PassengerTarget.TargetType.SEAT:
 				passenger_state = PassengerState.SIT
 				position.x = target_x
-				$AnimatedSprite.play("sit")
+				#$AnimatedSprite.play("sit")
 				reset_wait()
 			elif target.target_type == PassengerTarget.TargetType.HANDHOLD:
 				passenger_state = PassengerState.HANDHOLD
 				position.x = target_x
-				$AnimatedSprite.play("handhold")
+				#$AnimatedSprite.play("handhold")
 				reset_wait()
 			else: 
 				passenger_state = PassengerState.IDLE
 				printerr("Unexpected target type: " + str(target.target_type) + " for NPC")
 				position.x = target_x
-				$AnimatedSprite.play("idle")
+				#$AnimatedSprite.play("idle")
 				reset_wait()
 				
 	elif passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD, PassengerState.TRIP] : 
