@@ -1,12 +1,6 @@
-[gd_scene load_steps=1242 format=2]
+[gd_scene load_steps=1235 format=2]
 
 [ext_resource path="res://Passenger.gd" type="Script" id=1]
-[ext_resource path="res://placeholders/npc-trip.png" type="Texture" id=2]
-[ext_resource path="res://placeholders/npc-handhold.png" type="Texture" id=3]
-[ext_resource path="res://placeholders/npc-sit.png" type="Texture" id=4]
-[ext_resource path="res://placeholders/npc-walk.png" type="Texture" id=5]
-[ext_resource path="res://placeholders/npc-idle.png" type="Texture" id=6]
-[ext_resource path="res://placeholders/npc-shove.png" type="Texture" id=7]
 [ext_resource path="res://placeholders/green.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sounds/NPC/Hit/zapsplat_foley_clothing_jacket_hit_punch_sweetner_003_52780.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sounds/NPC/Hit/zapsplat_impact_boxing_glove_punch_hit_face_body_crunchy_hit_010_79332.mp3" type="AudioStream" id=10]
@@ -1216,39 +1210,6 @@
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso22.png" type="Texture" id=1221]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso40.png" type="Texture" id=1222]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "trip",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "handhold",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "trip",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "shove",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "sit",
-"speed": 5.0
-} ]
-
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 48.0
 height = 384.0
@@ -1260,14 +1221,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 789 ), ExtResource( 794 ), ExtResource( 795 ), ExtResource( 782 ), ExtResource( 783 ), ExtResource( 776 ), ExtResource( 786 ), ExtResource( 769 ), ExtResource( 800 ), ExtResource( 773 ), ExtResource( 799 ), ExtResource( 796 ), ExtResource( 778 ), ExtResource( 790 ), ExtResource( 798 ), ExtResource( 791 ), ExtResource( 801 ), ExtResource( 802 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 521 ), ExtResource( 499 ), ExtResource( 493 ), ExtResource( 514 ), ExtResource( 541 ), ExtResource( 522 ), ExtResource( 489 ), ExtResource( 695 ), ExtResource( 525 ), ExtResource( 526 ), ExtResource( 527 ), ExtResource( 539 ), ExtResource( 490 ), ExtResource( 495 ), ExtResource( 496 ), ExtResource( 497 ), ExtResource( 704 ), ExtResource( 709 ), ExtResource( 706 ), ExtResource( 707 ), ExtResource( 705 ), ExtResource( 703 ), ExtResource( 701 ), ExtResource( 700 ), ExtResource( 702 ), ExtResource( 708 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 789 ), ExtResource( 794 ), ExtResource( 795 ), ExtResource( 782 ), ExtResource( 783 ), ExtResource( 776 ), ExtResource( 786 ), ExtResource( 769 ), ExtResource( 800 ), ExtResource( 773 ), ExtResource( 799 ), ExtResource( 796 ), ExtResource( 778 ), ExtResource( 790 ), ExtResource( 798 ), ExtResource( 791 ), ExtResource( 801 ), ExtResource( 802 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 297 ), ExtResource( 329 ), ExtResource( 311 ), ExtResource( 322 ), ExtResource( 315 ), ExtResource( 327 ), ExtResource( 306 ), ExtResource( 307 ), ExtResource( 316 ), ExtResource( 313 ), ExtResource( 292 ), ExtResource( 317 ), ExtResource( 328 ), ExtResource( 301 ), ExtResource( 312 ), ExtResource( 294 ), ExtResource( 293 ), ExtResource( 295 ), ExtResource( 318 ), ExtResource( 310 ), ExtResource( 319 ), ExtResource( 323 ) ],
@@ -1283,14 +1244,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 878 ), ExtResource( 898 ), ExtResource( 901 ), ExtResource( 899 ), ExtResource( 900 ), ExtResource( 904 ), ExtResource( 906 ), ExtResource( 879 ), ExtResource( 975 ), ExtResource( 934 ), ExtResource( 951 ), ExtResource( 957 ), ExtResource( 942 ), ExtResource( 968 ), ExtResource( 956 ), ExtResource( 937 ), ExtResource( 964 ), ExtResource( 948 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 373 ), ExtResource( 399 ), ExtResource( 349 ), ExtResource( 350 ), ExtResource( 395 ), ExtResource( 337 ), ExtResource( 351 ), ExtResource( 386 ), ExtResource( 345 ), ExtResource( 396 ), ExtResource( 379 ), ExtResource( 359 ), ExtResource( 375 ), ExtResource( 376 ), ExtResource( 360 ), ExtResource( 393 ), ExtResource( 385 ), ExtResource( 346 ), ExtResource( 380 ), ExtResource( 374 ), ExtResource( 347 ), ExtResource( 377 ), ExtResource( 367 ), ExtResource( 388 ), ExtResource( 361 ), ExtResource( 352 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 878 ), ExtResource( 898 ), ExtResource( 901 ), ExtResource( 899 ), ExtResource( 900 ), ExtResource( 904 ), ExtResource( 906 ), ExtResource( 879 ), ExtResource( 975 ), ExtResource( 934 ), ExtResource( 951 ), ExtResource( 957 ), ExtResource( 942 ), ExtResource( 968 ), ExtResource( 956 ), ExtResource( 937 ), ExtResource( 964 ), ExtResource( 948 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 308 ), ExtResource( 300 ), ExtResource( 314 ), ExtResource( 296 ), ExtResource( 298 ), ExtResource( 299 ), ExtResource( 309 ), ExtResource( 302 ), ExtResource( 320 ), ExtResource( 326 ), ExtResource( 321 ), ExtResource( 324 ), ExtResource( 304 ), ExtResource( 325 ), ExtResource( 303 ), ExtResource( 305 ), ExtResource( 331 ), ExtResource( 330 ), ExtResource( 332 ), ExtResource( 333 ), ExtResource( 334 ), ExtResource( 335 ) ],
@@ -1306,14 +1267,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 792 ), ExtResource( 793 ), ExtResource( 803 ), ExtResource( 804 ), ExtResource( 787 ), ExtResource( 784 ), ExtResource( 768 ), ExtResource( 760 ), ExtResource( 788 ), ExtResource( 761 ), ExtResource( 763 ), ExtResource( 762 ), ExtResource( 764 ), ExtResource( 772 ), ExtResource( 765 ), ExtResource( 766 ), ExtResource( 770 ), ExtResource( 785 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 144 ), ExtResource( 177 ), ExtResource( 172 ), ExtResource( 202 ), ExtResource( 190 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 222 ), ExtResource( 181 ), ExtResource( 223 ), ExtResource( 173 ), ExtResource( 148 ), ExtResource( 209 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 221 ), ExtResource( 213 ), ExtResource( 207 ), ExtResource( 215 ), ExtResource( 171 ), ExtResource( 219 ), ExtResource( 201 ), ExtResource( 175 ), ExtResource( 227 ), ExtResource( 210 ), ExtResource( 174 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 792 ), ExtResource( 793 ), ExtResource( 803 ), ExtResource( 804 ), ExtResource( 787 ), ExtResource( 784 ), ExtResource( 768 ), ExtResource( 760 ), ExtResource( 788 ), ExtResource( 761 ), ExtResource( 763 ), ExtResource( 762 ), ExtResource( 764 ), ExtResource( 772 ), ExtResource( 765 ), ExtResource( 766 ), ExtResource( 770 ), ExtResource( 785 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 658 ), ExtResource( 676 ), ExtResource( 664 ), ExtResource( 651 ), ExtResource( 662 ), ExtResource( 659 ), ExtResource( 675 ), ExtResource( 652 ), ExtResource( 657 ), ExtResource( 665 ), ExtResource( 671 ), ExtResource( 663 ), ExtResource( 690 ), ExtResource( 691 ), ExtResource( 692 ), ExtResource( 684 ), ExtResource( 666 ), ExtResource( 673 ), ExtResource( 677 ), ExtResource( 653 ), ExtResource( 685 ), ExtResource( 650 ) ],
@@ -1329,14 +1290,14 @@ animations = [ {
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 767 ), ExtResource( 775 ), ExtResource( 774 ), ExtResource( 779 ), ExtResource( 780 ), ExtResource( 781 ), ExtResource( 826 ), ExtResource( 852 ), ExtResource( 857 ), ExtResource( 833 ), ExtResource( 813 ), ExtResource( 820 ), ExtResource( 824 ), ExtResource( 829 ), ExtResource( 858 ), ExtResource( 814 ), ExtResource( 843 ), ExtResource( 854 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 289 ), ExtResource( 291 ), ExtResource( 269 ), ExtResource( 290 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 279 ), ExtResource( 270 ), ExtResource( 275 ), ExtResource( 276 ), ExtResource( 277 ), ExtResource( 214 ), ExtResource( 192 ), ExtResource( 170 ), ExtResource( 183 ), ExtResource( 162 ), ExtResource( 143 ), ExtResource( 168 ), ExtResource( 164 ), ExtResource( 199 ), ExtResource( 228 ), ExtResource( 220 ), ExtResource( 191 ), ExtResource( 142 ), ExtResource( 205 ), ExtResource( 165 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 767 ), ExtResource( 775 ), ExtResource( 774 ), ExtResource( 779 ), ExtResource( 780 ), ExtResource( 781 ), ExtResource( 826 ), ExtResource( 852 ), ExtResource( 857 ), ExtResource( 833 ), ExtResource( 813 ), ExtResource( 820 ), ExtResource( 824 ), ExtResource( 829 ), ExtResource( 858 ), ExtResource( 814 ), ExtResource( 843 ), ExtResource( 854 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 596 ), ExtResource( 598 ), ExtResource( 600 ), ExtResource( 608 ), ExtResource( 609 ), ExtResource( 601 ), ExtResource( 602 ), ExtResource( 612 ), ExtResource( 613 ), ExtResource( 628 ), ExtResource( 618 ), ExtResource( 627 ), ExtResource( 623 ), ExtResource( 629 ), ExtResource( 619 ), ExtResource( 625 ), ExtResource( 617 ), ExtResource( 624 ), ExtResource( 621 ), ExtResource( 620 ), ExtResource( 622 ), ExtResource( 626 ), ExtResource( 637 ), ExtResource( 635 ), ExtResource( 641 ), ExtResource( 645 ), ExtResource( 646 ), ExtResource( 631 ), ExtResource( 642 ), ExtResource( 644 ), ExtResource( 648 ), ExtResource( 647 ), ExtResource( 630 ), ExtResource( 633 ), ExtResource( 634 ), ExtResource( 636 ), ExtResource( 640 ), ExtResource( 638 ), ExtResource( 643 ), ExtResource( 639 ), ExtResource( 632 ) ],
@@ -1352,15 +1313,15 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 807 ), ExtResource( 806 ), ExtResource( 834 ), ExtResource( 825 ), ExtResource( 827 ), ExtResource( 810 ), ExtResource( 830 ), ExtResource( 840 ), ExtResource( 815 ), ExtResource( 847 ), ExtResource( 816 ), ExtResource( 860 ), ExtResource( 808 ), ExtResource( 818 ), ExtResource( 865 ), ExtResource( 863 ), ExtResource( 821 ), ExtResource( 853 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 154 ), ExtResource( 180 ), ExtResource( 164 ), ExtResource( 194 ), ExtResource( 140 ), ExtResource( 170 ), ExtResource( 190 ), ExtResource( 162 ), ExtResource( 165 ), ExtResource( 192 ), ExtResource( 171 ), ExtResource( 142 ), ExtResource( 167 ), ExtResource( 178 ), ExtResource( 157 ), ExtResource( 166 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 191 ), ExtResource( 150 ), ExtResource( 172 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 181 ), ExtResource( 173 ), ExtResource( 148 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 183 ), ExtResource( 176 ), ExtResource( 136 ), ExtResource( 177 ), ExtResource( 139 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 199 ), ExtResource( 201 ), ExtResource( 202 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 200 ), ExtResource( 209 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 212 ), ExtResource( 221 ), ExtResource( 265 ), ExtResource( 230 ), ExtResource( 215 ), ExtResource( 249 ), ExtResource( 231 ), ExtResource( 232 ), ExtResource( 256 ), ExtResource( 240 ), ExtResource( 237 ), ExtResource( 241 ), ExtResource( 222 ), ExtResource( 216 ), ExtResource( 233 ), ExtResource( 218 ), ExtResource( 219 ), ExtResource( 255 ), ExtResource( 210 ), ExtResource( 220 ), ExtResource( 257 ), ExtResource( 238 ), ExtResource( 223 ), ExtResource( 266 ), ExtResource( 227 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 234 ), ExtResource( 207 ), ExtResource( 250 ), ExtResource( 226 ), ExtResource( 248 ), ExtResource( 239 ), ExtResource( 228 ), ExtResource( 268 ), ExtResource( 208 ), ExtResource( 260 ), ExtResource( 235 ), ExtResource( 229 ), ExtResource( 258 ), ExtResource( 236 ), ExtResource( 242 ), ExtResource( 254 ), ExtResource( 243 ), ExtResource( 244 ), ExtResource( 245 ), ExtResource( 217 ), ExtResource( 246 ), ExtResource( 247 ), ExtResource( 251 ), ExtResource( 211 ), ExtResource( 252 ), ExtResource( 253 ), ExtResource( 213 ), ExtResource( 259 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 267 ), ExtResource( 205 ), ExtResource( 206 ), ExtResource( 214 ), ExtResource( 282 ), ExtResource( 279 ), ExtResource( 325 ), ExtResource( 292 ), ExtResource( 294 ), ExtResource( 308 ), ExtResource( 274 ), ExtResource( 302 ), ExtResource( 304 ), ExtResource( 283 ), ExtResource( 300 ), ExtResource( 284 ), ExtResource( 296 ), ExtResource( 285 ), ExtResource( 316 ), ExtResource( 321 ), ExtResource( 272 ), ExtResource( 273 ), ExtResource( 287 ), ExtResource( 318 ), ExtResource( 280 ), ExtResource( 286 ), ExtResource( 314 ), ExtResource( 288 ), ExtResource( 291 ), ExtResource( 322 ), ExtResource( 327 ), ExtResource( 290 ), ExtResource( 293 ), ExtResource( 295 ), ExtResource( 276 ), ExtResource( 278 ), ExtResource( 315 ), ExtResource( 289 ), ExtResource( 303 ), ExtResource( 328 ), ExtResource( 297 ), ExtResource( 269 ), ExtResource( 271 ), ExtResource( 281 ), ExtResource( 323 ), ExtResource( 317 ), ExtResource( 298 ), ExtResource( 299 ), ExtResource( 319 ), ExtResource( 309 ), ExtResource( 320 ), ExtResource( 329 ), ExtResource( 310 ), ExtResource( 301 ), ExtResource( 305 ), ExtResource( 270 ), ExtResource( 306 ), ExtResource( 326 ), ExtResource( 324 ), ExtResource( 330 ), ExtResource( 307 ), ExtResource( 311 ), ExtResource( 312 ), ExtResource( 313 ), ExtResource( 331 ), ExtResource( 332 ), ExtResource( 275 ), ExtResource( 277 ), ExtResource( 333 ), ExtResource( 337 ), ExtResource( 345 ), ExtResource( 338 ), ExtResource( 339 ), ExtResource( 340 ), ExtResource( 335 ), ExtResource( 336 ), ExtResource( 344 ), ExtResource( 334 ), ExtResource( 341 ), ExtResource( 342 ), ExtResource( 343 ), ExtResource( 377 ), ExtResource( 380 ), ExtResource( 353 ), ExtResource( 387 ), ExtResource( 373 ), ExtResource( 393 ), ExtResource( 403 ), ExtResource( 349 ), ExtResource( 392 ), ExtResource( 354 ), ExtResource( 388 ), ExtResource( 365 ), ExtResource( 376 ), ExtResource( 404 ), ExtResource( 378 ), ExtResource( 397 ), ExtResource( 401 ), ExtResource( 379 ), ExtResource( 366 ), ExtResource( 384 ), ExtResource( 352 ), ExtResource( 405 ), ExtResource( 364 ), ExtResource( 399 ), ExtResource( 395 ), ExtResource( 361 ), ExtResource( 402 ), ExtResource( 363 ), ExtResource( 391 ), ExtResource( 394 ), ExtResource( 389 ), ExtResource( 406 ), ExtResource( 407 ), ExtResource( 381 ), ExtResource( 382 ), ExtResource( 400 ), ExtResource( 408 ), ExtResource( 383 ), ExtResource( 355 ), ExtResource( 390 ), ExtResource( 385 ), ExtResource( 409 ), ExtResource( 367 ), ExtResource( 371 ), ExtResource( 396 ), ExtResource( 360 ), ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 351 ), ExtResource( 368 ), ExtResource( 359 ), ExtResource( 350 ), ExtResource( 398 ), ExtResource( 386 ), ExtResource( 356 ), ExtResource( 357 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 369 ), ExtResource( 370 ), ExtResource( 372 ), ExtResource( 374 ), ExtResource( 375 ), ExtResource( 463 ), ExtResource( 414 ), ExtResource( 448 ), ExtResource( 421 ), ExtResource( 459 ), ExtResource( 428 ), ExtResource( 432 ), ExtResource( 420 ), ExtResource( 450 ), ExtResource( 430 ), ExtResource( 445 ), ExtResource( 437 ), ExtResource( 431 ), ExtResource( 429 ), ExtResource( 410 ), ExtResource( 444 ), ExtResource( 467 ), ExtResource( 472 ), ExtResource( 438 ), ExtResource( 442 ), ExtResource( 413 ), ExtResource( 466 ), ExtResource( 468 ), ExtResource( 439 ), ExtResource( 456 ), ExtResource( 425 ), ExtResource( 433 ), ExtResource( 434 ), ExtResource( 422 ), ExtResource( 412 ), ExtResource( 443 ), ExtResource( 449 ), ExtResource( 446 ), ExtResource( 426 ), ExtResource( 427 ), ExtResource( 415 ), ExtResource( 452 ), ExtResource( 418 ), ExtResource( 457 ), ExtResource( 461 ), ExtResource( 411 ), ExtResource( 462 ), ExtResource( 440 ), ExtResource( 458 ), ExtResource( 423 ), ExtResource( 441 ), ExtResource( 464 ), ExtResource( 447 ), ExtResource( 460 ), ExtResource( 469 ), ExtResource( 455 ), ExtResource( 416 ), ExtResource( 465 ), ExtResource( 435 ), ExtResource( 470 ), ExtResource( 419 ), ExtResource( 473 ), ExtResource( 417 ), ExtResource( 453 ), ExtResource( 436 ), ExtResource( 451 ), ExtResource( 424 ), ExtResource( 471 ), ExtResource( 454 ), ExtResource( 480 ), ExtResource( 486 ), ExtResource( 477 ), ExtResource( 482 ), ExtResource( 481 ), ExtResource( 483 ), ExtResource( 475 ), ExtResource( 484 ), ExtResource( 485 ), ExtResource( 479 ), ExtResource( 474 ), ExtResource( 476 ), ExtResource( 478 ), ExtResource( 539 ), ExtResource( 517 ), ExtResource( 514 ), ExtResource( 490 ), ExtResource( 537 ), ExtResource( 519 ), ExtResource( 521 ), ExtResource( 523 ), ExtResource( 536 ), ExtResource( 515 ), ExtResource( 513 ), ExtResource( 516 ), ExtResource( 522 ), ExtResource( 533 ), ExtResource( 538 ), ExtResource( 524 ), ExtResource( 500 ), ExtResource( 525 ), ExtResource( 488 ), ExtResource( 531 ), ExtResource( 532 ), ExtResource( 526 ), ExtResource( 506 ), ExtResource( 520 ), ExtResource( 534 ), ExtResource( 507 ), ExtResource( 527 ), ExtResource( 511 ), ExtResource( 499 ), ExtResource( 540 ), ExtResource( 495 ), ExtResource( 535 ), ExtResource( 508 ), ExtResource( 505 ), ExtResource( 528 ), ExtResource( 529 ), ExtResource( 541 ), ExtResource( 518 ), ExtResource( 542 ), ExtResource( 502 ), ExtResource( 492 ), ExtResource( 491 ), ExtResource( 530 ), ExtResource( 543 ), ExtResource( 501 ), ExtResource( 489 ), ExtResource( 512 ), ExtResource( 487 ), ExtResource( 504 ), ExtResource( 493 ), ExtResource( 509 ), ExtResource( 494 ), ExtResource( 503 ), ExtResource( 496 ), ExtResource( 497 ), ExtResource( 510 ), ExtResource( 498 ) ],
 "loop": true,
 "name": "dmcrun",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 807 ), ExtResource( 806 ), ExtResource( 834 ), ExtResource( 825 ), ExtResource( 827 ), ExtResource( 810 ), ExtResource( 830 ), ExtResource( 840 ), ExtResource( 815 ), ExtResource( 847 ), ExtResource( 816 ), ExtResource( 860 ), ExtResource( 808 ), ExtResource( 818 ), ExtResource( 865 ), ExtResource( 863 ), ExtResource( 821 ), ExtResource( 853 ) ],
+"loop": true,
+"name": "sit",
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 406 ), ExtResource( 431 ), ExtResource( 415 ), ExtResource( 425 ), ExtResource( 410 ), ExtResource( 426 ), ExtResource( 444 ), ExtResource( 408 ), ExtResource( 448 ), ExtResource( 442 ), ExtResource( 411 ), ExtResource( 417 ), ExtResource( 407 ), ExtResource( 449 ), ExtResource( 450 ), ExtResource( 460 ), ExtResource( 424 ), ExtResource( 452 ), ExtResource( 435 ), ExtResource( 436 ), ExtResource( 457 ), ExtResource( 421 ) ],
 "loop": true,
@@ -1375,14 +1336,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 822 ), ExtResource( 849 ), ExtResource( 841 ), ExtResource( 817 ), ExtResource( 838 ), ExtResource( 812 ), ExtResource( 832 ), ExtResource( 839 ), ExtResource( 809 ), ExtResource( 811 ), ExtResource( 844 ), ExtResource( 835 ), ExtResource( 845 ), ExtResource( 819 ), ExtResource( 805 ), ExtResource( 823 ), ExtResource( 828 ), ExtResource( 842 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 262 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 229 ), ExtResource( 231 ), ExtResource( 233 ), ExtResource( 247 ), ExtResource( 248 ), ExtResource( 250 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 271 ), ExtResource( 280 ), ExtResource( 272 ), ExtResource( 285 ), ExtResource( 283 ), ExtResource( 287 ), ExtResource( 284 ), ExtResource( 281 ), ExtResource( 282 ), ExtResource( 278 ), ExtResource( 266 ), ExtResource( 286 ), ExtResource( 288 ), ExtResource( 273 ), ExtResource( 274 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 822 ), ExtResource( 849 ), ExtResource( 841 ), ExtResource( 817 ), ExtResource( 838 ), ExtResource( 812 ), ExtResource( 832 ), ExtResource( 839 ), ExtResource( 809 ), ExtResource( 811 ), ExtResource( 844 ), ExtResource( 835 ), ExtResource( 845 ), ExtResource( 819 ), ExtResource( 805 ), ExtResource( 823 ), ExtResource( 828 ), ExtResource( 842 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 667 ), ExtResource( 682 ), ExtResource( 678 ), ExtResource( 654 ), ExtResource( 681 ), ExtResource( 668 ), ExtResource( 688 ), ExtResource( 660 ), ExtResource( 655 ), ExtResource( 669 ), ExtResource( 689 ), ExtResource( 649 ), ExtResource( 656 ), ExtResource( 661 ), ExtResource( 670 ), ExtResource( 672 ), ExtResource( 674 ), ExtResource( 679 ), ExtResource( 680 ), ExtResource( 683 ), ExtResource( 693 ), ExtResource( 694 ) ],
@@ -1398,14 +1359,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 831 ), ExtResource( 837 ), ExtResource( 836 ), ExtResource( 846 ), ExtResource( 848 ), ExtResource( 850 ), ExtResource( 851 ), ExtResource( 855 ), ExtResource( 856 ), ExtResource( 859 ), ExtResource( 861 ), ExtResource( 868 ), ExtResource( 862 ), ExtResource( 864 ), ExtResource( 866 ), ExtResource( 867 ), ExtResource( 910 ), ExtResource( 923 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 338 ), ExtResource( 339 ), ExtResource( 341 ), ExtResource( 342 ), ExtResource( 506 ), ExtResource( 491 ), ExtResource( 696 ), ExtResource( 501 ), ExtResource( 543 ), ExtResource( 505 ), ExtResource( 532 ), ExtResource( 507 ), ExtResource( 486 ), ExtResource( 508 ), ExtResource( 500 ), ExtResource( 529 ), ExtResource( 698 ), ExtResource( 537 ), ExtResource( 516 ), ExtResource( 510 ), ExtResource( 503 ), ExtResource( 512 ), ExtResource( 509 ), ExtResource( 533 ), ExtResource( 699 ), ExtResource( 531 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 831 ), ExtResource( 837 ), ExtResource( 836 ), ExtResource( 846 ), ExtResource( 848 ), ExtResource( 850 ), ExtResource( 851 ), ExtResource( 855 ), ExtResource( 856 ), ExtResource( 859 ), ExtResource( 861 ), ExtResource( 868 ), ExtResource( 862 ), ExtResource( 864 ), ExtResource( 866 ), ExtResource( 867 ), ExtResource( 910 ), ExtResource( 923 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 419 ), ExtResource( 422 ), ExtResource( 432 ), ExtResource( 409 ), ExtResource( 412 ), ExtResource( 427 ), ExtResource( 461 ), ExtResource( 443 ), ExtResource( 463 ), ExtResource( 441 ), ExtResource( 414 ), ExtResource( 420 ), ExtResource( 454 ), ExtResource( 423 ), ExtResource( 437 ), ExtResource( 428 ), ExtResource( 440 ), ExtResource( 433 ), ExtResource( 445 ), ExtResource( 413 ), ExtResource( 459 ), ExtResource( 429 ) ],
@@ -1421,14 +1382,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 869 ), ExtResource( 928 ), ExtResource( 896 ), ExtResource( 885 ), ExtResource( 911 ), ExtResource( 905 ), ExtResource( 912 ), ExtResource( 913 ), ExtResource( 882 ), ExtResource( 891 ), ExtResource( 881 ), ExtResource( 908 ), ExtResource( 884 ), ExtResource( 915 ), ExtResource( 914 ), ExtResource( 897 ), ExtResource( 880 ), ExtResource( 888 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 144 ), ExtResource( 177 ), ExtResource( 172 ), ExtResource( 202 ), ExtResource( 190 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 222 ), ExtResource( 181 ), ExtResource( 223 ), ExtResource( 173 ), ExtResource( 148 ), ExtResource( 209 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 221 ), ExtResource( 213 ), ExtResource( 207 ), ExtResource( 215 ), ExtResource( 171 ), ExtResource( 219 ), ExtResource( 201 ), ExtResource( 175 ), ExtResource( 227 ), ExtResource( 210 ), ExtResource( 174 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 869 ), ExtResource( 928 ), ExtResource( 896 ), ExtResource( 885 ), ExtResource( 911 ), ExtResource( 905 ), ExtResource( 912 ), ExtResource( 913 ), ExtResource( 882 ), ExtResource( 891 ), ExtResource( 881 ), ExtResource( 908 ), ExtResource( 884 ), ExtResource( 915 ), ExtResource( 914 ), ExtResource( 897 ), ExtResource( 880 ), ExtResource( 888 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 453 ), ExtResource( 446 ), ExtResource( 438 ), ExtResource( 430 ), ExtResource( 458 ), ExtResource( 416 ), ExtResource( 439 ), ExtResource( 455 ), ExtResource( 402 ), ExtResource( 451 ), ExtResource( 447 ), ExtResource( 456 ), ExtResource( 434 ), ExtResource( 462 ), ExtResource( 400 ), ExtResource( 401 ), ExtResource( 403 ), ExtResource( 404 ), ExtResource( 405 ), ExtResource( 418 ), ExtResource( 478 ), ExtResource( 479 ) ],
@@ -1444,14 +1405,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 893 ), ExtResource( 874 ), ExtResource( 889 ), ExtResource( 870 ), ExtResource( 916 ), ExtResource( 917 ), ExtResource( 929 ), ExtResource( 894 ), ExtResource( 927 ), ExtResource( 921 ), ExtResource( 924 ), ExtResource( 883 ), ExtResource( 918 ), ExtResource( 926 ), ExtResource( 875 ), ExtResource( 892 ), ExtResource( 877 ), ExtResource( 919 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 502 ), ExtResource( 530 ), ExtResource( 494 ), ExtResource( 485 ), ExtResource( 534 ), ExtResource( 515 ), ExtResource( 518 ), ExtResource( 492 ), ExtResource( 487 ), ExtResource( 697 ), ExtResource( 535 ), ExtResource( 520 ), ExtResource( 536 ), ExtResource( 524 ), ExtResource( 511 ), ExtResource( 538 ), ExtResource( 517 ), ExtResource( 523 ), ExtResource( 519 ), ExtResource( 513 ), ExtResource( 504 ), ExtResource( 528 ), ExtResource( 498 ), ExtResource( 540 ), ExtResource( 488 ), ExtResource( 542 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 893 ), ExtResource( 874 ), ExtResource( 889 ), ExtResource( 870 ), ExtResource( 916 ), ExtResource( 917 ), ExtResource( 929 ), ExtResource( 894 ), ExtResource( 927 ), ExtResource( 921 ), ExtResource( 924 ), ExtResource( 883 ), ExtResource( 918 ), ExtResource( 926 ), ExtResource( 875 ), ExtResource( 892 ), ExtResource( 877 ), ExtResource( 919 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 480 ), ExtResource( 483 ), ExtResource( 484 ), ExtResource( 482 ), ExtResource( 464 ), ExtResource( 467 ), ExtResource( 474 ), ExtResource( 465 ), ExtResource( 472 ), ExtResource( 473 ), ExtResource( 466 ), ExtResource( 468 ), ExtResource( 469 ), ExtResource( 470 ), ExtResource( 471 ), ExtResource( 475 ), ExtResource( 477 ), ExtResource( 476 ), ExtResource( 481 ), ExtResource( 365 ), ExtResource( 343 ), ExtResource( 392 ) ],
@@ -1467,14 +1428,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 922 ), ExtResource( 886 ), ExtResource( 902 ), ExtResource( 873 ), ExtResource( 920 ), ExtResource( 890 ), ExtResource( 909 ), ExtResource( 871 ), ExtResource( 903 ), ExtResource( 872 ), ExtResource( 925 ), ExtResource( 876 ), ExtResource( 930 ), ExtResource( 895 ), ExtResource( 931 ), ExtResource( 907 ), ExtResource( 932 ), ExtResource( 887 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 257 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 249 ), ExtResource( 232 ), ExtResource( 241 ), ExtResource( 239 ), ExtResource( 236 ), ExtResource( 243 ), ExtResource( 265 ), ExtResource( 235 ), ExtResource( 242 ), ExtResource( 259 ), ExtResource( 253 ), ExtResource( 260 ), ExtResource( 237 ), ExtResource( 258 ), ExtResource( 238 ), ExtResource( 234 ), ExtResource( 230 ), ExtResource( 245 ), ExtResource( 246 ), ExtResource( 256 ), ExtResource( 240 ), ExtResource( 261 ), ExtResource( 244 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 922 ), ExtResource( 886 ), ExtResource( 902 ), ExtResource( 873 ), ExtResource( 920 ), ExtResource( 890 ), ExtResource( 909 ), ExtResource( 871 ), ExtResource( 903 ), ExtResource( 872 ), ExtResource( 925 ), ExtResource( 876 ), ExtResource( 930 ), ExtResource( 895 ), ExtResource( 931 ), ExtResource( 907 ), ExtResource( 932 ), ExtResource( 887 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 55 ), ExtResource( 60 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 58 ), ExtResource( 47 ), ExtResource( 56 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 57 ), ExtResource( 49 ) ],
@@ -1586,14 +1547,14 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 727 ), ExtResource( 734 ), ExtResource( 735 ), ExtResource( 750 ), ExtResource( 748 ), ExtResource( 737 ), ExtResource( 758 ), ExtResource( 743 ), ExtResource( 759 ), ExtResource( 736 ), ExtResource( 749 ), ExtResource( 751 ), ExtResource( 728 ), ExtResource( 738 ), ExtResource( 739 ), ExtResource( 753 ), ExtResource( 752 ), ExtResource( 729 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 606 ), ExtResource( 585 ), ExtResource( 597 ), ExtResource( 586 ), ExtResource( 587 ), ExtResource( 605 ), ExtResource( 604 ), ExtResource( 615 ), ExtResource( 589 ), ExtResource( 582 ), ExtResource( 595 ), ExtResource( 610 ), ExtResource( 599 ), ExtResource( 581 ), ExtResource( 584 ), ExtResource( 588 ), ExtResource( 616 ), ExtResource( 583 ), ExtResource( 611 ), ExtResource( 590 ), ExtResource( 614 ), ExtResource( 591 ), ExtResource( 603 ), ExtResource( 607 ), ExtResource( 592 ), ExtResource( 593 ) ],
 "loop": true,
 "name": "dmcrun",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 727 ), ExtResource( 734 ), ExtResource( 735 ), ExtResource( 750 ), ExtResource( 748 ), ExtResource( 737 ), ExtResource( 758 ), ExtResource( 743 ), ExtResource( 759 ), ExtResource( 736 ), ExtResource( 749 ), ExtResource( 751 ), ExtResource( 728 ), ExtResource( 738 ), ExtResource( 739 ), ExtResource( 753 ), ExtResource( 752 ), ExtResource( 729 ) ],
+"loop": true,
+"name": "sit",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 61 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 70 ), ExtResource( 66 ), ExtResource( 62 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 67 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 68 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 73 ), ExtResource( 71 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 567 ), ExtResource( 568 ), ExtResource( 151 ), ExtResource( 146 ), ExtResource( 197 ), ExtResource( 189 ), ExtResource( 198 ), ExtResource( 195 ), ExtResource( 569 ), ExtResource( 573 ), ExtResource( 184 ), ExtResource( 141 ), ExtResource( 557 ), ExtResource( 544 ), ExtResource( 155 ), ExtResource( 556 ), ExtResource( 570 ), ExtResource( 152 ), ExtResource( 558 ), ExtResource( 571 ), ExtResource( 550 ), ExtResource( 153 ), ExtResource( 551 ) ],
@@ -1609,15 +1570,15 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 740 ), ExtResource( 741 ), ExtResource( 742 ), ExtResource( 744 ), ExtResource( 747 ), ExtResource( 745 ), ExtResource( 730 ), ExtResource( 746 ), ExtResource( 754 ), ExtResource( 755 ), ExtResource( 756 ), ExtResource( 757 ), ExtResource( 731 ), ExtResource( 732 ), ExtResource( 733 ), ExtResource( 797 ), ExtResource( 777 ), ExtResource( 771 ) ],
-"loop": true,
-"name": "sit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 150 ), ExtResource( 206 ), ExtResource( 169 ), ExtResource( 194 ), ExtResource( 154 ), ExtResource( 176 ), ExtResource( 166 ), ExtResource( 157 ), ExtResource( 211 ), ExtResource( 167 ), ExtResource( 203 ), ExtResource( 217 ), ExtResource( 178 ), ExtResource( 180 ), ExtResource( 200 ), ExtResource( 204 ), ExtResource( 212 ), ExtResource( 208 ), ExtResource( 216 ), ExtResource( 218 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 136 ), ExtResource( 140 ), ExtResource( 139 ) ],
 "loop": true,
 "name": "dmcrun",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 740 ), ExtResource( 741 ), ExtResource( 742 ), ExtResource( 744 ), ExtResource( 747 ), ExtResource( 745 ), ExtResource( 730 ), ExtResource( 746 ), ExtResource( 754 ), ExtResource( 755 ), ExtResource( 756 ), ExtResource( 757 ), ExtResource( 731 ), ExtResource( 732 ), ExtResource( 733 ), ExtResource( 797 ), ExtResource( 777 ), ExtResource( 771 ) ],
+"loop": true,
+"name": "sit",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 90 ), ExtResource( 81 ), ExtResource( 32 ), ExtResource( 82 ), ExtResource( 86 ), ExtResource( 63 ), ExtResource( 28 ), ExtResource( 76 ), ExtResource( 91 ), ExtResource( 16 ), ExtResource( 83 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 17 ), ExtResource( 84 ), ExtResource( 21 ), ExtResource( 85 ), ExtResource( 34 ), ExtResource( 77 ), ExtResource( 23 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 87 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 79 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 92 ), ExtResource( 25 ), ExtResource( 93 ), ExtResource( 12 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 19 ), ExtResource( 26 ) ],
 "loop": true,
@@ -1627,12 +1588,6 @@ animations = [ {
 
 [node name="Passenger" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
-frames = SubResource( 1 )
-animation = "handhold"
-offset = Vector2( 0, 50 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -1675,7 +1630,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 4 )
 animation = "sit"
-frame = 10
+frame = 4
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1683,7 +1638,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 5 )
 animation = "sit"
-frame = 10
+frame = 4
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1691,7 +1646,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 6 )
 animation = "run"
-frame = 9
+frame = 11
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1699,7 +1654,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 7 )
 animation = "sit"
-frame = 5
+frame = 17
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1709,7 +1664,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 8 )
 animation = "sit"
-frame = 14
+frame = 8
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1717,7 +1672,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 9 )
 animation = "sit"
-frame = 14
+frame = 8
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1725,7 +1680,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 10 )
 animation = "sit"
-frame = 16
+frame = 10
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1733,7 +1688,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 11 )
 animation = "sit"
-frame = 14
+frame = 8
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1741,7 +1696,6 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 12 )
 animation = "dmcrun"
-frame = 14
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1824,7 +1778,7 @@ offset = Vector2( 90, -25 )
 visible = false
 frames = SubResource( 14 )
 animation = "sit"
-frame = 2
+frame = 8
 playing = true
 offset = Vector2( 90, -25 )
 
