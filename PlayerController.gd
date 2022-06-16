@@ -1,16 +1,8 @@
 extends Node2D
 
-
-export var is_camera_drifting = false
-
 export var player_left_speed = 1200
 export var player_right_speed = 800
 
-export var still_camera_drift_speed = 200
-#export var moving_camera_drift_speed = 500
-export var max_camera_drift = 500
-
-export var does_flip = true
 export var flip_speed = 10
 
 var is_right = true
@@ -32,10 +24,19 @@ var slide_velocity_mult = 2
 var slide_velocity = 0
 var slide_velocity_change_rate = 0.5
 
-func _ready():
-	pass
+var is_shushing = false
+var time_for_shush = 0
 
-func _process(delta):
+func _physics_process(delta):
+	player_main_process(delta)
+
+func player_main_process(delta): 
+	if is_shushing: 
+		time_for_shush -= delta
+		if time_for_shush <= 0: 
+			is_shushing = false
+			$Player/ShushSound.playing = false
+	
 	calculate_player_input_forces(delta)
 	# player_velocity -= delta*train_acceleration*2
 			
@@ -67,13 +68,19 @@ func _process(delta):
 		$Player.position.x = 4950
 	
 	if player_velocity == 0:
-		$Player/Animations/BodyUpper.play("idle")
+		if is_shushing:
+			$Player/Animations/BodyUpper.play("shush")
+		else:
+			$Player/Animations/BodyUpper.play("idle")
 		$Player/Animations/BodyLower.play("idle")
-		$Player/Animations/BodyUpper.offset.x = 95
+		#$Player/Animations/BodyUpper.offset.x = 95
 	else:
-		$Player/Animations/BodyUpper.play("run")
+		if is_shushing:
+			$Player/Animations/BodyUpper.play("shush")
+		else:
+			$Player/Animations/BodyUpper.play("run")
 		$Player/Animations/BodyLower.play("run")
-		$Player/Animations/BodyUpper.offset.x = 103
+		#$Player/Animations/BodyUpper.offset.x = 103
 	if abs(player_velocity) > abs(PLAYER_MAX_FORCE + 100):
 		$Player/Animations/BodyUpper.visible = false
 		$Player/Animations/BodyLower.visible = false
@@ -82,19 +89,19 @@ func _process(delta):
 		$Player/Animations/BodyUpper.visible = true
 		$Player/Animations/BodyLower.visible = true
 		$Player/Animations/BodyWhole.visible = false
-		
-
 
 	calculate_lean_indicator(player_velocity, delta)
-
-
-	
-	camera_drift_settings()
 	flip_sprite(delta)
-	drift_camera(delta)
+
+func shush(): 
+	if not is_shushing: 
+		is_shushing = true
+		time_for_shush = 2
+		$Player/ShushSound.playing = true
 
 func set_train_acceleration(new_train_acceleration): 
 	train_acceleration = -3* new_train_acceleration
+	$Player/CameraNode.set_train_acceleration(train_acceleration) 
 
 func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("right"): 
@@ -155,43 +162,18 @@ func _on_Area2D_area_exited(enemy_area):
 	pass
 
 func flip_sprite(delta): 
-	if does_flip:
-		if is_right: 
-			if $Player/Sprite.scale.x < 1: 
-				$Player/Sprite.scale.x += flip_speed * delta
-				$Player/Animations.scale.x += flip_speed * delta
-		else: 
-			if $Player/Sprite.scale.x > -1: 
-				$Player/Sprite.scale.x -= flip_speed * delta
-				$Player/Animations.scale.x -= flip_speed * delta
-	else: 
-		if is_right:
-			$Player/Sprite.flip_h = false
-			$Player/Animations/BodyUpper.flip_h = false
-			$Player/Animations/BodyLower.flip_h = false
-		else: 
-			$Player/Sprite.flip_h = true
-			$Player/Animations/BodyUpper.flip_h = true
-			$Player/Animations/BodyLower.flip_h = true
-
-func camera_drift_settings(): 
-	if Input.is_action_just_pressed("drift_camera"):
-		is_camera_drifting = not is_camera_drifting
-	if Input.is_action_just_pressed("camera_drift_up"):
-		still_camera_drift_speed *= sqrt(2) 
-	if Input.is_action_just_pressed("camera_drift_down"):
-		still_camera_drift_speed /= sqrt(2)
-
-func drift_camera(delta): 
-	if not is_camera_drifting: 
-		$Player/CameraNode.position.x = 0
-		return
-	
 	if is_right: 
-		if $Player/CameraNode.position.x < max_camera_drift:
-			$Player/CameraNode.position.x += still_camera_drift_speed*delta	
+		if $Player/Animations.scale.x < 1: 
+			$Player/Animations.scale.x += flip_speed * delta
 	else: 
-		if $Player/CameraNode.position.x > -max_camera_drift:
-			$Player/CameraNode.position.x -= still_camera_drift_speed*delta
-
+		if $Player/Animations.scale.x > -1: 
+			$Player/Animations.scale.x -= flip_speed * delta
+			
+	if $Player/Animations.scale.x > 1: 
+		$Player/Animations.scale.x = 1
+	elif $Player/Animations.scale.x < -1:
+		$Player/Animations.scale.x = -1
+			
+func get_player_x_position(): 
+	return $Player.position.x
 

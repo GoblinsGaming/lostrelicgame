@@ -34,6 +34,7 @@ var time_since_last_train_speed_change = 0
 var time_to_next_train_speed_change = 0 
 
 onready var signal_bar = $CanvasLayer/SignalBar/ProgressBar
+onready var quiet_bar = $CanvasLayer/QuietBar/ProgressBar
 onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
 
 func _ready():
@@ -41,13 +42,93 @@ func _ready():
 	back.train_speed = 0
 	time_to_next_train_speed_change = rng.randf_range(1,5)
 	signal_bar.value = 0
+	quiet_bar.value = 50
 	convo_bar.value = 20
-
+	start_tunnel()
+	
 func _process(delta):
 	signal_processing(delta)
 	adjust_mist(delta)
 	randomize_train_acceleration(delta)
 	accelerate_train(delta)
+	process_noise(delta)
+	process_tunnel(delta)
+
+
+var is_tunnel = false
+
+func start_tunnel(): 
+	$Tunnel.visible = true
+	$TunnelBlack.visible = true
+	$Tunnel.position.x = 5982
+	$TunnelBlack.position.x = 934
+	is_tunnel = true
+
+func process_tunnel(delta): 
+	if is_tunnel: 
+		$Tunnel.position.x -= 500*delta
+		$TunnelBlack.position.x -= 500*delta
+		if $Tunnel.position.x <= -7500: 
+			is_tunnel = false
+			$Tunnel.visible = false
+			$TunnelBlack.visible = false
+
+
+const NOISE_DIST = 300
+const SHUSH_DIST = 800
+const QUIET_DEC = 50
+const QUIET_INC = 50
+const NOISE_THRESH = 50
+
+var can_shush = true
+var shush_reset_time = 0
+
+func process_noise(delta): 
+	var total_noise = 0
+	var player_pos = $PlayerController.get_player_x_position()
+
+	if is_train_accelerating:
+		total_noise = sqrt(abs(train_acceleration))*2
+	
+	if not can_shush: 
+		if Input.is_action_just_pressed("shush"):
+			$CanvasLayer/ShushIndicator.flash()
+		shush_reset_time -= delta
+
+		if shush_reset_time <= 0:
+			can_shush = true
+			$CanvasLayer/ShushIndicator.set_to_color()
+		$CanvasLayer/ShushIndicator.update_reset_time(shush_reset_time)
+	else:
+		if Input.is_action_just_pressed("shush"):
+			$PlayerController.shush()
+			can_shush = false
+			shush_reset_time = 5
+			$CanvasLayer/ShushIndicator.set_to_greyscale()
+			$CanvasLayer/ShushIndicator.update_reset_time(shush_reset_time)
+			
+		# TODO timer on shushing to apply to the train noise as well
+			for passenger in $PassengerController/NoisyPassengers.get_children():
+				if abs(passenger.position.x - player_pos) < SHUSH_DIST:
+					passenger.shush()
+				
+	for passenger in $PassengerController/NoisyPassengers.get_children():
+		# TODO use variable noise distances? 
+		if abs(passenger.position.x - player_pos) < NOISE_DIST:
+			total_noise += passenger.noise_level * (1.0 - abs(player_pos - passenger.position.x)/NOISE_DIST)
+	
+	var quiet = clamp(100 - total_noise, 0, 100)
+	
+	if quiet_bar.value < quiet - 2: 
+		quiet_bar.value += QUIET_INC * delta
+	elif quiet_bar.value > quiet + 2:
+		quiet_bar.value -= QUIET_DEC * delta
+#
+	var styleBox = quiet_bar.get("custom_styles/fg") 
+	if quiet_bar.value >= NOISE_THRESH: 
+		styleBox.bg_color = Color(0.2, 0.9, 0.2)
+	else: 
+		styleBox.bg_color = Color(0.8, 0.5, 0.1)
 
 func randomize_train_acceleration(delta): 
 	if time_since_last_train_speed_change < time_to_next_train_speed_change: 
@@ -69,64 +150,16 @@ func randomize_train_acceleration(delta):
 		is_train_juttering_back = false
 		is_train_accelerating = true
 		is_train_speeding_up = false
-		
-	print("time_since_last_train_speed_change " + str(time_since_last_train_speed_change))
 	time_since_last_train_speed_change = 0
 	time_to_next_train_speed_change = rng.randf_range(6,20)
-	print("time_to_next_train_speed_change " + str(time_to_next_train_speed_change))
 	
 	var acc_mult = rng.randf_range(0.05, 0.2)
 	train_acceleration = (train_target_speed - back.train_speed) * acc_mult
 	train_jutter_acceleration =  train_acceleration * 1.5
-
-	print("Train speed started " + str(back.train_speed))
-	print("Changing train speed to " + str(train_target_speed))
-	print("Difference in speed: " + str(train_target_speed - back.train_speed))
-	print("acceleration multiplier " + str(acc_mult))
-	print("train_acceleration " + str(train_acceleration))
-	print("train_jutter_acceleration " + str(train_jutter_acceleration))
-	print("----")
 		
 func accelerate_train(delta): 
-	if Input.is_action_just_pressed("train_up"): 
-		train_target_speed = 800
-		train_acceleration = 300
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = true
-		is_train_juttering_back = true
-		is_train_accelerating = true
-		is_train_speeding_up = true
-	
-	if Input.is_action_just_pressed("train_double_up"): 
-		train_target_speed = 1200
-		train_acceleration = 500
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = true
-		is_train_juttering_back = true
-		is_train_accelerating = true
-		is_train_speeding_up = true
-		
-	if Input.is_action_just_pressed("train_down"): 
-		train_target_speed = 0
-		train_acceleration = -300
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = false
-		is_train_juttering_back = false
-		is_train_accelerating = true
-		is_train_speeding_up = false
-			
-	if Input.is_action_just_pressed("train_double_down"): 
-		train_target_speed = 0
-		train_acceleration = -500
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = false
-		is_train_juttering_back = false
-		is_train_accelerating = true
-		is_train_speeding_up = false
-		
 	if not is_train_accelerating: 
-		return
-		
+		return	
 	
 	if is_train_speeding_up:
 		if is_train_juttering: 
@@ -137,12 +170,14 @@ func accelerate_train(delta):
 				if back.train_speed > -train_jutter_speed:
 					back.train_speed -= train_jutter_acceleration * delta
 					$PlayerController.set_train_acceleration(-train_jutter_acceleration)
+					$train.set_train_acceleration(-train_jutter_acceleration)
 				else:
 					is_train_juttering_back = false
 			else: 
 				if back.train_speed < train_jutter_speed:
 					back.train_speed += train_jutter_acceleration * delta
 					$PlayerController.set_train_acceleration(train_jutter_acceleration)
+					$train.set_train_acceleration(train_jutter_acceleration)
 				else:
 					is_train_juttering = false
 		else:
@@ -150,20 +185,28 @@ func accelerate_train(delta):
 				back.train_speed += train_acceleration * delta
 				$PlayerController.set_train_acceleration(train_acceleration)
 				$PassengerController.set_train_acceleration(train_acceleration)
+				$train.set_train_acceleration(train_acceleration)
+				$ObjectsController.set_train_acceleration(train_acceleration)
 			else: 
 				$PlayerController.set_train_acceleration(0)
 				$PassengerController.set_train_acceleration(0)
+				$train.set_train_acceleration(0)
+				$ObjectsController.set_train_acceleration(0)
 				is_train_accelerating = false
 	else: 
 		if back.train_speed > train_target_speed:
 			back.train_speed += train_acceleration * delta
 			$PlayerController.set_train_acceleration(train_acceleration)
 			$PassengerController.set_train_acceleration(train_acceleration)
+			$train.set_train_acceleration(train_acceleration)
+			$ObjectsController.set_train_acceleration(train_acceleration)
 		else: 
 			$PlayerController.set_train_acceleration(0)
 			$PassengerController.set_train_acceleration(0)
+			$train.set_train_acceleration(0)
+			$ObjectsController.set_train_acceleration(0)
 			is_train_accelerating = false
-
+			
 	return
 
 func signal_processing(delta): 
@@ -178,14 +221,23 @@ func signal_processing(delta):
 		if signal_bar.value >= 0: 
 			signal_bar.value = signal_bar.value - signal_reduction_speed*delta
 	
-	var styleBox = signal_bar.get("custom_styles/fg") 
+	var signalStyleBox = signal_bar.get("custom_styles/fg") 
+
 	if signal_bar.value >= signal_threshold: 
-		styleBox.bg_color = Color(0, 1, 0)
-		if convo_bar.value <= 100: 
+		signalStyleBox.bg_color = Color(0.2, 0.9, 0.9)
+	else: 
+		signalStyleBox.bg_color = Color(1, 0, 0)
+		
+	# TODO Move this elsewhere
+	var convoStyleBox = convo_bar.get("custom_styles/fg") 
+	if signal_bar.value >= signal_threshold and quiet_bar.value >= NOISE_THRESH:
+		convoStyleBox.bg_color = Color(0.1, 0.1, 0.8)
+		if convo_bar.value < 100: 
 			convo_bar.value += convo_fill_speed*delta
 	else: 
-		styleBox.bg_color = Color(1, 0, 0)
-		convo_bar.value -= convo_reduction_speed*delta
+		convoStyleBox.bg_color = Color(0.5, 0.5, 0.0)
+		if convo_bar.value > 0:
+			convo_bar.value -= convo_reduction_speed*delta
 		
 	#$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
 	$SignalPoint.position.x -= 200 * signal_move_mult * delta
