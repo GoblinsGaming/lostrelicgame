@@ -3,13 +3,13 @@
 [ext_resource path="res://Train-Interior/Seats.png" type="Texture" id=1]
 [ext_resource path="res://Train-Interior/Rail-Mid.png" type="Texture" id=2]
 [ext_resource path="res://Train-Interior/Rail-End-R.png" type="Texture" id=3]
+[ext_resource path="res://Standle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Train-Interior/Train-Window-Frame-BG.png" type="Texture" id=5]
 [ext_resource path="res://Train-Interior/Train-Wall-Plain.png" type="Texture" id=6]
 [ext_resource path="res://Train-Interior/Train-End-L-BG-Open.png" type="Texture" id=7]
 [ext_resource path="res://Train-Interior/Train-End-L-BG.png" type="Texture" id=8]
 [ext_resource path="res://Train-Interior/Door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Train.gd" type="Script" id=10]
-[ext_resource path="res://Train-Interior/Standle-Handle.png" type="Texture" id=11]
 [ext_resource path="res://Train-Interior/Rail-End-L.png" type="Texture" id=13]
 [ext_resource path="res://Train-Interior/Overhead Bins.png" type="Texture" id=14]
 
@@ -122,44 +122,6 @@ centered = false
 position = Vector2( 4809, 420 )
 texture = ExtResource( 3 )
 
-[node name="Standles" type="Node2D" parent="."]
-
-[node name="Standle-Handle" type="Sprite" parent="Standles"]
-position = Vector2( 328, 424 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle2" type="Sprite" parent="Standles"]
-position = Vector2( 472, 424 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle3" type="Sprite" parent="Standles"]
-position = Vector2( 616, 424 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle4" type="Sprite" parent="Standles"]
-position = Vector2( 2730.5, 420 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle5" type="Sprite" parent="Standles"]
-position = Vector2( 2874.5, 420 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle6" type="Sprite" parent="Standles"]
-position = Vector2( 3018.5, 420 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle7" type="Sprite" parent="Standles"]
-position = Vector2( 3890.5, 420 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle8" type="Sprite" parent="Standles"]
-position = Vector2( 4034.5, 420 )
-texture = ExtResource( 11 )
-
-[node name="Standle-Handle9" type="Sprite" parent="Standles"]
-position = Vector2( 4178.5, 420 )
-texture = ExtResource( 11 )
-
 [node name="OverheadBins" type="Sprite" parent="."]
 position = Vector2( 624, 96 )
 texture = ExtResource( 14 )
@@ -169,3 +131,41 @@ centered = false
 position = Vector2( 4128, 104 )
 texture = ExtResource( 14 )
 centered = false
+
+[node name="Standles" type="Node2D" parent="."]
+
+[node name="Standle" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 328, 64 )
+
+[node name="Standle2" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 472, 64 )
+
+[node name="Standle3" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 616, 64 )
+
+[node name="Standle4" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 2536, 64 )
+
+[node name="Standle5" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 2680, 64 )
+
+[node name="Standle6" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 2824, 64 )
+
+[node name="Standle7" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 2944, 64 )
+
+[node name="Standle8" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 3088, 64 )
+
+[node name="Standle9" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 3232, 64 )
+
+[node name="Standle10" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 3840, 64 )
+
+[node name="Standle11" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 3984, 64 )
+
+[node name="Standle12" parent="Standles" instance=ExtResource( 4 )]
+position = Vector2( 4128, 64 )
