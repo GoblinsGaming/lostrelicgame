@@ -1,23 +1,26 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var is_active = true
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
+func deactivate(): 
+	is_active = false
+	$Sprite.material.set_shader_param("should_highlight", false)
+
+func activate(): 
+	is_active = true
+	$Sprite.material.set_shader_param("should_highlight", false)
 
 func _on_ButtonArea2D_mouse_entered():
-	$Sprite.material.set_shader_param("should_highlight", true)
+	if not is_active: 
+		$Sprite.material.set_shader_param("should_highlight", true)
 
 func _on_ButtonArea2D_mouse_exited():
-	$Sprite.material.set_shader_param("should_highlight", false)
+	if not is_active: 
+		$Sprite.material.set_shader_param("should_highlight", false)

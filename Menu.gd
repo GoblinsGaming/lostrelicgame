@@ -129,3 +129,6 @@ func _on_CreditsButtonArea2D_input_event(viewport, event, shape_idx):
 func _on_ExitButtonArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		print("Exit")
+
+func _on_CloseButtonArea2D_input_event(viewport, event, shape_idx):
+	pass # Replace with function body.

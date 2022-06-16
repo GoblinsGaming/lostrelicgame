@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://Assets/UI/Exit.png" type="Texture" id=7]
 [ext_resource path="res://Basketball.gd" type="Script" id=8]
 [ext_resource path="res://Assets/UI/Credits.png" type="Texture" id=9]
+[ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=11]
 [ext_resource path="res://ObjectsController.gd" type="Script" id=12]
+[ext_resource path="res://Assets/UI/HelpBack.png" type="Texture" id=13]
 [ext_resource path="res://objects/basketball-shading.png" type="Texture" id=20]
 [ext_resource path="res://objects/basketball-outline.png" type="Texture" id=21]
 
@@ -33,7 +36,7 @@ shader = SubResource( 7 )
 shader_param/should_highlight = false
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 29 )
+extents = Vector2( 64, 64 )
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -92,6 +95,31 @@ void fragment() {
 shader = SubResource( 11 )
 shader_param/should_highlight = false
 
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform bool should_highlight = false;
+
+void fragment() {
+	if(should_highlight) {
+	    COLOR = texture(TEXTURE, UV);
+	    // float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+	    COLOR.rgb = vec3(1.0-COLOR.g, 1.0-COLOR.b, 1.0-COLOR.r);
+	} else { 
+		COLOR = texture(TEXTURE, UV);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
+shader_param/should_highlight = false
+
+[sub_resource type="DynamicFont" id=15]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -116,77 +144,121 @@ texture = ExtResource( 20 )
 [node name="Outline" type="Sprite" parent="ObjectsController/Basketball"]
 texture = ExtResource( 21 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ButtonsLayer" type="CanvasLayer" parent="."]
 
-[node name="StartButton" type="Node2D" parent="CanvasLayer"]
+[node name="StartButton" type="Node2D" parent="ButtonsLayer"]
 position = Vector2( 384, 600 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/StartButton"]
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/StartButton"]
 material = SubResource( 8 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
-[node name="ButtonArea2D" type="Area2D" parent="CanvasLayer/StartButton"]
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/StartButton"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StartButton/ButtonArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/StartButton/ButtonArea2D"]
 position = Vector2( 0, -20 )
 shape = SubResource( 1 )
 
-[node name="HelpButton" type="Node2D" parent="CanvasLayer"]
+[node name="HelpButton" type="Node2D" parent="ButtonsLayer"]
 position = Vector2( 576, 600 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/HelpButton"]
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/HelpButton"]
 material = SubResource( 6 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
-[node name="ButtonArea2D" type="Area2D" parent="CanvasLayer/HelpButton"]
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/HelpButton"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HelpButton/ButtonArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/HelpButton/ButtonArea2D"]
 position = Vector2( 0, -20 )
 shape = SubResource( 1 )
 
-[node name="CreditsButton" type="Node2D" parent="CanvasLayer"]
+[node name="CreditsButton" type="Node2D" parent="ButtonsLayer"]
 position = Vector2( 768, 600 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/CreditsButton"]
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/CreditsButton"]
 material = SubResource( 10 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
 
-[node name="ButtonArea2D" type="Area2D" parent="CanvasLayer/CreditsButton"]
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/CreditsButton"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CreditsButton/ButtonArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/CreditsButton/ButtonArea2D"]
 position = Vector2( 0, -20 )
 shape = SubResource( 1 )
 
-[node name="ExitButton" type="Node2D" parent="CanvasLayer"]
+[node name="ExitButton" type="Node2D" parent="ButtonsLayer"]
 position = Vector2( 960, 600 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/ExitButton"]
+[node name="Sprite" type="Sprite" parent="ButtonsLayer/ExitButton"]
 material = SubResource( 12 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
-[node name="ButtonArea2D" type="Area2D" parent="CanvasLayer/ExitButton"]
+[node name="ButtonArea2D" type="Area2D" parent="ButtonsLayer/ExitButton"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ExitButton/ButtonArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsLayer/ExitButton/ButtonArea2D"]
 position = Vector2( 0, -20 )
 shape = SubResource( 1 )
 
-[connection signal="input_event" from="CanvasLayer/StartButton/ButtonArea2D" to="." method="_on_StartButtonArea2D_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/StartButton/ButtonArea2D" to="CanvasLayer/StartButton" method="_on_ButtonArea2D_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/StartButton/ButtonArea2D" to="CanvasLayer/StartButton" method="_on_ButtonArea2D_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/HelpButton/ButtonArea2D" to="." method="_on_HelpButtonArea2D_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/HelpButton/ButtonArea2D" to="CanvasLayer/HelpButton" method="_on_ButtonArea2D_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/HelpButton/ButtonArea2D" to="CanvasLayer/HelpButton" method="_on_ButtonArea2D_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/CreditsButton/ButtonArea2D" to="." method="_on_CreditsButtonArea2D_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/CreditsButton/ButtonArea2D" to="CanvasLayer/CreditsButton" method="_on_ButtonArea2D_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/CreditsButton/ButtonArea2D" to="CanvasLayer/CreditsButton" method="_on_ButtonArea2D_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/ExitButton/ButtonArea2D" to="." method="_on_ExitButtonArea2D_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/ExitButton/ButtonArea2D" to="CanvasLayer/ExitButton" method="_on_ButtonArea2D_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/ExitButton/ButtonArea2D" to="CanvasLayer/ExitButton" method="_on_ButtonArea2D_mouse_exited"]
+[node name="HelpLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite" parent="HelpLayer"]
+modulate = Color( 1, 1, 0.639216, 0.85098 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="CloseButton" type="Node2D" parent="HelpLayer"]
+position = Vector2( 1280, 88 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="HelpLayer/CloseButton"]
+material = SubResource( 14 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 11 )
+
+[node name="ButtonArea2D" type="Area2D" parent="HelpLayer/CloseButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HelpLayer/CloseButton/ButtonArea2D"]
+shape = SubResource( 1 )
+
+[node name="Text" type="Node2D" parent="HelpLayer"]
+
+[node name="Label" type="Label" parent="HelpLayer/Text"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 148.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 15 )
+text = "Welcome to Subway Cellular!
+
+The aim of the game is to have a conversation on your phone.
+
+
+
+
+Move around using WASD or the Arrow keys
+
+
+"
+
+[connection signal="input_event" from="ButtonsLayer/StartButton/ButtonArea2D" to="." method="_on_StartButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/StartButton/ButtonArea2D" to="ButtonsLayer/StartButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/StartButton/ButtonArea2D" to="ButtonsLayer/StartButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ButtonsLayer/HelpButton/ButtonArea2D" to="." method="_on_HelpButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/HelpButton/ButtonArea2D" to="ButtonsLayer/HelpButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/HelpButton/ButtonArea2D" to="ButtonsLayer/HelpButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ButtonsLayer/CreditsButton/ButtonArea2D" to="." method="_on_CreditsButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/CreditsButton/ButtonArea2D" to="ButtonsLayer/CreditsButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/CreditsButton/ButtonArea2D" to="ButtonsLayer/CreditsButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="ButtonsLayer/ExitButton/ButtonArea2D" to="." method="_on_ExitButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="ButtonsLayer/ExitButton/ButtonArea2D" to="ButtonsLayer/ExitButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsLayer/ExitButton/ButtonArea2D" to="ButtonsLayer/ExitButton" method="_on_ButtonArea2D_mouse_exited"]
+[connection signal="input_event" from="HelpLayer/CloseButton/ButtonArea2D" to="." method="_on_CloseButtonArea2D_input_event"]
+[connection signal="mouse_entered" from="HelpLayer/CloseButton/ButtonArea2D" to="HelpLayer/CloseButton" method="_on_ButtonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="HelpLayer/CloseButton/ButtonArea2D" to="HelpLayer/CloseButton" method="_on_ButtonArea2D_mouse_exited"]
