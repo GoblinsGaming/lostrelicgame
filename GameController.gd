@@ -1,5 +1,7 @@
 extends Node2D
 
+signal win
+signal lose
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -53,7 +55,11 @@ func _process(delta):
 	accelerate_train(delta)
 	process_noise(delta)
 	process_tunnel(delta)
+	calculate_win_loss()
 
+func calculate_win_loss(): 
+	if convo_bar.value >= 99:
+		emit_signal("win")
 
 var is_tunnel = false
 
