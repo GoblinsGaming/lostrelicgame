@@ -164,10 +164,12 @@ func accelerate_train(delta):
 				$PlayerController.set_train_acceleration(train_acceleration)
 				$PassengerController.set_train_acceleration(train_acceleration)
 				$train.set_train_acceleration(train_acceleration)
+				$ObjectsController.set_train_acceleration(train_acceleration)
 			else: 
 				$PlayerController.set_train_acceleration(0)
 				$PassengerController.set_train_acceleration(0)
 				$train.set_train_acceleration(0)
+				$ObjectsController.set_train_acceleration(0)
 				is_train_accelerating = false
 	else: 
 		if back.train_speed > train_target_speed:
@@ -175,10 +177,12 @@ func accelerate_train(delta):
 			$PlayerController.set_train_acceleration(train_acceleration)
 			$PassengerController.set_train_acceleration(train_acceleration)
 			$train.set_train_acceleration(train_acceleration)
+			$ObjectsController.set_train_acceleration(train_acceleration)
 		else: 
 			$PlayerController.set_train_acceleration(0)
 			$PassengerController.set_train_acceleration(0)
 			$train.set_train_acceleration(0)
+			$ObjectsController.set_train_acceleration(0)
 			is_train_accelerating = false
 			
 	return
