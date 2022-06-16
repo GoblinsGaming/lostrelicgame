@@ -5,7 +5,7 @@ var is_opening = false
 const DOOR_SPEED_MULT = 50
 
 func _ready():
-	open()
+	pass
 
 func _process(delta):
 	if Input.is_action_pressed("ui_down"):
