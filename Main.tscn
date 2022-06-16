@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Passenger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NoisyPassenger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FPSCounter.gd" type="Script" id=4]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
@@ -13,6 +13,9 @@
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.141176, 0.698039, 0.92549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.960784, 0.929412, 0.462745, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0509804, 0.290196, 0.92549, 1 )
@@ -222,32 +225,21 @@ texture = ExtResource( 20 )
 
 [node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
 
-[node name="Passenger" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 1608, 544 )
-
-[node name="Passenger2" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 1768, 544 )
-
-[node name="Passenger3" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 1936, 544 )
-
-[node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2096, 544 )
-
-[node name="Passenger5" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2256, 552 )
-
-[node name="Passenger6" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2416, 552 )
-
-[node name="Passenger7" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2584, 552 )
-
-[node name="Passenger8" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
-position = Vector2( 2744, 552 )
-
 [node name="PassengerBackup" type="Node2D" parent="GameController/PassengerController"]
 visible = false
+
+[node name="NoisyPassengers" type="Node2D" parent="GameController/PassengerController"]
+
+[node name="NoisyPassenger" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
+
+[node name="NoisyPassenger2" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
+position = Vector2( 2080, 528 )
+
+[node name="NoisyPassenger3" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
+position = Vector2( 2256, 528 )
+
+[node name="NoisyPassenger4" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
+position = Vector2( 2440, 528 )
 
 [node name="PlayerController" parent="GameController" instance=ExtResource( 7 )]
 position = Vector2( 20, 44 )
@@ -273,8 +265,21 @@ step = 0.0
 value = 50.0
 percent_visible = false
 
-[node name="ConvoBar" type="Node2D" parent="GameController/CanvasLayer"]
+[node name="QuietBar" type="Node2D" parent="GameController/CanvasLayer"]
 position = Vector2( 0, 60 )
+
+[node name="ProgressBar" type="ProgressBar" parent="GameController/CanvasLayer/QuietBar"]
+margin_left = 39.0
+margin_top = 33.0
+margin_right = 284.0
+margin_bottom = 74.0
+custom_styles/fg = SubResource( 3 )
+step = 0.0
+value = 50.0
+percent_visible = false
+
+[node name="ConvoBar" type="Node2D" parent="GameController/CanvasLayer"]
+position = Vector2( 0, 120 )
 
 [node name="ProgressBar" type="ProgressBar" parent="GameController/CanvasLayer/ConvoBar"]
 margin_left = 39.0

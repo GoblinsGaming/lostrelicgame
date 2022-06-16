@@ -34,6 +34,7 @@ var time_since_last_train_speed_change = 0
 var time_to_next_train_speed_change = 0 
 
 onready var signal_bar = $CanvasLayer/SignalBar/ProgressBar
+onready var quiet_bar = $CanvasLayer/QuietBar/ProgressBar
 onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
 
 func _ready():
@@ -41,13 +42,46 @@ func _ready():
 	back.train_speed = 0
 	time_to_next_train_speed_change = rng.randf_range(1,5)
 	signal_bar.value = 0
+	quiet_bar.value = 50
 	convo_bar.value = 20
-
+	
 func _process(delta):
 	signal_processing(delta)
 	adjust_mist(delta)
 	randomize_train_acceleration(delta)
 	accelerate_train(delta)
+	process_noise(delta)
+
+const NOISE_DIST = 300
+const QUIET_DEC = 50
+const QUIET_INC = 50
+const NOISE_THRESH = 50
+
+func process_noise(delta): 
+	var total_noise = 0
+	var player_pos = $PlayerController.get_player_x_position()
+	
+	if is_train_accelerating:
+		total_noise = sqrt(abs(train_acceleration))*2
+
+	for passenger in $PassengerController/NoisyPassengers.get_children():
+		# TODO use variable noise distances? 
+
+		if abs(passenger.position.x - player_pos) < NOISE_DIST:
+			total_noise += passenger.noise_level * (1.0 - abs(player_pos - passenger.position.x)/NOISE_DIST)
+	
+	var quiet = clamp(100 - total_noise, 0, 100)
+	
+	if quiet_bar.value < quiet - 2: 
+		quiet_bar.value += QUIET_INC * delta
+	elif quiet_bar.value > quiet + 2:
+		quiet_bar.value -= QUIET_DEC * delta
+#
+	var styleBox = quiet_bar.get("custom_styles/fg") 
+	if quiet_bar.value >= NOISE_THRESH: 
+		styleBox.bg_color = Color(0.2, 0.9, 0.2)
+	else: 
+		styleBox.bg_color = Color(0.8, 0.5, 0.1)
 
 func randomize_train_acceleration(delta): 
 	if time_since_last_train_speed_change < time_to_next_train_speed_change: 
@@ -130,14 +164,23 @@ func signal_processing(delta):
 		if signal_bar.value >= 0: 
 			signal_bar.value = signal_bar.value - signal_reduction_speed*delta
 	
-	var styleBox = signal_bar.get("custom_styles/fg") 
+	var signalStyleBox = signal_bar.get("custom_styles/fg") 
+
 	if signal_bar.value >= signal_threshold: 
-		styleBox.bg_color = Color(0, 1, 0)
-		if convo_bar.value <= 100: 
+		signalStyleBox.bg_color = Color(0.2, 0.9, 0.9)
+	else: 
+		signalStyleBox.bg_color = Color(1, 0, 0)
+		
+	# TODO Move this elsewhere
+	var convoStyleBox = convo_bar.get("custom_styles/fg") 
+	if signal_bar.value >= signal_threshold and quiet_bar.value >= NOISE_THRESH:
+		convoStyleBox.bg_color = Color(0.1, 0.1, 0.8)
+		if convo_bar.value < 100: 
 			convo_bar.value += convo_fill_speed*delta
 	else: 
-		styleBox.bg_color = Color(1, 0, 0)
-		convo_bar.value -= convo_reduction_speed*delta
+		convoStyleBox.bg_color = Color(0.5, 0.5, 0.0)
+		if convo_bar.value > 0:
+			convo_bar.value -= convo_reduction_speed*delta
 		
 	#$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
 	$SignalPoint.position.x -= 200 * signal_move_mult * delta

@@ -162,5 +162,6 @@ func flip_sprite(delta):
 			$Player/Animations/BodyUpper.flip_h = true
 			$Player/Animations/BodyLower.flip_h = true
 
-
+func get_player_x_position(): 
+	return $Player.position.x
 

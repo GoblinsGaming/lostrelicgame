@@ -56,6 +56,5 @@ func train_accelerate_drift_camera(delta):
 		camera_node_pos.x += diff*delta*train_acc_cam_drift_spd
 		
 	if abs(train_acceleration) > 100:
-		print(sqrt(abs(train_acceleration))/50)
 		shake_screen(sqrt(abs(train_acceleration))/50)
 
