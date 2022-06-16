@@ -77,45 +77,8 @@ func randomize_train_acceleration(delta):
 	train_jutter_acceleration =  train_acceleration * 1.5
 		
 func accelerate_train(delta): 
-	if Input.is_action_just_pressed("train_up"): 
-		train_target_speed = 800
-		train_acceleration = 300
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = true
-		is_train_juttering_back = true
-		is_train_accelerating = true
-		is_train_speeding_up = true
-	
-	if Input.is_action_just_pressed("train_double_up"): 
-		train_target_speed = 1200
-		train_acceleration = 500
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = true
-		is_train_juttering_back = true
-		is_train_accelerating = true
-		is_train_speeding_up = true
-		
-	if Input.is_action_just_pressed("train_down"): 
-		train_target_speed = 0
-		train_acceleration = -300
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = false
-		is_train_juttering_back = false
-		is_train_accelerating = true
-		is_train_speeding_up = false
-			
-	if Input.is_action_just_pressed("train_double_down"): 
-		train_target_speed = 0
-		train_acceleration = -500
-		train_jutter_acceleration =  train_acceleration * 1.5
-		is_train_juttering = false
-		is_train_juttering_back = false
-		is_train_accelerating = true
-		is_train_speeding_up = false
-		
 	if not is_train_accelerating: 
-		return
-		
+		return	
 	
 	if is_train_speeding_up:
 		if is_train_juttering: 

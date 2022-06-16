@@ -1,14 +1,7 @@
 extends Node2D
 
-
-export var is_camera_drifting = false
-
 export var player_left_speed = 1200
 export var player_right_speed = 800
-
-export var still_camera_drift_speed = 200
-#export var moving_camera_drift_speed = 500
-export var max_camera_drift = 500
 
 export var does_flip = true
 export var flip_speed = 10
@@ -32,8 +25,6 @@ var slide_velocity_mult = 2
 var slide_velocity = 0
 var slide_velocity_change_rate = 0.5
 
-func _ready():
-	pass
 
 func _physics_process(delta):
 	player_main_process(delta)
@@ -85,20 +76,13 @@ func player_main_process(delta):
 		$Player/Animations/BodyUpper.visible = true
 		$Player/Animations/BodyLower.visible = true
 		$Player/Animations/BodyWhole.visible = false
-		
-
 
 	calculate_lean_indicator(player_velocity, delta)
 	flip_sprite(delta)
-	train_accelerate_drift_camera(delta)
-	
-	# camera_drift_settings()
-	#drift_camera(delta)
-	
-
 
 func set_train_acceleration(new_train_acceleration): 
 	train_acceleration = -3* new_train_acceleration
+	$Player/CameraNode.set_train_acceleration(train_acceleration) 
 
 func calculate_player_input_forces(delta):
 	if Input.is_action_pressed("right"): 
@@ -180,34 +164,3 @@ func flip_sprite(delta):
 
 
 
-func camera_drift_settings(): 
-	if Input.is_action_just_pressed("drift_camera"):
-		is_camera_drifting = not is_camera_drifting
-	if Input.is_action_just_pressed("camera_drift_up"):
-		still_camera_drift_speed *= sqrt(2) 
-	if Input.is_action_just_pressed("camera_drift_down"):
-		still_camera_drift_speed /= sqrt(2)
-
-func drift_camera(delta): 
-	if not is_camera_drifting: 
-		$Player/CameraNode.position.x = 0
-		return
-	
-	if is_right: 
-		if $Player/CameraNode.position.x < max_camera_drift:
-			$Player/CameraNode.position.x += still_camera_drift_speed*delta	
-	else: 
-		if $Player/CameraNode.position.x > -max_camera_drift:
-			$Player/CameraNode.position.x -= still_camera_drift_speed*delta
-
-var train_acc_camera_drift = 300
-var train_acc_cam_drift_spd = 0.2
-
-func train_accelerate_drift_camera(delta): 
-	var train_acc_camera_drift = -train_acceleration
-	if $Player/CameraNode.position.x < train_acc_camera_drift - 4:
-		var diff = train_acc_camera_drift - $Player/CameraNode.position.x 
-		$Player/CameraNode.position.x += diff*delta*train_acc_cam_drift_spd
-	elif $Player/CameraNode.position.x > train_acc_camera_drift - 4:
-		var diff = train_acc_camera_drift - $Player/CameraNode.position.x 
-		$Player/CameraNode.position.x += diff*delta*train_acc_cam_drift_spd

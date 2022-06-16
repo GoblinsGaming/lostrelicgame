@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=2]
+[gd_scene load_steps=191 format=2]
 
 [ext_resource path="res://PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://placeholders/mainchar.png" type="Texture" id=2]
@@ -185,6 +185,7 @@
 [ext_resource path="res://Assets/Player/DevilmanCrybabyRun/MaincharDCBRun091.png" type="Texture" id=183]
 [ext_resource path="res://Assets/Player/DevilmanCrybabyRun/MaincharDCBRun098.png" type="Texture" id=184]
 [ext_resource path="res://Assets/Player/DevilmanCrybabyRun/MaincharDCBRun087.png" type="Texture" id=185]
+[ext_resource path="res://CameraNode.gd" type="Script" id=186]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 46.9275
@@ -237,6 +238,7 @@ texture = ExtResource( 2 )
 
 [node name="CameraNode" type="Node2D" parent="Player"]
 position = Vector2( 8, -98 )
+script = ExtResource( 186 )
 
 [node name="Camera2D" type="Camera2D" parent="Player/CameraNode"]
 position = Vector2( -678, -486 )
@@ -272,7 +274,7 @@ offset = Vector2( 90, -25 )
 [node name="BodyWhole" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 4 )
 animation = "run"
-frame = 57
+frame = 48
 playing = true
 offset = Vector2( 20, 143 )
 

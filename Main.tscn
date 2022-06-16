@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Passenger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FPSCounter.gd" type="Script" id=4]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://placeholders/signal_point.png" type="Texture" id=11]
@@ -220,6 +221,30 @@ target_type = 1
 texture = ExtResource( 20 )
 
 [node name="Passengers" type="Node2D" parent="GameController/PassengerController"]
+
+[node name="Passenger" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 1608, 544 )
+
+[node name="Passenger2" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 1768, 544 )
+
+[node name="Passenger3" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 1936, 544 )
+
+[node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 2096, 544 )
+
+[node name="Passenger5" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 2256, 552 )
+
+[node name="Passenger6" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 2416, 552 )
+
+[node name="Passenger7" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 2584, 552 )
+
+[node name="Passenger8" parent="GameController/PassengerController/Passengers" instance=ExtResource( 3 )]
+position = Vector2( 2744, 552 )
 
 [node name="PassengerBackup" type="Node2D" parent="GameController/PassengerController"]
 visible = false
