@@ -26,6 +26,7 @@ var time_to_next_train_speed_change = 15
 func _ready():
 	back.train_speed = 0
 	time_to_next_train_speed_change = 10
+	$Sound/Music.playing = true
 	
 func _process(delta):
 	adjust_mist(delta)

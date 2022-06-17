@@ -11,5 +11,5 @@ dest_files=[ "res://.import/music_zapsplat_electric_drum_and_bass.mp3-23b8e015b0
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

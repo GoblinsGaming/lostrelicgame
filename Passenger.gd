@@ -352,7 +352,6 @@ func sit_animations():
 	$Animations/Speech.visible = true
 
 func stand_animations():
-	print("STAND")
 	BodyUpper.play("sit", true)
 	BodyLower.play("sit", true)
 	var children = $Animations/BodyUpper/Accessories.get_children()
@@ -367,7 +366,6 @@ func stand_animations():
 	$Animations/Speech.visible = false
 	yield(BodyUpper, "animation_finished")
 	$Animations/Speech.visible = false
-	print("DONE")
 	position.y = preseated_y
 	z_index = 0
 	BodyLower.z_index = 0

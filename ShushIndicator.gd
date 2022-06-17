@@ -2,14 +2,17 @@ extends Node2D
 
 func _ready():
 	$ShushResetLabel.visible = false
+	$PressX.visible = true
 	$Sprite.material.set_shader_param("should_greyscale", false)
 
 func set_to_greyscale(): 
 	$ShushResetLabel.visible = true
+	$PressX.visible = false
 	$Sprite.material.set_shader_param("should_greyscale", true)
 	
 func set_to_color(): 
 	$ShushResetLabel.visible = false
+	$PressX.visible = true
 	$Sprite.material.set_shader_param("should_greyscale", false)
 	$Sprite.material.set_shader_param("is_flashing", false)
 

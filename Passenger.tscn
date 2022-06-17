@@ -1713,6 +1713,19 @@ animations = [ {
 "name": "run",
 "speed": 25.0
 }, {
+"frames": [  ],
+"loop": true,
+"name": "sit",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 547 ), ExtResource( 565 ), ExtResource( 80 ), ExtResource( 161 ), ExtResource( 566 ), ExtResource( 574 ), ExtResource( 575 ), ExtResource( 555 ), ExtResource( 572 ), ExtResource( 576 ), ExtResource( 156 ), ExtResource( 78 ), ExtResource( 149 ), ExtResource( 554 ), ExtResource( 564 ), ExtResource( 559 ), ExtResource( 158 ), ExtResource( 545 ), ExtResource( 163 ), ExtResource( 577 ), ExtResource( 578 ), ExtResource( 546 ), ExtResource( 560 ), ExtResource( 187 ), ExtResource( 561 ), ExtResource( 548 ), ExtResource( 159 ), ExtResource( 182 ), ExtResource( 111 ), ExtResource( 160 ), ExtResource( 135 ), ExtResource( 179 ), ExtResource( 186 ), ExtResource( 549 ), ExtResource( 188 ), ExtResource( 552 ), ExtResource( 553 ), ExtResource( 562 ), ExtResource( 563 ), ExtResource( 580 ), ExtResource( 579 ) ],
+"loop": true,
+"name": "run",
+"speed": 25.0
+}, {
 "frames": [ ExtResource( 606 ), ExtResource( 585 ), ExtResource( 597 ), ExtResource( 586 ), ExtResource( 587 ), ExtResource( 605 ), ExtResource( 604 ), ExtResource( 615 ), ExtResource( 589 ), ExtResource( 582 ), ExtResource( 595 ), ExtResource( 610 ), ExtResource( 599 ), ExtResource( 581 ), ExtResource( 584 ), ExtResource( 588 ), ExtResource( 616 ), ExtResource( 583 ), ExtResource( 611 ), ExtResource( 590 ), ExtResource( 614 ), ExtResource( 591 ), ExtResource( 603 ), ExtResource( 607 ), ExtResource( 592 ), ExtResource( 593 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1807,7 +1820,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 4 )
 animation = "sit"
-frame = 2
+frame = 9
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1815,7 +1828,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 5 )
 animation = "sit"
-frame = 2
+frame = 9
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1823,7 +1836,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 6 )
 animation = "sit"
-frame = 15
+frame = 4
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1833,7 +1846,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 7 )
 animation = "sit"
-frame = 6
+frame = 13
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1841,7 +1854,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 8 )
 animation = "sit"
-frame = 6
+frame = 13
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1849,7 +1862,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 9 )
 animation = "sit"
-frame = 8
+frame = 15
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1857,7 +1870,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 10 )
 animation = "sit"
-frame = 6
+frame = 13
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1865,7 +1878,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 11 )
 animation = "dmcrun"
-frame = 14
+frame = 9
 playing = true
 offset = Vector2( 95, -25 )
 
