@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Engine Rev.mp3-df594ff7a886edf398c9b9b05275efcf.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Train/Engine Rev.mp3"
+dest_files=[ "res://.import/Engine Rev.mp3-df594ff7a886edf398c9b9b05275efcf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

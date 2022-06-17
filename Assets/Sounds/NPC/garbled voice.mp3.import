@@ -2,11 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-valid=false
+path="res://.import/garbled voice.mp3-72cbcd9d715519aa9725c097e88ced97.mp3str"
 
 [deps]
 
 source_file="res://Assets/Sounds/NPC/garbled voice.mp3"
+dest_files=[ "res://.import/garbled voice.mp3-72cbcd9d715519aa9725c097e88ced97.mp3str" ]
+
 [params]
 
 loop=true

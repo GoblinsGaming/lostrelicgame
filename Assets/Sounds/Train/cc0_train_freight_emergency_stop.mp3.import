@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cc0_train_freight_emergency_stop.mp3-44c50e9424a426cd9789b631d05e9abf.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Train/cc0_train_freight_emergency_stop.mp3"
+dest_files=[ "res://.import/cc0_train_freight_emergency_stop.mp3-44c50e9424a426cd9789b631d05e9abf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

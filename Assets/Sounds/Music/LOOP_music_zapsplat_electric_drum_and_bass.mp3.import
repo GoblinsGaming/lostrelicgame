@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LOOP_music_zapsplat_electric_drum_and_bass.mp3-032fb7563c162d6c9462f063197cf74f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/LOOP_music_zapsplat_electric_drum_and_bass.mp3"
+dest_files=[ "res://.import/LOOP_music_zapsplat_electric_drum_and_bass.mp3-032fb7563c162d6c9462f063197cf74f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
