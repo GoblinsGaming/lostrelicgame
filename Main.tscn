@@ -508,6 +508,7 @@ custom_fonts/font = SubResource( 9 )
 text = "Victory"
 
 [node name="FPSCounter" type="Node2D" parent="GameController/CanvasLayer"]
+visible = false
 position = Vector2( 48, 152 )
 script = ExtResource( 4 )
 
