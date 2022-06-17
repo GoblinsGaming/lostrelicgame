@@ -90,7 +90,9 @@ func _process(delta):
 			noise_level = clamp(noise_level, 0, MAX_NOISE_LEVEL)
 			$Animations/Speech.scale.x = (noise_level / MAX_NOISE_LEVEL) * 2
 			$Animations/Speech.scale.y = (noise_level / MAX_NOISE_LEVEL) * 2
-			if noise_level > 10:
+			$Animations/Speech.visible = false
+			if noise_level > 15:
+				$Animations/Speech.visible = true
 				$Sound/Talk/AudioStreamPlayer2D.playing = true
 				$Sound/Talk/AudioStreamPlayer2D.volume_db = (noise_level / MAX_NOISE_LEVEL) * 24 - 12
 			time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
@@ -293,14 +295,6 @@ func generate_npc():
 	children = $Animations/BodyUpper/Accessories/Eyewear.get_children()
 	children[randi() % children.size()].visible = true
 
-	#facial_feature
-	children = $Animations/BodyUpper/Accessories/FacialFeature.get_children()
-	children[randi() % children.size()].visible = true
-
-	#hair
-	children = $Animations/BodyUpper/Accessories/Hair.get_children()
-	children[randi() % children.size()].visible = true
-
 	#mouth
 	children = $Animations/BodyUpper/Accessories/Mouth.get_children()
 	children[randi() % children.size()].visible = true
@@ -370,7 +364,9 @@ func stand_animations():
 	noise_level = 0
 	$Sound/Talk/AudioStreamPlayer2D.playing = false
 	$Animations/Speech.visible = false
+	$Animations/Speech.visible = false
 	yield(BodyUpper, "animation_finished")
+	$Animations/Speech.visible = false
 	print("DONE")
 	position.y = preseated_y
 	z_index = 0
