@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs00.png" type="Texture" id=16]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso00.png" type="Texture" id=17]
 [ext_resource path="res://placeholders/shush-button.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sounds/Music/music_zapsplat_electric_drum_and_bass.mp3" type="AudioStream" id=19]
 [ext_resource path="res://objects/basketball-shading.png" type="Texture" id=20]
 [ext_resource path="res://objects/basketball-outline.png" type="Texture" id=21]
 
@@ -247,6 +248,7 @@ shape = SubResource( 1 )
 pause_mode = 1
 
 [node name="StartScreen" type="Node2D" parent="StartLayer"]
+visible = false
 
 [node name="Background" type="Sprite" parent="StartLayer/StartScreen"]
 modulate = Color( 1, 1, 0.639216, 0.85098 )
@@ -308,13 +310,13 @@ text = "Welcome to Subway Cellular!
 
 The aim of the game is to have a conversation on your phone on the train on your way to work. However, the train is a dangerous place. It speeds up and slows down at its own whim, and the other subway passengers are noisy and get in your way. 
 
-Move around using WASD or the Arrow keys
+Move left and right using A and D or the Left and Right arrow keys
 
 Follow the 5G signal cone to keep your signal bar high
 
 Stay out of noisy areas to keep your quiet bar low. Press X to shush noisy passengers. Watch the shush indicator in the top-right. 
 
-Fill the conversation bar and don't let it empty"
+Fill the conversation bar to win"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -430,6 +432,11 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Sound" type="Node2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 19 )
 
 [connection signal="input_event" from="ButtonsLayer/StartButton/ButtonArea2D" to="." method="_on_StartButtonArea2D_input_event"]
 [connection signal="mouse_entered" from="ButtonsLayer/StartButton/ButtonArea2D" to="ButtonsLayer/StartButton" method="_on_ButtonArea2D_mouse_entered"]

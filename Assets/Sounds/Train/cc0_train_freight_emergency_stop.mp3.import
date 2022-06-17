@@ -11,5 +11,5 @@ dest_files=[ "res://.import/cc0_train_freight_emergency_stop.mp3-44c50e9424a426c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

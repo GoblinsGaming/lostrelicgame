@@ -142,6 +142,7 @@ func _ready():
 	close_help_button.deactivate()
 	close_credits_button.deactivate()
 	close_exit_button.deactivate()
+	$Sound/Music.playing = true
 		
 func activate_menu_buttons(): 
 	start_button.activate()
