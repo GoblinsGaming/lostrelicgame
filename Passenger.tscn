@@ -1,4 +1,4 @@
-[gd_scene load_steps=1377 format=2]
+[gd_scene load_steps=964 format=2]
 
 [ext_resource path="res://Passenger.gd" type="Script" id=1]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Wide/Sitting_Eyes_Wide02.png" type="Texture" id=2]
@@ -141,8 +141,6 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs25.png" type="Texture" id=139]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs24.png" type="Texture" id=140]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs29.png" type="Texture" id=141]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso23.png" type="Texture" id=142]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso16.png" type="Texture" id=143]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso00.png" type="Texture" id=144]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso05.png" type="Texture" id=145]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs21.png" type="Texture" id=146]
@@ -161,15 +159,10 @@
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running26.png" type="Texture" id=159]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running29.png" type="Texture" id=160]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running03.png" type="Texture" id=161]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso15.png" type="Texture" id=162]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running18.png" type="Texture" id=163]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso18.png" type="Texture" id=164]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso25.png" type="Texture" id=165]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs06.png" type="Texture" id=166]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs09.png" type="Texture" id=167]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso17.png" type="Texture" id=168]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs02.png" type="Texture" id=169]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso13.png" type="Texture" id=170]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso19.png" type="Texture" id=171]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso02.png" type="Texture" id=172]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso10.png" type="Texture" id=173]
@@ -182,7 +175,6 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs13.png" type="Texture" id=180]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso08.png" type="Texture" id=181]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running27.png" type="Texture" id=182]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso14.png" type="Texture" id=183]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs28.png" type="Texture" id=184]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Jeans/Jean_Legs_Running40.png" type="Texture" id=185]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running32.png" type="Texture" id=186]
@@ -190,21 +182,17 @@
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running34.png" type="Texture" id=188]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs23.png" type="Texture" id=189]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso04.png" type="Texture" id=190]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso22.png" type="Texture" id=191]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso12.png" type="Texture" id=192]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso13.png" type="Texture" id=193]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs03.png" type="Texture" id=194]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs25.png" type="Texture" id=195]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso14.png" type="Texture" id=196]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs22.png" type="Texture" id=197]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs24.png" type="Texture" id=198]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso19.png" type="Texture" id=199]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs14.png" type="Texture" id=200]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso21.png" type="Texture" id=201]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso03.png" type="Texture" id=202]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs10.png" type="Texture" id=203]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs15.png" type="Texture" id=204]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso24.png" type="Texture" id=205]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs01.png" type="Texture" id=206]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso17.png" type="Texture" id=207]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs17.png" type="Texture" id=208]
@@ -213,13 +201,11 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs08.png" type="Texture" id=211]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs16.png" type="Texture" id=212]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso16.png" type="Texture" id=213]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso11.png" type="Texture" id=214]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso18.png" type="Texture" id=215]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs18.png" type="Texture" id=216]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs11.png" type="Texture" id=217]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs19.png" type="Texture" id=218]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso20.png" type="Texture" id=219]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso21.png" type="Texture" id=220]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso15.png" type="Texture" id=221]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso07.png" type="Texture" id=222]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso09.png" type="Texture" id=223]
@@ -227,12 +213,8 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs21.png" type="Texture" id=225]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Jeans/Jean_DMCBRun_Legs22.png" type="Texture" id=226]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_DMCBRun_Torso23.png" type="Texture" id=227]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso20.png" type="Texture" id=228]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso03.png" type="Texture" id=229]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso19.png" type="Texture" id=230]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso04.png" type="Texture" id=231]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso04.png" type="Texture" id=232]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso05.png" type="Texture" id=233]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso18.png" type="Texture" id=234]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso10.png" type="Texture" id=235]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso07.png" type="Texture" id=236]
@@ -246,12 +228,7 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso25.png" type="Texture" id=244]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso20.png" type="Texture" id=245]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso21.png" type="Texture" id=246]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso06.png" type="Texture" id=247]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso07.png" type="Texture" id=248]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso03.png" type="Texture" id=249]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso08.png" type="Texture" id=250]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso09.png" type="Texture" id=251]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso10.png" type="Texture" id=252]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso13.png" type="Texture" id=253]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso01.png" type="Texture" id=254]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso02.png" type="Texture" id=255]
@@ -261,36 +238,7 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso12.png" type="Texture" id=259]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso14.png" type="Texture" id=260]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso24.png" type="Texture" id=261]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso00.png" type="Texture" id=262]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso01.png" type="Texture" id=263]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso02.png" type="Texture" id=264]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansWhiteShirt/WhiteShirt_Jean_NPC_DMCBRun_Torso09.png" type="Texture" id=265]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso21.png" type="Texture" id=266]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso04.png" type="Texture" id=267]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso05.png" type="Texture" id=268]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso02.png" type="Texture" id=269]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso07.png" type="Texture" id=270]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso11.png" type="Texture" id=271]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso13.png" type="Texture" id=272]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso24.png" type="Texture" id=273]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso25.png" type="Texture" id=274]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso08.png" type="Texture" id=275]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso09.png" type="Texture" id=276]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso10.png" type="Texture" id=277]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso20.png" type="Texture" id=278]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso06.png" type="Texture" id=279]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso12.png" type="Texture" id=280]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso18.png" type="Texture" id=281]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso19.png" type="Texture" id=282]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso15.png" type="Texture" id=283]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso17.png" type="Texture" id=284]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso14.png" type="Texture" id=285]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso22.png" type="Texture" id=286]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso16.png" type="Texture" id=287]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlackShirt/BlackShirt_Jean_DMCBRun_Torso23.png" type="Texture" id=288]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso00.png" type="Texture" id=289]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso03.png" type="Texture" id=290]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosRedShirt/Chino_RedShirt_DMCBRun_Torso01.png" type="Texture" id=291]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso10.png" type="Texture" id=292]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso16.png" type="Texture" id=293]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso15.png" type="Texture" id=294]
@@ -335,134 +283,36 @@
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlueshirt/NPC_WalkCycle_Chino_BlueShirt_Torso19.png" type="Texture" id=333]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlueshirt/NPC_WalkCycle_Chino_BlueShirt_Torso20.png" type="Texture" id=334]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosBlueshirt/NPC_WalkCycle_Chino_BlueShirt_Torso21.png" type="Texture" id=335]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso25.png" type="Texture" id=336]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso05.png" type="Texture" id=337]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso00.png" type="Texture" id=338]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso01.png" type="Texture" id=339]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Running_Torso00.png" type="Texture" id=340]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso02.png" type="Texture" id=341]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso03.png" type="Texture" id=342]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso20.png" type="Texture" id=343]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso06.png" type="Texture" id=344]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso08.png" type="Texture" id=345]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso17.png" type="Texture" id=346]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso20.png" type="Texture" id=347]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlueShirt/Jeans_BlueShirt_Running_torso00.png" type="Texture" id=348]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso02.png" type="Texture" id=349]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso03.png" type="Texture" id=350]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso06.png" type="Texture" id=351]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso25.png" type="Texture" id=352]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso02.png" type="Texture" id=353]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso03.png" type="Texture" id=354]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso04.png" type="Texture" id=355]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso05.png" type="Texture" id=356]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso10.png" type="Texture" id=357]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso00.png" type="Texture" id=358]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso11.png" type="Texture" id=359]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso14.png" type="Texture" id=360]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso24.png" type="Texture" id=361]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso07.png" type="Texture" id=362]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso13.png" type="Texture" id=363]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso14.png" type="Texture" id=364]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso19.png" type="Texture" id=365]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso01.png" type="Texture" id=366]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso22.png" type="Texture" id=367]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso16.png" type="Texture" id=368]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso17.png" type="Texture" id=369]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansRedShirt/Jeans_RedShirt_Running_Torso00.png" type="Texture" id=370]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso18.png" type="Texture" id=371]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso20.png" type="Texture" id=372]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso00.png" type="Texture" id=373]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso19.png" type="Texture" id=374]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso12.png" type="Texture" id=375]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso13.png" type="Texture" id=376]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso21.png" type="Texture" id=377]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso19.png" type="Texture" id=378]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso10.png" type="Texture" id=379]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso18.png" type="Texture" id=380]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso12.png" type="Texture" id=381]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso15.png" type="Texture" id=382]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso21.png" type="Texture" id=383]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansGreenShirt/Jeans_GreenShirt_Running_Torso00.png" type="Texture" id=384]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso16.png" type="Texture" id=385]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso07.png" type="Texture" id=386]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso22.png" type="Texture" id=387]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso23.png" type="Texture" id=388]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso23.png" type="Texture" id=389]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso00.png" type="Texture" id=390]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso24.png" type="Texture" id=391]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso21.png" type="Texture" id=392]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso15.png" type="Texture" id=393]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso11.png" type="Texture" id=394]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso04.png" type="Texture" id=395]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso09.png" type="Texture" id=396]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso08.png" type="Texture" id=397]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_DMCBRun_Torso09.png" type="Texture" id=398]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlueshirt/NPC_BlueShirt_Chino_DMCBRun_Torso01.png" type="Texture" id=399]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso14.png" type="Texture" id=400]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso15.png" type="Texture" id=401]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso08.png" type="Texture" id=402]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso16.png" type="Texture" id=403]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso17.png" type="Texture" id=404]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso18.png" type="Texture" id=405]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso00.png" type="Texture" id=406]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso12.png" type="Texture" id=407]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso07.png" type="Texture" id=408]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso03.png" type="Texture" id=409]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso04.png" type="Texture" id=410]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso10.png" type="Texture" id=411]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso04.png" type="Texture" id=412]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso19.png" type="Texture" id=413]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso10.png" type="Texture" id=414]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso02.png" type="Texture" id=415]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso05.png" type="Texture" id=416]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso11.png" type="Texture" id=417]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso19.png" type="Texture" id=418]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso00.png" type="Texture" id=419]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso11.png" type="Texture" id=420]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso21.png" type="Texture" id=421]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso01.png" type="Texture" id=422]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso13.png" type="Texture" id=423]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso16.png" type="Texture" id=424]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso03.png" type="Texture" id=425]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso05.png" type="Texture" id=426]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso05.png" type="Texture" id=427]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso15.png" type="Texture" id=428]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso21.png" type="Texture" id=429]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso03.png" type="Texture" id=430]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso01.png" type="Texture" id=431]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso02.png" type="Texture" id=432]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso17.png" type="Texture" id=433]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso12.png" type="Texture" id=434]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso18.png" type="Texture" id=435]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso19.png" type="Texture" id=436]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso14.png" type="Texture" id=437]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso02.png" type="Texture" id=438]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso06.png" type="Texture" id=439]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso16.png" type="Texture" id=440]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso09.png" type="Texture" id=441]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso09.png" type="Texture" id=442]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso07.png" type="Texture" id=443]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso06.png" type="Texture" id=444]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso18.png" type="Texture" id=445]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso01.png" type="Texture" id=446]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso10.png" type="Texture" id=447]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso08.png" type="Texture" id=448]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso13.png" type="Texture" id=449]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso14.png" type="Texture" id=450]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso09.png" type="Texture" id=451]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso17.png" type="Texture" id=452]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso00.png" type="Texture" id=453]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso12.png" type="Texture" id=454]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso07.png" type="Texture" id=455]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso11.png" type="Texture" id=456]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso20.png" type="Texture" id=457]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso04.png" type="Texture" id=458]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso20.png" type="Texture" id=459]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosWhiteShirt/NPC_WalkCycle_Chino_WhiteShirt_Torso15.png" type="Texture" id=460]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso06.png" type="Texture" id=461]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso13.png" type="Texture" id=462]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlueShirt/NPC_WalkCycle_Jeans_BlueShirt_Torso08.png" type="Texture" id=463]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso04.png" type="Texture" id=464]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso07.png" type="Texture" id=465]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso10.png" type="Texture" id=466]
@@ -477,20 +327,16 @@
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso15.png" type="Texture" id=475]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso17.png" type="Texture" id=476]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso16.png" type="Texture" id=477]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso20.png" type="Texture" id=478]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansGreenShirt/NPC_WalkCycle_Jeans_GreenShirt_Torso21.png" type="Texture" id=479]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso00.png" type="Texture" id=480]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso18.png" type="Texture" id=481]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso03.png" type="Texture" id=482]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso01.png" type="Texture" id=483]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansRedShirt/NPC_WalkCycle_Jeans_RedShirt_Torso02.png" type="Texture" id=484]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso03.png" type="Texture" id=485]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso12.png" type="Texture" id=486]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso08.png" type="Texture" id=487]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso24.png" type="Texture" id=488]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso06.png" type="Texture" id=489]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso12.png" type="Texture" id=490]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso05.png" type="Texture" id=491]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso07.png" type="Texture" id=492]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso02.png" type="Texture" id=493]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso02.png" type="Texture" id=494]
@@ -499,23 +345,12 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso15.png" type="Texture" id=497]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso22.png" type="Texture" id=498]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso01.png" type="Texture" id=499]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso14.png" type="Texture" id=500]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso07.png" type="Texture" id=501]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso00.png" type="Texture" id=502]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso20.png" type="Texture" id=503]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso20.png" type="Texture" id=504]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso09.png" type="Texture" id=505]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso04.png" type="Texture" id=506]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso11.png" type="Texture" id=507]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso13.png" type="Texture" id=508]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso22.png" type="Texture" id=509]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso19.png" type="Texture" id=510]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso14.png" type="Texture" id=511]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso21.png" type="Texture" id=512]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso19.png" type="Texture" id=513]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso03.png" type="Texture" id=514]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso05.png" type="Texture" id=515]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso18.png" type="Texture" id=516]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso16.png" type="Texture" id=517]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso06.png" type="Texture" id=518]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso18.png" type="Texture" id=519]
@@ -528,21 +363,15 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso09.png" type="Texture" id=526]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso10.png" type="Texture" id=527]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso21.png" type="Texture" id=528]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso15.png" type="Texture" id=529]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso01.png" type="Texture" id=530]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso25.png" type="Texture" id=531]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso10.png" type="Texture" id=532]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso23.png" type="Texture" id=533]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso04.png" type="Texture" id=534]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso10.png" type="Texture" id=535]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso12.png" type="Texture" id=536]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso17.png" type="Texture" id=537]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso15.png" type="Texture" id=538]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso11.png" type="Texture" id=539]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso23.png" type="Texture" id=540]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso04.png" type="Texture" id=541]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso25.png" type="Texture" id=542]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso08.png" type="Texture" id=543]
 [ext_resource path="res://Assets/NPC/Walk/BodyLower/Chinos/NPC_Chino_WalkCycle_Legs31.png" type="Texture" id=544]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running17.png" type="Texture" id=545]
 [ext_resource path="res://Assets/NPC/Run/BodyLower/Chinos/Chino_Legs_Running21.png" type="Texture" id=546]
@@ -595,110 +424,43 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs25.png" type="Texture" id=593]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso00.png" type="Texture" id=594]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs10.png" type="Texture" id=595]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso00.png" type="Texture" id=596]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs02.png" type="Texture" id=597]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso01.png" type="Texture" id=598]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs12.png" type="Texture" id=599]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso02.png" type="Texture" id=600]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso05.png" type="Texture" id=601]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso06.png" type="Texture" id=602]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs22.png" type="Texture" id=603]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs06.png" type="Texture" id=604]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs05.png" type="Texture" id=605]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs00.png" type="Texture" id=606]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs23.png" type="Texture" id=607]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso03.png" type="Texture" id=608]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso04.png" type="Texture" id=609]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs11.png" type="Texture" id=610]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs18.png" type="Texture" id=611]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso07.png" type="Texture" id=612]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso08.png" type="Texture" id=613]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs20.png" type="Texture" id=614]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs07.png" type="Texture" id=615]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyLower/Chinos/Chino_DMCBRun_Legs16.png" type="Texture" id=616]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso16.png" type="Texture" id=617]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso10.png" type="Texture" id=618]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso14.png" type="Texture" id=619]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso19.png" type="Texture" id=620]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso18.png" type="Texture" id=621]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso20.png" type="Texture" id=622]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso12.png" type="Texture" id=623]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso17.png" type="Texture" id=624]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso15.png" type="Texture" id=625]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso21.png" type="Texture" id=626]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso11.png" type="Texture" id=627]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso09.png" type="Texture" id=628]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso13.png" type="Texture" id=629]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso32.png" type="Texture" id=630]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso27.png" type="Texture" id=631]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso40.png" type="Texture" id=632]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso33.png" type="Texture" id=633]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso34.png" type="Texture" id=634]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso23.png" type="Texture" id=635]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso35.png" type="Texture" id=636]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso22.png" type="Texture" id=637]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso37.png" type="Texture" id=638]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso39.png" type="Texture" id=639]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso36.png" type="Texture" id=640]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso24.png" type="Texture" id=641]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso28.png" type="Texture" id=642]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso38.png" type="Texture" id=643]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso29.png" type="Texture" id=644]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso25.png" type="Texture" id=645]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso26.png" type="Texture" id=646]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso31.png" type="Texture" id=647]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosRedShirt/NPC_WalkCycle_Chino_RedShirt_Torso30.png" type="Texture" id=648]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso11.png" type="Texture" id=649]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso21.png" type="Texture" id=650]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso03.png" type="Texture" id=651]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso07.png" type="Texture" id=652]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso19.png" type="Texture" id=653]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso03.png" type="Texture" id=654]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso08.png" type="Texture" id=655]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso12.png" type="Texture" id=656]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso08.png" type="Texture" id=657]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso00.png" type="Texture" id=658]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso05.png" type="Texture" id=659]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso07.png" type="Texture" id=660]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso13.png" type="Texture" id=661]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso04.png" type="Texture" id=662]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso11.png" type="Texture" id=663]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso02.png" type="Texture" id=664]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso09.png" type="Texture" id=665]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso16.png" type="Texture" id=666]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso00.png" type="Texture" id=667]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso05.png" type="Texture" id=668]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso09.png" type="Texture" id=669]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso14.png" type="Texture" id=670]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso10.png" type="Texture" id=671]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso15.png" type="Texture" id=672]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso17.png" type="Texture" id=673]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso16.png" type="Texture" id=674]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso06.png" type="Texture" id=675]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso01.png" type="Texture" id=676]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso18.png" type="Texture" id=677]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso02.png" type="Texture" id=678]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso17.png" type="Texture" id=679]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso18.png" type="Texture" id=680]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso04.png" type="Texture" id=681]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso01.png" type="Texture" id=682]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso19.png" type="Texture" id=683]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso15.png" type="Texture" id=684]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso20.png" type="Texture" id=685]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Running_Torso00.png" type="Texture" id=686]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso00.png" type="Texture" id=687]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso06.png" type="Texture" id=688]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso10.png" type="Texture" id=689]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso12.png" type="Texture" id=690]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso13.png" type="Texture" id=691]
 [ext_resource path="res://Assets/NPC/Walk/BodyUpper/ChinosGreenShirt/NPC_WalkCycle_GreenShirt_Torso14.png" type="Texture" id=692]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso20.png" type="Texture" id=693]
-[ext_resource path="res://Assets/NPC/Walk/BodyUpper/JeansBlackShirt/NPC_WalkCycle_Jeans_BlackShirt_Torso21.png" type="Texture" id=694]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso07.png" type="Texture" id=695]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso06.png" type="Texture" id=696]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansRedShirt/RedShirt_Jean_DMCBRun_Torso09.png" type="Texture" id=697]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso16.png" type="Texture" id=698]
-[ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/JeansBlueShirt/BlueShirt_Jean_DMCBRun_Torso24.png" type="Texture" id=699]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso23.png" type="Texture" id=700]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso22.png" type="Texture" id=701]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso24.png" type="Texture" id=702]
@@ -766,21 +528,15 @@
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso12.png" type="Texture" id=764]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso14.png" type="Texture" id=765]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso15.png" type="Texture" id=766]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso00.png" type="Texture" id=767]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso06.png" type="Texture" id=768]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso07.png" type="Texture" id=769]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso16.png" type="Texture" id=770]
 [ext_resource path="res://Assets/NPC/Sit/BodyLower/Jeans/Jean_Sitting_17.png" type="Texture" id=771]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso13.png" type="Texture" id=772]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso09.png" type="Texture" id=773]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso02.png" type="Texture" id=774]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso01.png" type="Texture" id=775]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso05.png" type="Texture" id=776]
 [ext_resource path="res://Assets/NPC/Sit/BodyLower/Jeans/Jean_Sitting_16.png" type="Texture" id=777]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso12.png" type="Texture" id=778]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso03.png" type="Texture" id=779]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso04.png" type="Texture" id=780]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso05.png" type="Texture" id=781]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso03.png" type="Texture" id=782]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso04.png" type="Texture" id=783]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso05.png" type="Texture" id=784]
@@ -804,71 +560,6 @@
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_Sitting_Torso17.png" type="Texture" id=802]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso02.png" type="Texture" id=803]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Sitting_Torso03.png" type="Texture" id=804]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso14.png" type="Texture" id=805]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso01.png" type="Texture" id=806]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso00.png" type="Texture" id=807]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso12.png" type="Texture" id=808]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso08.png" type="Texture" id=809]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso05.png" type="Texture" id=810]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso09.png" type="Texture" id=811]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso05.png" type="Texture" id=812]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso10.png" type="Texture" id=813]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso15.png" type="Texture" id=814]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso08.png" type="Texture" id=815]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso10.png" type="Texture" id=816]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso03.png" type="Texture" id=817]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso13.png" type="Texture" id=818]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso13.png" type="Texture" id=819]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso11.png" type="Texture" id=820]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso16.png" type="Texture" id=821]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso00.png" type="Texture" id=822]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso15.png" type="Texture" id=823]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso12.png" type="Texture" id=824]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso03.png" type="Texture" id=825]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso06.png" type="Texture" id=826]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso04.png" type="Texture" id=827]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso16.png" type="Texture" id=828]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso13.png" type="Texture" id=829]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso06.png" type="Texture" id=830]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso00.png" type="Texture" id=831]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso06.png" type="Texture" id=832]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso09.png" type="Texture" id=833]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso02.png" type="Texture" id=834]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso11.png" type="Texture" id=835]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso02.png" type="Texture" id=836]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso01.png" type="Texture" id=837]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso04.png" type="Texture" id=838]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso07.png" type="Texture" id=839]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso07.png" type="Texture" id=840]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso02.png" type="Texture" id=841]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso17.png" type="Texture" id=842]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso16.png" type="Texture" id=843]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso10.png" type="Texture" id=844]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso12.png" type="Texture" id=845]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso03.png" type="Texture" id=846]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso09.png" type="Texture" id=847]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso04.png" type="Texture" id=848]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlackShirt/Jean_BlackShirt_Sitting_Torso01.png" type="Texture" id=849]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso05.png" type="Texture" id=850]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso06.png" type="Texture" id=851]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso07.png" type="Texture" id=852]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso17.png" type="Texture" id=853]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso17.png" type="Texture" id=854]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso07.png" type="Texture" id=855]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso08.png" type="Texture" id=856]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso08.png" type="Texture" id=857]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosRedShirt/Chino_RedShirt_Sitting_Torso14.png" type="Texture" id=858]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso09.png" type="Texture" id=859]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso11.png" type="Texture" id=860]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso10.png" type="Texture" id=861]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso12.png" type="Texture" id=862]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso15.png" type="Texture" id=863]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso13.png" type="Texture" id=864]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Sitting_Torso14.png" type="Texture" id=865]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso14.png" type="Texture" id=866]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso15.png" type="Texture" id=867]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso11.png" type="Texture" id=868]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso00.png" type="Texture" id=869]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting03.png" type="Texture" id=870]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso07.png" type="Texture" id=871]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso09.png" type="Texture" id=872]
@@ -879,24 +570,15 @@
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting16.png" type="Texture" id=877]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso00.png" type="Texture" id=878]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso07.png" type="Texture" id=879]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso16.png" type="Texture" id=880]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso10.png" type="Texture" id=881]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso08.png" type="Texture" id=882]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting11.png" type="Texture" id=883]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso12.png" type="Texture" id=884]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso03.png" type="Texture" id=885]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso01.png" type="Texture" id=886]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso17.png" type="Texture" id=887]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso17.png" type="Texture" id=888]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting02.png" type="Texture" id=889]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso05.png" type="Texture" id=890]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso09.png" type="Texture" id=891]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting15.png" type="Texture" id=892]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting00.png" type="Texture" id=893]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting07.png" type="Texture" id=894]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso13.png" type="Texture" id=895]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso02.png" type="Texture" id=896]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso15.png" type="Texture" id=897]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso01.png" type="Texture" id=898]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso03.png" type="Texture" id=899]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso04.png" type="Texture" id=900]
@@ -904,17 +586,9 @@
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso02.png" type="Texture" id=902]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso08.png" type="Texture" id=903]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso05.png" type="Texture" id=904]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso05.png" type="Texture" id=905]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/ChinosBlueshirt/Chino_BlueShirt_Sitting_Torso06.png" type="Texture" id=906]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso15.png" type="Texture" id=907]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso11.png" type="Texture" id=908]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso06.png" type="Texture" id=909]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso16.png" type="Texture" id=910]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso04.png" type="Texture" id=911]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso06.png" type="Texture" id=912]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso07.png" type="Texture" id=913]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso14.png" type="Texture" id=914]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso13.png" type="Texture" id=915]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting04.png" type="Texture" id=916]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting05.png" type="Texture" id=917]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting12.png" type="Texture" id=918]
@@ -922,12 +596,10 @@
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso04.png" type="Texture" id=920]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting09.png" type="Texture" id=921]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso00.png" type="Texture" id=922]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansBlueShirt/Jean_BlueShirt_Sititing_Torso17.png" type="Texture" id=923]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting10.png" type="Texture" id=924]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso10.png" type="Texture" id=925]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting13.png" type="Texture" id=926]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting08.png" type="Texture" id=927]
-[ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansGreenShirt/Jean_GreenShirt_Sititing_Torso01.png" type="Texture" id=928]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansRedShirt/Jean_RedShirt_Sitting06.png" type="Texture" id=929]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso12.png" type="Texture" id=930]
 [ext_resource path="res://Assets/NPC/Sit/BodyUpper/JeansWhiteShirt/Jean_WhiteShirt_Sitting_Torso14.png" type="Texture" id=931]
@@ -1093,75 +765,17 @@
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Running_Torso12.png" type="Texture" id=1091]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Running_Torso29.png" type="Texture" id=1092]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosGreenShirt/Chino_GreenShirt_Running_Torso32.png" type="Texture" id=1093]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso12.png" type="Texture" id=1094]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso05.png" type="Texture" id=1095]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso30.png" type="Texture" id=1096]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso34.png" type="Texture" id=1097]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso04.png" type="Texture" id=1098]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso36.png" type="Texture" id=1099]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso28.png" type="Texture" id=1100]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso21.png" type="Texture" id=1101]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso34.png" type="Texture" id=1102]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso38.png" type="Texture" id=1103]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso06.png" type="Texture" id=1104]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso11.png" type="Texture" id=1105]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso17.png" type="Texture" id=1106]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso26.png" type="Texture" id=1107]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso25.png" type="Texture" id=1108]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso18.png" type="Texture" id=1109]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso19.png" type="Texture" id=1110]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso31.png" type="Texture" id=1111]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso23.png" type="Texture" id=1112]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso24.png" type="Texture" id=1113]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso27.png" type="Texture" id=1114]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso35.png" type="Texture" id=1115]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso40.png" type="Texture" id=1116]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso02.png" type="Texture" id=1117]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso33.png" type="Texture" id=1118]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso14.png" type="Texture" id=1119]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso22.png" type="Texture" id=1120]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso13.png" type="Texture" id=1121]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso01.png" type="Texture" id=1122]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso32.png" type="Texture" id=1123]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso20.png" type="Texture" id=1124]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso33.png" type="Texture" id=1125]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso01.png" type="Texture" id=1126]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso03.png" type="Texture" id=1127]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso10.png" type="Texture" id=1128]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso04.png" type="Texture" id=1129]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso05.png" type="Texture" id=1130]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso06.png" type="Texture" id=1131]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso16.png" type="Texture" id=1132]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso07.png" type="Texture" id=1133]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso09.png" type="Texture" id=1134]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso07.png" type="Texture" id=1135]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso35.png" type="Texture" id=1136]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso37.png" type="Texture" id=1137]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso03.png" type="Texture" id=1138]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso08.png" type="Texture" id=1139]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso12.png" type="Texture" id=1140]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso37.png" type="Texture" id=1141]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso36.png" type="Texture" id=1142]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso38.png" type="Texture" id=1143]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso39.png" type="Texture" id=1144]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso10.png" type="Texture" id=1145]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso29.png" type="Texture" id=1146]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso09.png" type="Texture" id=1147]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso39.png" type="Texture" id=1148]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso08.png" type="Texture" id=1149]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso15.png" type="Texture" id=1150]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso11.png" type="Texture" id=1151]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosWhiteShirt/Chino_WhiteShirt_Running_Torso02.png" type="Texture" id=1152]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso14.png" type="Texture" id=1153]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso13.png" type="Texture" id=1154]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso15.png" type="Texture" id=1155]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/ChinosRedShirt/Chino_RedShirt_Running_Torso40.png" type="Texture" id=1156]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso16.png" type="Texture" id=1157]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso40.png" type="Texture" id=1158]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso25.png" type="Texture" id=1159]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso26.png" type="Texture" id=1160]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso07.png" type="Texture" id=1161]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso31.png" type="Texture" id=1162]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso19.png" type="Texture" id=1163]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso23.png" type="Texture" id=1164]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso27.png" type="Texture" id=1165]
@@ -1170,57 +784,35 @@
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso28.png" type="Texture" id=1168]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso30.png" type="Texture" id=1169]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso02.png" type="Texture" id=1170]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso37.png" type="Texture" id=1171]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso10.png" type="Texture" id=1172]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso18.png" type="Texture" id=1173]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso28.png" type="Texture" id=1174]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso38.png" type="Texture" id=1175]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso17.png" type="Texture" id=1176]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso39.png" type="Texture" id=1177]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso14.png" type="Texture" id=1178]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso18.png" type="Texture" id=1179]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso09.png" type="Texture" id=1180]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso30.png" type="Texture" id=1181]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso21.png" type="Texture" id=1182]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso31.png" type="Texture" id=1183]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso33.png" type="Texture" id=1184]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso19.png" type="Texture" id=1185]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso32.png" type="Texture" id=1186]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso23.png" type="Texture" id=1187]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso34.png" type="Texture" id=1188]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso35.png" type="Texture" id=1189]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso36.png" type="Texture" id=1190]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso21.png" type="Texture" id=1191]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso15.png" type="Texture" id=1192]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso20.png" type="Texture" id=1193]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso29.png" type="Texture" id=1194]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso20.png" type="Texture" id=1195]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso32.png" type="Texture" id=1196]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso06.png" type="Texture" id=1197]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso17.png" type="Texture" id=1198]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso37.png" type="Texture" id=1199]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso38.png" type="Texture" id=1200]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso39.png" type="Texture" id=1201]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso27.png" type="Texture" id=1202]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso35.png" type="Texture" id=1203]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso08.png" type="Texture" id=1204]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso24.png" type="Texture" id=1205]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso26.png" type="Texture" id=1206]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso34.png" type="Texture" id=1207]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso25.png" type="Texture" id=1208]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso01.png" type="Texture" id=1209]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso03.png" type="Texture" id=1210]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso04.png" type="Texture" id=1211]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso33.png" type="Texture" id=1212]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso11.png" type="Texture" id=1213]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso12.png" type="Texture" id=1214]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso13.png" type="Texture" id=1215]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso16.png" type="Texture" id=1216]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso29.png" type="Texture" id=1217]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso36.png" type="Texture" id=1218]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso22.png" type="Texture" id=1219]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso24.png" type="Texture" id=1220]
-[ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansBlackShirt/Jeans_BlackShirt_Running_Torso22.png" type="Texture" id=1221]
 [ext_resource path="res://Assets/NPC/Run/BodyUpper/JeansWhiteShirt/Jeans_WhiteShirt_Running_Torso40.png" type="Texture" id=1222]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Wide/Sitting_Eyes_Wide09.png" type="Texture" id=1223]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow04.png" type="Texture" id=1224]
@@ -1361,11 +953,6 @@ height = 384.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 715 ), ExtResource( 947 ), ExtResource( 949 ), ExtResource( 950 ), ExtResource( 953 ), ExtResource( 962 ), ExtResource( 952 ), ExtResource( 955 ), ExtResource( 954 ), ExtResource( 958 ), ExtResource( 959 ), ExtResource( 960 ), ExtResource( 961 ), ExtResource( 945 ), ExtResource( 52 ), ExtResource( 933 ), ExtResource( 946 ), ExtResource( 943 ), ExtResource( 935 ), ExtResource( 936 ), ExtResource( 938 ), ExtResource( 944 ), ExtResource( 939 ), ExtResource( 940 ), ExtResource( 941 ), ExtResource( 1026 ), ExtResource( 997 ), ExtResource( 1016 ), ExtResource( 977 ), ExtResource( 985 ), ExtResource( 1005 ), ExtResource( 972 ), ExtResource( 1022 ), ExtResource( 999 ), ExtResource( 976 ), ExtResource( 1003 ), ExtResource( 1025 ), ExtResource( 973 ), ExtResource( 1023 ), ExtResource( 974 ), ExtResource( 987 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 521 ), ExtResource( 499 ), ExtResource( 493 ), ExtResource( 514 ), ExtResource( 541 ), ExtResource( 522 ), ExtResource( 489 ), ExtResource( 695 ), ExtResource( 525 ), ExtResource( 526 ), ExtResource( 527 ), ExtResource( 539 ), ExtResource( 490 ), ExtResource( 495 ), ExtResource( 496 ), ExtResource( 497 ), ExtResource( 704 ), ExtResource( 709 ), ExtResource( 706 ), ExtResource( 707 ), ExtResource( 705 ), ExtResource( 703 ), ExtResource( 701 ), ExtResource( 700 ), ExtResource( 702 ), ExtResource( 708 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1380,15 +967,15 @@ animations = [ {
 "loop": true,
 "name": "sit",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 715 ), ExtResource( 947 ), ExtResource( 949 ), ExtResource( 950 ), ExtResource( 953 ), ExtResource( 962 ), ExtResource( 952 ), ExtResource( 955 ), ExtResource( 954 ), ExtResource( 958 ), ExtResource( 959 ), ExtResource( 960 ), ExtResource( 961 ), ExtResource( 945 ), ExtResource( 52 ), ExtResource( 933 ), ExtResource( 946 ), ExtResource( 943 ), ExtResource( 935 ), ExtResource( 936 ), ExtResource( 938 ), ExtResource( 944 ), ExtResource( 939 ), ExtResource( 940 ), ExtResource( 941 ), ExtResource( 1026 ), ExtResource( 997 ), ExtResource( 1016 ), ExtResource( 977 ), ExtResource( 985 ), ExtResource( 1005 ), ExtResource( 972 ), ExtResource( 1022 ), ExtResource( 999 ), ExtResource( 976 ), ExtResource( 1003 ), ExtResource( 1025 ), ExtResource( 973 ), ExtResource( 1023 ), ExtResource( 974 ), ExtResource( 987 ) ],
+"loop": true,
+"name": "run",
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 340 ), ExtResource( 1006 ), ExtResource( 984 ), ExtResource( 986 ), ExtResource( 992 ), ExtResource( 991 ), ExtResource( 1028 ), ExtResource( 1017 ), ExtResource( 988 ), ExtResource( 989 ), ExtResource( 996 ), ExtResource( 993 ), ExtResource( 998 ), ExtResource( 1029 ), ExtResource( 994 ), ExtResource( 990 ), ExtResource( 983 ), ExtResource( 995 ), ExtResource( 1008 ), ExtResource( 1007 ), ExtResource( 1000 ), ExtResource( 1019 ), ExtResource( 981 ), ExtResource( 1001 ), ExtResource( 963 ), ExtResource( 982 ), ExtResource( 1002 ), ExtResource( 1027 ), ExtResource( 967 ), ExtResource( 1013 ), ExtResource( 970 ), ExtResource( 1009 ), ExtResource( 1004 ), ExtResource( 1010 ), ExtResource( 1011 ), ExtResource( 965 ), ExtResource( 1012 ), ExtResource( 1014 ), ExtResource( 1015 ), ExtResource( 1018 ), ExtResource( 1020 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 373 ), ExtResource( 399 ), ExtResource( 349 ), ExtResource( 350 ), ExtResource( 395 ), ExtResource( 337 ), ExtResource( 351 ), ExtResource( 386 ), ExtResource( 345 ), ExtResource( 396 ), ExtResource( 379 ), ExtResource( 359 ), ExtResource( 375 ), ExtResource( 376 ), ExtResource( 360 ), ExtResource( 393 ), ExtResource( 385 ), ExtResource( 346 ), ExtResource( 380 ), ExtResource( 374 ), ExtResource( 347 ), ExtResource( 377 ), ExtResource( 367 ), ExtResource( 388 ), ExtResource( 361 ), ExtResource( 352 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1403,15 +990,15 @@ animations = [ {
 "loop": true,
 "name": "sit",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 340 ), ExtResource( 1006 ), ExtResource( 984 ), ExtResource( 986 ), ExtResource( 992 ), ExtResource( 991 ), ExtResource( 1028 ), ExtResource( 1017 ), ExtResource( 988 ), ExtResource( 989 ), ExtResource( 996 ), ExtResource( 993 ), ExtResource( 998 ), ExtResource( 1029 ), ExtResource( 994 ), ExtResource( 990 ), ExtResource( 983 ), ExtResource( 995 ), ExtResource( 1008 ), ExtResource( 1007 ), ExtResource( 1000 ), ExtResource( 1019 ), ExtResource( 981 ), ExtResource( 1001 ), ExtResource( 963 ), ExtResource( 982 ), ExtResource( 1002 ), ExtResource( 1027 ), ExtResource( 967 ), ExtResource( 1013 ), ExtResource( 970 ), ExtResource( 1009 ), ExtResource( 1004 ), ExtResource( 1010 ), ExtResource( 1011 ), ExtResource( 965 ), ExtResource( 1012 ), ExtResource( 1014 ), ExtResource( 1015 ), ExtResource( 1018 ), ExtResource( 1020 ) ],
+"loop": true,
+"name": "run",
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 686 ), ExtResource( 1021 ), ExtResource( 1024 ), ExtResource( 966 ), ExtResource( 969 ), ExtResource( 971 ), ExtResource( 978 ), ExtResource( 979 ), ExtResource( 980 ), ExtResource( 1059 ), ExtResource( 1033 ), ExtResource( 1054 ), ExtResource( 1091 ), ExtResource( 1034 ), ExtResource( 1056 ), ExtResource( 1050 ), ExtResource( 1053 ), ExtResource( 1055 ), ExtResource( 1077 ), ExtResource( 1078 ), ExtResource( 1048 ), ExtResource( 1047 ), ExtResource( 1068 ), ExtResource( 1061 ), ExtResource( 1051 ), ExtResource( 1049 ), ExtResource( 1079 ), ExtResource( 1052 ), ExtResource( 1085 ), ExtResource( 1092 ), ExtResource( 1080 ), ExtResource( 1070 ), ExtResource( 1093 ), ExtResource( 1084 ), ExtResource( 1062 ), ExtResource( 1081 ), ExtResource( 1074 ), ExtResource( 1030 ), ExtResource( 1090 ), ExtResource( 1089 ), ExtResource( 1075 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 144 ), ExtResource( 177 ), ExtResource( 172 ), ExtResource( 202 ), ExtResource( 190 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 222 ), ExtResource( 181 ), ExtResource( 223 ), ExtResource( 173 ), ExtResource( 148 ), ExtResource( 209 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 221 ), ExtResource( 213 ), ExtResource( 207 ), ExtResource( 215 ), ExtResource( 171 ), ExtResource( 219 ), ExtResource( 201 ), ExtResource( 175 ), ExtResource( 227 ), ExtResource( 210 ), ExtResource( 174 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1426,130 +1013,15 @@ animations = [ {
 "loop": true,
 "name": "sit",
 "speed": 25.0
-} ]
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 594 ), ExtResource( 1035 ), ExtResource( 1044 ), ExtResource( 1031 ), ExtResource( 1082 ), ExtResource( 1057 ), ExtResource( 1063 ), ExtResource( 1058 ), ExtResource( 1066 ), ExtResource( 1036 ), ExtResource( 1067 ), ExtResource( 1064 ), ExtResource( 1032 ), ExtResource( 1037 ), ExtResource( 1083 ), ExtResource( 1072 ), ExtResource( 1086 ), ExtResource( 1060 ), ExtResource( 1038 ), ExtResource( 1071 ), ExtResource( 1087 ), ExtResource( 1069 ), ExtResource( 1065 ), ExtResource( 1073 ), ExtResource( 1040 ), ExtResource( 1041 ), ExtResource( 1039 ), ExtResource( 1076 ), ExtResource( 1088 ), ExtResource( 1042 ), ExtResource( 1043 ), ExtResource( 1045 ), ExtResource( 1046 ), ExtResource( 1118 ), ExtResource( 1102 ), ExtResource( 1136 ), ExtResource( 1099 ), ExtResource( 1137 ), ExtResource( 1103 ), ExtResource( 1148 ), ExtResource( 1156 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
 }, {
-"frames": [ ExtResource( 289 ), ExtResource( 291 ), ExtResource( 269 ), ExtResource( 290 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 279 ), ExtResource( 270 ), ExtResource( 275 ), ExtResource( 276 ), ExtResource( 277 ), ExtResource( 214 ), ExtResource( 192 ), ExtResource( 170 ), ExtResource( 183 ), ExtResource( 162 ), ExtResource( 143 ), ExtResource( 168 ), ExtResource( 164 ), ExtResource( 199 ), ExtResource( 228 ), ExtResource( 220 ), ExtResource( 191 ), ExtResource( 142 ), ExtResource( 205 ), ExtResource( 165 ) ],
-"loop": true,
-"name": "dmcrun",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 596 ), ExtResource( 598 ), ExtResource( 600 ), ExtResource( 608 ), ExtResource( 609 ), ExtResource( 601 ), ExtResource( 602 ), ExtResource( 612 ), ExtResource( 613 ), ExtResource( 628 ), ExtResource( 618 ), ExtResource( 627 ), ExtResource( 623 ), ExtResource( 629 ), ExtResource( 619 ), ExtResource( 625 ), ExtResource( 617 ), ExtResource( 624 ), ExtResource( 621 ), ExtResource( 620 ), ExtResource( 622 ), ExtResource( 626 ), ExtResource( 637 ), ExtResource( 635 ), ExtResource( 641 ), ExtResource( 645 ), ExtResource( 646 ), ExtResource( 631 ), ExtResource( 642 ), ExtResource( 644 ), ExtResource( 648 ), ExtResource( 647 ), ExtResource( 630 ), ExtResource( 633 ), ExtResource( 634 ), ExtResource( 636 ), ExtResource( 640 ), ExtResource( 638 ), ExtResource( 643 ), ExtResource( 639 ), ExtResource( 632 ) ],
-"loop": true,
-"name": "walk",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 767 ), ExtResource( 775 ), ExtResource( 774 ), ExtResource( 779 ), ExtResource( 780 ), ExtResource( 781 ), ExtResource( 826 ), ExtResource( 852 ), ExtResource( 857 ), ExtResource( 833 ), ExtResource( 813 ), ExtResource( 820 ), ExtResource( 824 ), ExtResource( 829 ), ExtResource( 858 ), ExtResource( 814 ), ExtResource( 843 ), ExtResource( 854 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-} ]
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 358 ), ExtResource( 1122 ), ExtResource( 1152 ), ExtResource( 1138 ), ExtResource( 1098 ), ExtResource( 1095 ), ExtResource( 1104 ), ExtResource( 1135 ), ExtResource( 1139 ), ExtResource( 1147 ), ExtResource( 1128 ), ExtResource( 1105 ), ExtResource( 1140 ), ExtResource( 1121 ), ExtResource( 1119 ), ExtResource( 1150 ), ExtResource( 1132 ), ExtResource( 1106 ), ExtResource( 1109 ), ExtResource( 1110 ), ExtResource( 1124 ), ExtResource( 1101 ), ExtResource( 1120 ), ExtResource( 1112 ), ExtResource( 1113 ), ExtResource( 1108 ), ExtResource( 1107 ), ExtResource( 1114 ), ExtResource( 1100 ), ExtResource( 1146 ), ExtResource( 1096 ), ExtResource( 1111 ), ExtResource( 1123 ), ExtResource( 1125 ), ExtResource( 1097 ), ExtResource( 1115 ), ExtResource( 1142 ), ExtResource( 1141 ), ExtResource( 1143 ), ExtResource( 1144 ), ExtResource( 1116 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 154 ), ExtResource( 180 ), ExtResource( 164 ), ExtResource( 194 ), ExtResource( 140 ), ExtResource( 170 ), ExtResource( 190 ), ExtResource( 162 ), ExtResource( 165 ), ExtResource( 192 ), ExtResource( 171 ), ExtResource( 142 ), ExtResource( 167 ), ExtResource( 178 ), ExtResource( 157 ), ExtResource( 166 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 191 ), ExtResource( 150 ), ExtResource( 172 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 181 ), ExtResource( 173 ), ExtResource( 148 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 183 ), ExtResource( 176 ), ExtResource( 136 ), ExtResource( 177 ), ExtResource( 139 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 199 ), ExtResource( 201 ), ExtResource( 202 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 200 ), ExtResource( 209 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 212 ), ExtResource( 221 ), ExtResource( 265 ), ExtResource( 230 ), ExtResource( 215 ), ExtResource( 249 ), ExtResource( 231 ), ExtResource( 232 ), ExtResource( 256 ), ExtResource( 240 ), ExtResource( 237 ), ExtResource( 241 ), ExtResource( 222 ), ExtResource( 216 ), ExtResource( 233 ), ExtResource( 218 ), ExtResource( 219 ), ExtResource( 255 ), ExtResource( 210 ), ExtResource( 220 ), ExtResource( 257 ), ExtResource( 238 ), ExtResource( 223 ), ExtResource( 266 ), ExtResource( 227 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 234 ), ExtResource( 207 ), ExtResource( 250 ), ExtResource( 226 ), ExtResource( 248 ), ExtResource( 239 ), ExtResource( 228 ), ExtResource( 268 ), ExtResource( 208 ), ExtResource( 260 ), ExtResource( 235 ), ExtResource( 229 ), ExtResource( 258 ), ExtResource( 236 ), ExtResource( 242 ), ExtResource( 254 ), ExtResource( 243 ), ExtResource( 244 ), ExtResource( 245 ), ExtResource( 217 ), ExtResource( 246 ), ExtResource( 247 ), ExtResource( 251 ), ExtResource( 211 ), ExtResource( 252 ), ExtResource( 253 ), ExtResource( 213 ), ExtResource( 259 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 267 ), ExtResource( 205 ), ExtResource( 206 ), ExtResource( 214 ), ExtResource( 282 ), ExtResource( 279 ), ExtResource( 325 ), ExtResource( 292 ), ExtResource( 294 ), ExtResource( 308 ), ExtResource( 274 ), ExtResource( 302 ), ExtResource( 304 ), ExtResource( 283 ), ExtResource( 300 ), ExtResource( 284 ), ExtResource( 296 ), ExtResource( 285 ), ExtResource( 316 ), ExtResource( 321 ), ExtResource( 272 ), ExtResource( 273 ), ExtResource( 287 ), ExtResource( 318 ), ExtResource( 280 ), ExtResource( 286 ), ExtResource( 314 ), ExtResource( 288 ), ExtResource( 291 ), ExtResource( 322 ), ExtResource( 327 ), ExtResource( 290 ), ExtResource( 293 ), ExtResource( 295 ), ExtResource( 276 ), ExtResource( 278 ), ExtResource( 315 ), ExtResource( 289 ), ExtResource( 303 ), ExtResource( 328 ), ExtResource( 297 ), ExtResource( 269 ), ExtResource( 271 ), ExtResource( 281 ), ExtResource( 323 ), ExtResource( 317 ), ExtResource( 298 ), ExtResource( 299 ), ExtResource( 319 ), ExtResource( 309 ), ExtResource( 320 ), ExtResource( 329 ), ExtResource( 310 ), ExtResource( 301 ), ExtResource( 305 ), ExtResource( 270 ), ExtResource( 306 ), ExtResource( 326 ), ExtResource( 324 ), ExtResource( 330 ), ExtResource( 307 ), ExtResource( 311 ), ExtResource( 312 ), ExtResource( 313 ), ExtResource( 331 ), ExtResource( 332 ), ExtResource( 275 ), ExtResource( 277 ), ExtResource( 333 ), ExtResource( 337 ), ExtResource( 345 ), ExtResource( 338 ), ExtResource( 339 ), ExtResource( 340 ), ExtResource( 335 ), ExtResource( 336 ), ExtResource( 344 ), ExtResource( 334 ), ExtResource( 341 ), ExtResource( 342 ), ExtResource( 343 ), ExtResource( 377 ), ExtResource( 380 ), ExtResource( 353 ), ExtResource( 387 ), ExtResource( 373 ), ExtResource( 393 ), ExtResource( 403 ), ExtResource( 349 ), ExtResource( 392 ), ExtResource( 354 ), ExtResource( 388 ), ExtResource( 365 ), ExtResource( 376 ), ExtResource( 404 ), ExtResource( 378 ), ExtResource( 397 ), ExtResource( 401 ), ExtResource( 379 ), ExtResource( 366 ), ExtResource( 384 ), ExtResource( 352 ), ExtResource( 405 ), ExtResource( 364 ), ExtResource( 399 ), ExtResource( 395 ), ExtResource( 361 ), ExtResource( 402 ), ExtResource( 363 ), ExtResource( 391 ), ExtResource( 394 ), ExtResource( 389 ), ExtResource( 406 ), ExtResource( 407 ), ExtResource( 381 ), ExtResource( 382 ), ExtResource( 400 ), ExtResource( 408 ), ExtResource( 383 ), ExtResource( 355 ), ExtResource( 390 ), ExtResource( 385 ), ExtResource( 409 ), ExtResource( 367 ), ExtResource( 371 ), ExtResource( 396 ), ExtResource( 360 ), ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 351 ), ExtResource( 368 ), ExtResource( 359 ), ExtResource( 350 ), ExtResource( 398 ), ExtResource( 386 ), ExtResource( 356 ), ExtResource( 357 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 369 ), ExtResource( 370 ), ExtResource( 372 ), ExtResource( 374 ), ExtResource( 375 ), ExtResource( 463 ), ExtResource( 414 ), ExtResource( 448 ), ExtResource( 421 ), ExtResource( 459 ), ExtResource( 428 ), ExtResource( 432 ), ExtResource( 420 ), ExtResource( 450 ), ExtResource( 430 ), ExtResource( 445 ), ExtResource( 437 ), ExtResource( 431 ), ExtResource( 429 ), ExtResource( 410 ), ExtResource( 444 ), ExtResource( 467 ), ExtResource( 472 ), ExtResource( 438 ), ExtResource( 442 ), ExtResource( 413 ), ExtResource( 466 ), ExtResource( 468 ), ExtResource( 439 ), ExtResource( 456 ), ExtResource( 425 ), ExtResource( 433 ), ExtResource( 434 ), ExtResource( 422 ), ExtResource( 412 ), ExtResource( 443 ), ExtResource( 449 ), ExtResource( 446 ), ExtResource( 426 ), ExtResource( 427 ), ExtResource( 415 ), ExtResource( 452 ), ExtResource( 418 ), ExtResource( 457 ), ExtResource( 461 ), ExtResource( 411 ), ExtResource( 462 ), ExtResource( 440 ), ExtResource( 458 ), ExtResource( 423 ), ExtResource( 441 ), ExtResource( 464 ), ExtResource( 447 ), ExtResource( 460 ), ExtResource( 469 ), ExtResource( 455 ), ExtResource( 416 ), ExtResource( 465 ), ExtResource( 435 ), ExtResource( 470 ), ExtResource( 419 ), ExtResource( 473 ), ExtResource( 417 ), ExtResource( 453 ), ExtResource( 436 ), ExtResource( 451 ), ExtResource( 424 ), ExtResource( 471 ), ExtResource( 454 ), ExtResource( 480 ), ExtResource( 486 ), ExtResource( 477 ), ExtResource( 482 ), ExtResource( 481 ), ExtResource( 483 ), ExtResource( 475 ), ExtResource( 484 ), ExtResource( 485 ), ExtResource( 479 ), ExtResource( 474 ), ExtResource( 476 ), ExtResource( 478 ), ExtResource( 539 ), ExtResource( 517 ), ExtResource( 514 ), ExtResource( 490 ), ExtResource( 537 ), ExtResource( 519 ), ExtResource( 521 ), ExtResource( 523 ), ExtResource( 536 ), ExtResource( 515 ), ExtResource( 513 ), ExtResource( 516 ), ExtResource( 522 ), ExtResource( 533 ), ExtResource( 538 ), ExtResource( 524 ), ExtResource( 500 ), ExtResource( 525 ), ExtResource( 488 ), ExtResource( 531 ), ExtResource( 532 ), ExtResource( 526 ), ExtResource( 506 ), ExtResource( 520 ), ExtResource( 534 ), ExtResource( 507 ), ExtResource( 527 ), ExtResource( 511 ), ExtResource( 499 ), ExtResource( 540 ), ExtResource( 495 ), ExtResource( 535 ), ExtResource( 508 ), ExtResource( 505 ), ExtResource( 528 ), ExtResource( 529 ), ExtResource( 541 ), ExtResource( 518 ), ExtResource( 542 ), ExtResource( 502 ), ExtResource( 492 ), ExtResource( 491 ), ExtResource( 530 ), ExtResource( 543 ), ExtResource( 501 ), ExtResource( 489 ), ExtResource( 512 ), ExtResource( 487 ), ExtResource( 504 ), ExtResource( 493 ), ExtResource( 509 ), ExtResource( 494 ), ExtResource( 503 ), ExtResource( 496 ), ExtResource( 497 ), ExtResource( 510 ), ExtResource( 498 ) ],
-"loop": true,
-"name": "dmcrun",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 406 ), ExtResource( 431 ), ExtResource( 415 ), ExtResource( 425 ), ExtResource( 410 ), ExtResource( 426 ), ExtResource( 444 ), ExtResource( 408 ), ExtResource( 448 ), ExtResource( 442 ), ExtResource( 411 ), ExtResource( 417 ), ExtResource( 407 ), ExtResource( 449 ), ExtResource( 450 ), ExtResource( 460 ), ExtResource( 424 ), ExtResource( 452 ), ExtResource( 435 ), ExtResource( 436 ), ExtResource( 457 ), ExtResource( 421 ) ],
-"loop": true,
-"name": "walk",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 807 ), ExtResource( 806 ), ExtResource( 834 ), ExtResource( 825 ), ExtResource( 827 ), ExtResource( 810 ), ExtResource( 830 ), ExtResource( 840 ), ExtResource( 815 ), ExtResource( 847 ), ExtResource( 816 ), ExtResource( 860 ), ExtResource( 808 ), ExtResource( 818 ), ExtResource( 865 ), ExtResource( 863 ), ExtResource( 821 ), ExtResource( 853 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-} ]
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ ExtResource( 687 ), ExtResource( 1126 ), ExtResource( 1117 ), ExtResource( 1127 ), ExtResource( 1129 ), ExtResource( 1130 ), ExtResource( 1131 ), ExtResource( 1133 ), ExtResource( 1149 ), ExtResource( 1134 ), ExtResource( 1145 ), ExtResource( 1151 ), ExtResource( 1094 ), ExtResource( 1154 ), ExtResource( 1153 ), ExtResource( 1155 ), ExtResource( 1157 ), ExtResource( 1176 ), ExtResource( 1173 ), ExtResource( 1185 ), ExtResource( 1195 ), ExtResource( 1191 ), ExtResource( 1221 ), ExtResource( 1187 ), ExtResource( 1205 ), ExtResource( 1208 ), ExtResource( 1206 ), ExtResource( 1202 ), ExtResource( 1174 ), ExtResource( 1217 ), ExtResource( 1181 ), ExtResource( 1162 ), ExtResource( 1196 ), ExtResource( 1212 ), ExtResource( 1207 ), ExtResource( 1203 ), ExtResource( 1218 ), ExtResource( 1171 ), ExtResource( 1175 ), ExtResource( 1177 ), ExtResource( 1158 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 262 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 229 ), ExtResource( 231 ), ExtResource( 233 ), ExtResource( 247 ), ExtResource( 248 ), ExtResource( 250 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 271 ), ExtResource( 280 ), ExtResource( 272 ), ExtResource( 285 ), ExtResource( 283 ), ExtResource( 287 ), ExtResource( 284 ), ExtResource( 281 ), ExtResource( 282 ), ExtResource( 278 ), ExtResource( 266 ), ExtResource( 286 ), ExtResource( 288 ), ExtResource( 273 ), ExtResource( 274 ) ],
-"loop": true,
-"name": "dmcrun",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 667 ), ExtResource( 682 ), ExtResource( 678 ), ExtResource( 654 ), ExtResource( 681 ), ExtResource( 668 ), ExtResource( 688 ), ExtResource( 660 ), ExtResource( 655 ), ExtResource( 669 ), ExtResource( 689 ), ExtResource( 649 ), ExtResource( 656 ), ExtResource( 661 ), ExtResource( 670 ), ExtResource( 672 ), ExtResource( 674 ), ExtResource( 679 ), ExtResource( 680 ), ExtResource( 683 ), ExtResource( 693 ), ExtResource( 694 ) ],
-"loop": true,
-"name": "walk",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 822 ), ExtResource( 849 ), ExtResource( 841 ), ExtResource( 817 ), ExtResource( 838 ), ExtResource( 812 ), ExtResource( 832 ), ExtResource( 839 ), ExtResource( 809 ), ExtResource( 811 ), ExtResource( 844 ), ExtResource( 835 ), ExtResource( 845 ), ExtResource( 819 ), ExtResource( 805 ), ExtResource( 823 ), ExtResource( 828 ), ExtResource( 842 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-} ]
-
-[sub_resource type="SpriteFrames" id=8]
-animations = [ {
-"frames": [ ExtResource( 340 ), ExtResource( 1006 ), ExtResource( 984 ), ExtResource( 986 ), ExtResource( 992 ), ExtResource( 991 ), ExtResource( 1028 ), ExtResource( 1017 ), ExtResource( 988 ), ExtResource( 989 ), ExtResource( 996 ), ExtResource( 993 ), ExtResource( 998 ), ExtResource( 1029 ), ExtResource( 994 ), ExtResource( 990 ), ExtResource( 983 ), ExtResource( 995 ), ExtResource( 1008 ), ExtResource( 1007 ), ExtResource( 1000 ), ExtResource( 1019 ), ExtResource( 981 ), ExtResource( 1001 ), ExtResource( 963 ), ExtResource( 982 ), ExtResource( 1002 ), ExtResource( 1027 ), ExtResource( 967 ), ExtResource( 1013 ), ExtResource( 970 ), ExtResource( 1009 ), ExtResource( 1004 ), ExtResource( 1010 ), ExtResource( 1011 ), ExtResource( 965 ), ExtResource( 1012 ), ExtResource( 1014 ), ExtResource( 1015 ), ExtResource( 1018 ), ExtResource( 1020 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 338 ), ExtResource( 339 ), ExtResource( 341 ), ExtResource( 342 ), ExtResource( 506 ), ExtResource( 491 ), ExtResource( 696 ), ExtResource( 501 ), ExtResource( 543 ), ExtResource( 505 ), ExtResource( 532 ), ExtResource( 507 ), ExtResource( 486 ), ExtResource( 508 ), ExtResource( 500 ), ExtResource( 529 ), ExtResource( 698 ), ExtResource( 537 ), ExtResource( 516 ), ExtResource( 510 ), ExtResource( 503 ), ExtResource( 512 ), ExtResource( 509 ), ExtResource( 533 ), ExtResource( 699 ), ExtResource( 531 ) ],
-"loop": true,
-"name": "dmcrun",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 419 ), ExtResource( 422 ), ExtResource( 432 ), ExtResource( 409 ), ExtResource( 412 ), ExtResource( 427 ), ExtResource( 461 ), ExtResource( 443 ), ExtResource( 463 ), ExtResource( 441 ), ExtResource( 414 ), ExtResource( 420 ), ExtResource( 454 ), ExtResource( 423 ), ExtResource( 437 ), ExtResource( 428 ), ExtResource( 440 ), ExtResource( 433 ), ExtResource( 445 ), ExtResource( 413 ), ExtResource( 459 ), ExtResource( 429 ) ],
-"loop": true,
-"name": "walk",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 831 ), ExtResource( 837 ), ExtResource( 836 ), ExtResource( 846 ), ExtResource( 848 ), ExtResource( 850 ), ExtResource( 851 ), ExtResource( 855 ), ExtResource( 856 ), ExtResource( 859 ), ExtResource( 861 ), ExtResource( 868 ), ExtResource( 862 ), ExtResource( 864 ), ExtResource( 866 ), ExtResource( 867 ), ExtResource( 910 ), ExtResource( 923 ) ],
-"loop": true,
-"name": "sit",
-"speed": 25.0
-} ]
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
 "frames": [ ExtResource( 686 ), ExtResource( 1021 ), ExtResource( 1024 ), ExtResource( 966 ), ExtResource( 969 ), ExtResource( 971 ), ExtResource( 978 ), ExtResource( 979 ), ExtResource( 980 ), ExtResource( 1059 ), ExtResource( 1033 ), ExtResource( 1054 ), ExtResource( 1091 ), ExtResource( 1034 ), ExtResource( 1056 ), ExtResource( 1050 ), ExtResource( 1053 ), ExtResource( 1055 ), ExtResource( 1077 ), ExtResource( 1078 ), ExtResource( 1048 ), ExtResource( 1047 ), ExtResource( 1068 ), ExtResource( 1061 ), ExtResource( 1051 ), ExtResource( 1049 ), ExtResource( 1079 ), ExtResource( 1052 ), ExtResource( 1085 ), ExtResource( 1092 ), ExtResource( 1080 ), ExtResource( 1070 ), ExtResource( 1093 ), ExtResource( 1084 ), ExtResource( 1062 ), ExtResource( 1081 ), ExtResource( 1074 ), ExtResource( 1030 ), ExtResource( 1090 ), ExtResource( 1089 ), ExtResource( 1075 ) ],
 "loop": true,
 "name": "run",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 144 ), ExtResource( 177 ), ExtResource( 172 ), ExtResource( 202 ), ExtResource( 190 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 222 ), ExtResource( 181 ), ExtResource( 223 ), ExtResource( 173 ), ExtResource( 148 ), ExtResource( 209 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 221 ), ExtResource( 213 ), ExtResource( 207 ), ExtResource( 215 ), ExtResource( 171 ), ExtResource( 219 ), ExtResource( 201 ), ExtResource( 175 ), ExtResource( 227 ), ExtResource( 210 ), ExtResource( 174 ) ],
-"loop": true,
-"name": "dmcrun",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 453 ), ExtResource( 446 ), ExtResource( 438 ), ExtResource( 430 ), ExtResource( 458 ), ExtResource( 416 ), ExtResource( 439 ), ExtResource( 455 ), ExtResource( 402 ), ExtResource( 451 ), ExtResource( 447 ), ExtResource( 456 ), ExtResource( 434 ), ExtResource( 462 ), ExtResource( 400 ), ExtResource( 401 ), ExtResource( 403 ), ExtResource( 404 ), ExtResource( 405 ), ExtResource( 418 ), ExtResource( 478 ), ExtResource( 479 ) ],
-"loop": true,
-"name": "walk",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 869 ), ExtResource( 928 ), ExtResource( 896 ), ExtResource( 885 ), ExtResource( 911 ), ExtResource( 905 ), ExtResource( 912 ), ExtResource( 913 ), ExtResource( 882 ), ExtResource( 891 ), ExtResource( 881 ), ExtResource( 908 ), ExtResource( 884 ), ExtResource( 915 ), ExtResource( 914 ), ExtResource( 897 ), ExtResource( 880 ), ExtResource( 888 ) ],
-"loop": true,
-"name": "sit",
 "speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 594 ), ExtResource( 1035 ), ExtResource( 1044 ), ExtResource( 1031 ), ExtResource( 1082 ), ExtResource( 1057 ), ExtResource( 1063 ), ExtResource( 1058 ), ExtResource( 1066 ), ExtResource( 1036 ), ExtResource( 1067 ), ExtResource( 1064 ), ExtResource( 1032 ), ExtResource( 1037 ), ExtResource( 1083 ), ExtResource( 1072 ), ExtResource( 1086 ), ExtResource( 1060 ), ExtResource( 1038 ), ExtResource( 1071 ), ExtResource( 1087 ), ExtResource( 1069 ), ExtResource( 1065 ), ExtResource( 1073 ), ExtResource( 1040 ), ExtResource( 1041 ), ExtResource( 1039 ), ExtResource( 1076 ), ExtResource( 1088 ), ExtResource( 1042 ), ExtResource( 1043 ), ExtResource( 1045 ), ExtResource( 1046 ), ExtResource( 1118 ), ExtResource( 1102 ), ExtResource( 1136 ), ExtResource( 1099 ), ExtResource( 1137 ), ExtResource( 1103 ), ExtResource( 1148 ), ExtResource( 1156 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 502 ), ExtResource( 530 ), ExtResource( 494 ), ExtResource( 485 ), ExtResource( 534 ), ExtResource( 515 ), ExtResource( 518 ), ExtResource( 492 ), ExtResource( 487 ), ExtResource( 697 ), ExtResource( 535 ), ExtResource( 520 ), ExtResource( 536 ), ExtResource( 524 ), ExtResource( 511 ), ExtResource( 538 ), ExtResource( 517 ), ExtResource( 523 ), ExtResource( 519 ), ExtResource( 513 ), ExtResource( 504 ), ExtResource( 528 ), ExtResource( 498 ), ExtResource( 540 ), ExtResource( 488 ), ExtResource( 542 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1564,15 +1036,15 @@ animations = [ {
 "loop": true,
 "name": "sit",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 594 ), ExtResource( 1035 ), ExtResource( 1044 ), ExtResource( 1031 ), ExtResource( 1082 ), ExtResource( 1057 ), ExtResource( 1063 ), ExtResource( 1058 ), ExtResource( 1066 ), ExtResource( 1036 ), ExtResource( 1067 ), ExtResource( 1064 ), ExtResource( 1032 ), ExtResource( 1037 ), ExtResource( 1083 ), ExtResource( 1072 ), ExtResource( 1086 ), ExtResource( 1060 ), ExtResource( 1038 ), ExtResource( 1071 ), ExtResource( 1087 ), ExtResource( 1069 ), ExtResource( 1065 ), ExtResource( 1073 ), ExtResource( 1040 ), ExtResource( 1041 ), ExtResource( 1039 ), ExtResource( 1076 ), ExtResource( 1088 ), ExtResource( 1042 ), ExtResource( 1043 ), ExtResource( 1045 ), ExtResource( 1046 ), ExtResource( 1118 ), ExtResource( 1102 ), ExtResource( 1136 ), ExtResource( 1099 ), ExtResource( 1137 ), ExtResource( 1103 ), ExtResource( 1148 ), ExtResource( 1156 ) ],
+"loop": true,
+"name": "run",
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 1166 ), ExtResource( 1209 ), ExtResource( 1170 ), ExtResource( 1210 ), ExtResource( 1211 ), ExtResource( 1167 ), ExtResource( 1197 ), ExtResource( 1161 ), ExtResource( 1204 ), ExtResource( 1180 ), ExtResource( 1172 ), ExtResource( 1213 ), ExtResource( 1214 ), ExtResource( 1215 ), ExtResource( 1178 ), ExtResource( 1192 ), ExtResource( 1216 ), ExtResource( 1198 ), ExtResource( 1179 ), ExtResource( 1163 ), ExtResource( 1193 ), ExtResource( 1182 ), ExtResource( 1219 ), ExtResource( 1164 ), ExtResource( 1220 ), ExtResource( 1159 ), ExtResource( 1160 ), ExtResource( 1165 ), ExtResource( 1168 ), ExtResource( 1194 ), ExtResource( 1169 ), ExtResource( 1183 ), ExtResource( 1186 ), ExtResource( 1184 ), ExtResource( 1188 ), ExtResource( 1189 ), ExtResource( 1190 ), ExtResource( 1199 ), ExtResource( 1200 ), ExtResource( 1201 ), ExtResource( 1222 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 257 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 249 ), ExtResource( 232 ), ExtResource( 241 ), ExtResource( 239 ), ExtResource( 236 ), ExtResource( 243 ), ExtResource( 265 ), ExtResource( 235 ), ExtResource( 242 ), ExtResource( 259 ), ExtResource( 253 ), ExtResource( 260 ), ExtResource( 237 ), ExtResource( 258 ), ExtResource( 238 ), ExtResource( 234 ), ExtResource( 230 ), ExtResource( 245 ), ExtResource( 246 ), ExtResource( 256 ), ExtResource( 240 ), ExtResource( 261 ), ExtResource( 244 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1586,6 +1058,11 @@ animations = [ {
 "frames": [ ExtResource( 922 ), ExtResource( 886 ), ExtResource( 902 ), ExtResource( 873 ), ExtResource( 920 ), ExtResource( 890 ), ExtResource( 909 ), ExtResource( 871 ), ExtResource( 903 ), ExtResource( 872 ), ExtResource( 925 ), ExtResource( 876 ), ExtResource( 930 ), ExtResource( 895 ), ExtResource( 931 ), ExtResource( 907 ), ExtResource( 932 ), ExtResource( 887 ) ],
 "loop": true,
 "name": "sit",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 1166 ), ExtResource( 1209 ), ExtResource( 1170 ), ExtResource( 1210 ), ExtResource( 1211 ), ExtResource( 1167 ), ExtResource( 1197 ), ExtResource( 1161 ), ExtResource( 1204 ), ExtResource( 1180 ), ExtResource( 1172 ), ExtResource( 1213 ), ExtResource( 1214 ), ExtResource( 1215 ), ExtResource( 1178 ), ExtResource( 1192 ), ExtResource( 1216 ), ExtResource( 1198 ), ExtResource( 1179 ), ExtResource( 1163 ), ExtResource( 1193 ), ExtResource( 1182 ), ExtResource( 1219 ), ExtResource( 1164 ), ExtResource( 1220 ), ExtResource( 1159 ), ExtResource( 1160 ), ExtResource( 1165 ), ExtResource( 1168 ), ExtResource( 1194 ), ExtResource( 1169 ), ExtResource( 1183 ), ExtResource( 1186 ), ExtResource( 1184 ), ExtResource( 1188 ), ExtResource( 1189 ), ExtResource( 1190 ), ExtResource( 1199 ), ExtResource( 1200 ), ExtResource( 1201 ), ExtResource( 1222 ) ],
+"loop": true,
+"name": "run",
 "speed": 25.0
 } ]
 
@@ -1708,11 +1185,6 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ ExtResource( 547 ), ExtResource( 565 ), ExtResource( 80 ), ExtResource( 161 ), ExtResource( 566 ), ExtResource( 574 ), ExtResource( 575 ), ExtResource( 555 ), ExtResource( 572 ), ExtResource( 576 ), ExtResource( 156 ), ExtResource( 78 ), ExtResource( 149 ), ExtResource( 554 ), ExtResource( 564 ), ExtResource( 559 ), ExtResource( 158 ), ExtResource( 545 ), ExtResource( 163 ), ExtResource( 577 ), ExtResource( 578 ), ExtResource( 546 ), ExtResource( 560 ), ExtResource( 187 ), ExtResource( 561 ), ExtResource( 548 ), ExtResource( 159 ), ExtResource( 182 ), ExtResource( 111 ), ExtResource( 160 ), ExtResource( 135 ), ExtResource( 179 ), ExtResource( 186 ), ExtResource( 549 ), ExtResource( 188 ), ExtResource( 552 ), ExtResource( 553 ), ExtResource( 562 ), ExtResource( 563 ), ExtResource( 580 ), ExtResource( 579 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 606 ), ExtResource( 585 ), ExtResource( 597 ), ExtResource( 586 ), ExtResource( 587 ), ExtResource( 605 ), ExtResource( 604 ), ExtResource( 615 ), ExtResource( 589 ), ExtResource( 582 ), ExtResource( 595 ), ExtResource( 610 ), ExtResource( 599 ), ExtResource( 581 ), ExtResource( 584 ), ExtResource( 588 ), ExtResource( 616 ), ExtResource( 583 ), ExtResource( 611 ), ExtResource( 590 ), ExtResource( 614 ), ExtResource( 591 ), ExtResource( 603 ), ExtResource( 607 ), ExtResource( 592 ), ExtResource( 593 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1727,15 +1199,15 @@ animations = [ {
 "loop": true,
 "name": "sit",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 547 ), ExtResource( 565 ), ExtResource( 80 ), ExtResource( 161 ), ExtResource( 566 ), ExtResource( 574 ), ExtResource( 575 ), ExtResource( 555 ), ExtResource( 572 ), ExtResource( 576 ), ExtResource( 156 ), ExtResource( 78 ), ExtResource( 149 ), ExtResource( 554 ), ExtResource( 564 ), ExtResource( 559 ), ExtResource( 158 ), ExtResource( 545 ), ExtResource( 163 ), ExtResource( 577 ), ExtResource( 578 ), ExtResource( 546 ), ExtResource( 560 ), ExtResource( 187 ), ExtResource( 561 ), ExtResource( 548 ), ExtResource( 159 ), ExtResource( 182 ), ExtResource( 111 ), ExtResource( 160 ), ExtResource( 135 ), ExtResource( 179 ), ExtResource( 186 ), ExtResource( 549 ), ExtResource( 188 ), ExtResource( 552 ), ExtResource( 553 ), ExtResource( 562 ), ExtResource( 563 ), ExtResource( 580 ), ExtResource( 579 ) ],
+"loop": true,
+"name": "run",
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ ExtResource( 123 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 116 ), ExtResource( 98 ), ExtResource( 120 ), ExtResource( 115 ), ExtResource( 101 ), ExtResource( 112 ), ExtResource( 127 ), ExtResource( 114 ), ExtResource( 130 ), ExtResource( 117 ), ExtResource( 131 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 132 ), ExtResource( 108 ), ExtResource( 126 ), ExtResource( 133 ), ExtResource( 122 ), ExtResource( 134 ), ExtResource( 95 ), ExtResource( 118 ), ExtResource( 113 ), ExtResource( 119 ), ExtResource( 125 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 94 ), ExtResource( 185 ) ],
-"loop": true,
-"name": "run",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 150 ), ExtResource( 206 ), ExtResource( 169 ), ExtResource( 194 ), ExtResource( 154 ), ExtResource( 176 ), ExtResource( 166 ), ExtResource( 157 ), ExtResource( 211 ), ExtResource( 167 ), ExtResource( 203 ), ExtResource( 217 ), ExtResource( 178 ), ExtResource( 180 ), ExtResource( 200 ), ExtResource( 204 ), ExtResource( 212 ), ExtResource( 208 ), ExtResource( 216 ), ExtResource( 218 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 136 ), ExtResource( 140 ), ExtResource( 139 ) ],
 "loop": true,
 "name": "dmcrun",
@@ -1749,6 +1221,11 @@ animations = [ {
 "frames": [ ExtResource( 740 ), ExtResource( 741 ), ExtResource( 742 ), ExtResource( 744 ), ExtResource( 747 ), ExtResource( 745 ), ExtResource( 730 ), ExtResource( 746 ), ExtResource( 754 ), ExtResource( 755 ), ExtResource( 756 ), ExtResource( 757 ), ExtResource( 731 ), ExtResource( 732 ), ExtResource( 733 ), ExtResource( 797 ), ExtResource( 777 ), ExtResource( 771 ) ],
 "loop": true,
 "name": "sit",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 123 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 116 ), ExtResource( 98 ), ExtResource( 120 ), ExtResource( 115 ), ExtResource( 101 ), ExtResource( 112 ), ExtResource( 127 ), ExtResource( 114 ), ExtResource( 130 ), ExtResource( 117 ), ExtResource( 131 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 132 ), ExtResource( 108 ), ExtResource( 126 ), ExtResource( 133 ), ExtResource( 122 ), ExtResource( 134 ), ExtResource( 95 ), ExtResource( 118 ), ExtResource( 113 ), ExtResource( 119 ), ExtResource( 125 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 94 ), ExtResource( 185 ) ],
+"loop": true,
+"name": "run",
 "speed": 25.0
 } ]
 
@@ -1807,57 +1284,17 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 4 )
 animation = "sit"
-frame = 2
-playing = true
-offset = Vector2( 95, -25 )
-
-[node name="ChinosRedShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Chinos"]
-visible = false
-frames = SubResource( 5 )
-animation = "sit"
-frame = 2
-playing = true
-offset = Vector2( 95, -25 )
-
-[node name="ChinosWhiteShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Chinos"]
-visible = false
-frames = SubResource( 6 )
-animation = "sit"
-frame = 15
+frame = 8
 playing = true
 offset = Vector2( 95, -25 )
 
 [node name="Jeans" type="Node2D" parent="Animations/BodyUpper"]
 
-[node name="JeansBlackShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Jeans"]
-visible = false
-frames = SubResource( 7 )
-animation = "sit"
-frame = 6
-playing = true
-offset = Vector2( 95, -25 )
-
-[node name="JeansBlueShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Jeans"]
-visible = false
-frames = SubResource( 8 )
-animation = "sit"
-frame = 6
-playing = true
-offset = Vector2( 95, -25 )
-
-[node name="JeansGreenShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Jeans"]
-visible = false
-frames = SubResource( 9 )
-animation = "sit"
-frame = 8
-playing = true
-offset = Vector2( 95, -25 )
-
 [node name="JeansRedShirt" type="AnimatedSprite" parent="Animations/BodyUpper/Jeans"]
 visible = false
 frames = SubResource( 10 )
 animation = "sit"
-frame = 6
+frame = 12
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1865,7 +1302,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 11 )
 animation = "dmcrun"
-frame = 14
+frame = 22
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1876,7 +1313,7 @@ offset = Vector2( 95, -25 )
 [node name="Wide" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyes"]
 frames = SubResource( 12 )
 animation = "sit"
-frame = 14
+frame = 2
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1888,7 +1325,7 @@ offset = Vector2( 95, -25 )
 [node name="VeryTired" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyes"]
 frames = SubResource( 14 )
 animation = "sit"
-frame = 1
+frame = 7
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1902,7 +1339,7 @@ animation = "sit"
 [node name="SunGlasses" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyewear"]
 frames = SubResource( 16 )
 animation = "sit"
-frame = 11
+frame = 17
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1912,6 +1349,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 17 )
 animation = "sit"
+frame = 6
 playing = true
 offset = Vector2( 95, -25 )
 
