@@ -27,8 +27,8 @@ var target_x
 
 var passenger_state = PassengerState.IDLE
 
-export var min_time_for_state_change = 3
-export var max_time_for_state_change = 6
+export var min_time_for_state_change = 8
+export var max_time_for_state_change = 30
 var time_since_last_state_change = 0
 var time_til_next_state_change = 0
 
@@ -39,9 +39,17 @@ const INVINCIBILITY_TIME = 1
 var invincibility_timer = 0
 var is_invincible
 
+var noise_level = 0
+const min_noise_increase_rate = 5
+const max_noise_increase_rate = 20
+const MAX_NOISE_LEVEL = 50
+const MIN_TIME_BETWEEN_NOISE_CHANGES = 1
+const MAX_TIME_BETWEEN_NOISE_CHANGES = 10
 const MAX_VELOCITY = 1200
 const TRIP_VELOCITY = 1000
 const COMFORT_VELOCITY = 700
+
+var time_to_next_noise_change = 0
 
 var is_npc = true
 
@@ -54,6 +62,7 @@ var slide_velocity_change_rate = 0.5
 
 func _ready():
 	rng.randomize()
+	time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
 	# $AnimatedSprite.play("idle")
 	var children = $Sound/Hit.get_children()
 	for child in children:
@@ -70,6 +79,18 @@ func walk_to_target(new_target):
 	passenger_state = PassengerState.WALK
 	
 	reset_wait()
+
+func _process(delta):
+	if passenger_state == PassengerState.SIT:
+		if time_to_next_noise_change > 0:
+			time_to_next_noise_change -= delta
+		else: 
+			if noise_level < MAX_NOISE_LEVEL:
+				noise_level += rng.randf_range(min_noise_increase_rate, max_noise_increase_rate)
+			noise_level = clamp(noise_level, 0, MAX_NOISE_LEVEL)
+			$Animations/Speech.scale.x = (noise_level / MAX_NOISE_LEVEL) * 2
+			$Animations/Speech.scale.y = (noise_level / MAX_NOISE_LEVEL) * 2
+			time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
 
 func _physics_process(delta): 
 	if passenger_state == PassengerState.WALK:
@@ -248,6 +269,7 @@ func invisibilize():
 		var grandchildren = child.get_children()
 		for grandchild in grandchildren:
 			grandchild.visible = false
+	$Animations/Speech.visible = false
 	
 
 func generate_npc():
@@ -299,6 +321,7 @@ func generate_npc():
 
 func sit_animations():
 	z_index = -1
+	BodyLower.z_index = -1
 	preseated_y =  position.y
 	position.y = 555
 	BodyUpper.play("sit")
@@ -326,6 +349,9 @@ func sit_animations():
 			framecount = grandchild.frames.get_frame_count("sit")
 			if framecount > 0:
 				grandchild.set_frame(framecount - 1)
+	$Animations/Speech.scale.x = (noise_level / MAX_NOISE_LEVEL ) * 2
+	$Animations/Speech.scale.y = (noise_level / MAX_NOISE_LEVEL ) * 2
+	$Animations/Speech.visible = true
 
 func stand_animations():
 	print("STAND")
@@ -337,8 +363,17 @@ func stand_animations():
 		grandchildren = child.get_children()
 		for grandchild in grandchildren:
 			grandchild.play("sit", true)
+	noise_level = 0
+	$Animations/Speech.visible = false
 	yield(BodyUpper, "animation_finished")
 	print("DONE")
 	position.y = preseated_y
 	z_index = 0
+	BodyLower.z_index = 0
 	emit_signal("stop_using_target", self)
+
+func shush(): 
+	noise_level = 0
+	$Animations/Speech.scale.x = 0
+	$Animations/Speech.scale.y = 0
+	time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)

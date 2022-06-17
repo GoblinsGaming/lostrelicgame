@@ -1,8 +1,7 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://NoisyPassenger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FPSCounter.gd" type="Script" id=4]
 [ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://ShushIndicator.gd" type="Script" id=6]
@@ -370,22 +369,41 @@ position = Vector2( 1932, 624.811 )
 [node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
 position = Vector2( 1750.05, 612.298 )
 
+[node name="Passenger5" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 2445.07, 630.49 )
+
+[node name="Passenger6" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 2617.07, 633.49 )
+
+[node name="Passenger7" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 3005.07, 629.301 )
+
+[node name="Passenger8" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 2823.13, 616.788 )
+
+[node name="Passenger9" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 3191.16, 606.951 )
+
+[node name="Passenger10" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 3363.16, 609.951 )
+
+[node name="Passenger11" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 3751.16, 605.762 )
+
+[node name="Passenger12" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 3569.21, 593.249 )
+
+[node name="Passenger13" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 4061.05, 592.392 )
+
+[node name="Passenger14" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 4233.05, 595.392 )
+
+[node name="Passenger15" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
+position = Vector2( 4621.05, 591.203 )
+
 [node name="PassengerBackup" type="Node2D" parent="GameController/PassengerController"]
 visible = false
-
-[node name="NoisyPassengers" type="Node2D" parent="GameController/PassengerController"]
-visible = false
-
-[node name="NoisyPassenger" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
-
-[node name="NoisyPassenger2" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
-position = Vector2( 2080, 528 )
-
-[node name="NoisyPassenger3" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
-position = Vector2( 2256, 528 )
-
-[node name="NoisyPassenger4" parent="GameController/PassengerController/NoisyPassengers" instance=ExtResource( 3 )]
-position = Vector2( 2440, 528 )
 
 [node name="StevenHawk" parent="GameController/PassengerController" instance=ExtResource( 18 )]
 position = Vector2( 2185, 627.811 )

@@ -50,6 +50,8 @@ func walk_passenger_to_random_target(passenger):
 				closest_dist = dist_to_close
 				target_index = new_target_index
 
+	if target_index == null:
+		return
 	var target = unassigned_targets[target_index]
 	unassigned_targets.remove(target_index)
 	passenger.walk_to_target(target)

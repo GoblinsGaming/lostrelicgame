@@ -110,12 +110,11 @@ func process_noise(delta):
 			$CanvasLayer/ShushIndicator.update_reset_time(shush_reset_time)
 			
 		# TODO timer on shushing to apply to the train noise as well
-			for passenger in $PassengerController/NoisyPassengers.get_children():
+			for passenger in $PassengerController/Passengers.get_children():
 				if abs(passenger.position.x - player_pos) < SHUSH_DIST:
 					passenger.shush()
 				
-	for passenger in $PassengerController/NoisyPassengers.get_children():
-		# TODO use variable noise distances? 
+	for passenger in $PassengerController/Passengers.get_children():
 		if abs(passenger.position.x - player_pos) < NOISE_DIST:
 			total_noise += passenger.noise_level * (1.0 - abs(player_pos - passenger.position.x)/NOISE_DIST)
 	
