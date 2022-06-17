@@ -1,4 +1,4 @@
-[gd_scene load_steps=1285 format=2]
+[gd_scene load_steps=1377 format=2]
 
 [ext_resource path="res://Passenger.gd" type="Script" id=1]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Wide/Sitting_Eyes_Wide02.png" type="Texture" id=2]
@@ -710,6 +710,7 @@
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso25.png" type="Texture" id=708]
 [ext_resource path="res://Assets/NPC/DevilmanCrybabyRun/BodyUpper/ChinosBlackShirt/Chino_BlackShirt_DMCBRun_Torso17.png" type="Texture" id=709]
 [ext_resource path="res://Assets/NPC/Accessories/Mouth/Accessories-Side_0000s_0003s_0001_Frown.png" type="Texture" id=710]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose212.png" type="Texture" id=711]
 [ext_resource path="res://Assets/NPC/Accessories/Nose/Accessories-Side_0000s_0002s_0001_Nose-2.png" type="Texture" id=712]
 [ext_resource path="res://Assets/NPC/Accessories/Mouth/Accessories-Side_0000s_0003s_0000_Creepy-Smile.png" type="Texture" id=713]
 [ext_resource path="res://Assets/NPC/Accessories/Eyes/Accessories-Side_0000s_0001s_0000_Eyes-Wide.png" type="Texture" id=714]
@@ -724,6 +725,7 @@
 [ext_resource path="res://Assets/NPC/Accessories/Nose/Accessories-Side_0000s_0002s_0000_Nose-1.png" type="Texture" id=723]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow02.png" type="Texture" id=724]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow03.png" type="Texture" id=725]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile09.png" type="Texture" id=726]
 [ext_resource path="res://Assets/NPC/Sit/BodyLower/Chinos/Chino_Legs_Sitting00.png" type="Texture" id=727]
 [ext_resource path="res://Assets/NPC/Sit/BodyLower/Chinos/Chino_Legs_Sitting12.png" type="Texture" id=728]
 [ext_resource path="res://Assets/NPC/Sit/BodyLower/Chinos/Chino_Legs_Sitting17.png" type="Texture" id=729]
@@ -1234,35 +1236,124 @@
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow06.png" type="Texture" id=1234]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Wide/Sitting_Eyes_Wide10.png" type="Texture" id=1235]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Wide/Sitting_Eyes_Wide11.png" type="Texture" id=1236]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile16.png" type="Texture" id=1237]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile17.png" type="Texture" id=1238]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown15.png" type="Texture" id=1239]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses08.png" type="Texture" id=1240]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses11.png" type="Texture" id=1241]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose103.png" type="Texture" id=1242]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses12.png" type="Texture" id=1243]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow14.png" type="Texture" id=1244]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow16.png" type="Texture" id=1245]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses15.png" type="Texture" id=1246]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses10.png" type="Texture" id=1247]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses14.png" type="Texture" id=1248]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose111.png" type="Texture" id=1249]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose112.png" type="Texture" id=1250]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose113.png" type="Texture" id=1251]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow13.png" type="Texture" id=1252]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown11.png" type="Texture" id=1253]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow15.png" type="Texture" id=1254]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown17.png" type="Texture" id=1255]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses17.png" type="Texture" id=1256]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses16.png" type="Texture" id=1257]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown04.png" type="Texture" id=1258]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses06.png" type="Texture" id=1259]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses01.png" type="Texture" id=1260]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses07.png" type="Texture" id=1261]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile11.png" type="Texture" id=1262]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown00.png" type="Texture" id=1263]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses05.png" type="Texture" id=1264]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses13.png" type="Texture" id=1265]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow10.png" type="Texture" id=1266]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown09.png" type="Texture" id=1267]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown06.png" type="Texture" id=1268]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown13.png" type="Texture" id=1269]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow09.png" type="Texture" id=1270]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses00.png" type="Texture" id=1271]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses04.png" type="Texture" id=1272]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose100.png" type="Texture" id=1273]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose102.png" type="Texture" id=1274]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses02.png" type="Texture" id=1275]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses03.png" type="Texture" id=1276]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow17.png" type="Texture" id=1277]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow12.png" type="Texture" id=1278]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose110.png" type="Texture" id=1279]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Narrow/Sitting_Eyes_Narrow11.png" type="Texture" id=1280]
 [ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyewear/Sitting_Sunglasses/Sitting_Sunglasses09.png" type="Texture" id=1281]
 [ext_resource path="res://placeholders/red.png" type="Texture" id=1282]
 [ext_resource path="res://Assets/Sounds/NPC/garbled voice.mp3" type="AudioStream" id=1283]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose203.png" type="Texture" id=1284]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose206.png" type="Texture" id=1285]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose207.png" type="Texture" id=1286]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose204.png" type="Texture" id=1287]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose202.png" type="Texture" id=1288]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown07.png" type="Texture" id=1289]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose115.png" type="Texture" id=1290]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose209.png" type="Texture" id=1291]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose210.png" type="Texture" id=1292]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile15.png" type="Texture" id=1293]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose108.png" type="Texture" id=1294]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose200.png" type="Texture" id=1295]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose213.png" type="Texture" id=1296]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile14.png" type="Texture" id=1297]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose211.png" type="Texture" id=1298]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile13.png" type="Texture" id=1299]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose215.png" type="Texture" id=1300]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown08.png" type="Texture" id=1301]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown01.png" type="Texture" id=1302]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown02.png" type="Texture" id=1303]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown10.png" type="Texture" id=1304]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose106.png" type="Texture" id=1305]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose114.png" type="Texture" id=1306]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose116.png" type="Texture" id=1307]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose117.png" type="Texture" id=1308]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose216.png" type="Texture" id=1309]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose217.png" type="Texture" id=1310]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose105.png" type="Texture" id=1311]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose208.png" type="Texture" id=1312]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile10.png" type="Texture" id=1313]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown16.png" type="Texture" id=1314]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose107.png" type="Texture" id=1315]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose109.png" type="Texture" id=1316]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose201.png" type="Texture" id=1317]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose101.png" type="Texture" id=1318]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose214.png" type="Texture" id=1319]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile12.png" type="Texture" id=1320]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown03.png" type="Texture" id=1321]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown12.png" type="Texture" id=1322]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown14.png" type="Texture" id=1323]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Frown/Sitting_Frown05.png" type="Texture" id=1324]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose1/Sitting_Nose104.png" type="Texture" id=1325]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Nose/Sitting_Nose2/Sitting_Nose205.png" type="Texture" id=1326]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired02.png" type="Texture" id=1327]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired08.png" type="Texture" id=1328]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired17.png" type="Texture" id=1329]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile02.png" type="Texture" id=1330]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile05.png" type="Texture" id=1331]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile06.png" type="Texture" id=1332]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile07.png" type="Texture" id=1333]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile04.png" type="Texture" id=1334]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile08.png" type="Texture" id=1335]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired05.png" type="Texture" id=1336]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired00.png" type="Texture" id=1337]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired03.png" type="Texture" id=1338]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired04.png" type="Texture" id=1339]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired10.png" type="Texture" id=1340]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired11.png" type="Texture" id=1341]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired12.png" type="Texture" id=1342]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired16.png" type="Texture" id=1343]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile00.png" type="Texture" id=1344]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile01.png" type="Texture" id=1345]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Mouth/Sitting_Creepy_Smile/Sitting_Creepy_Smile03.png" type="Texture" id=1346]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired01.png" type="Texture" id=1347]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired15.png" type="Texture" id=1348]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired06.png" type="Texture" id=1349]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired13.png" type="Texture" id=1350]
+[ext_resource path="res://Assets/NPC/Accessories/Eyes/Accessories-Side_0000s_0001s_0003_Eyes-Very-Tired.png" type="Texture" id=1351]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired07.png" type="Texture" id=1352]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired09.png" type="Texture" id=1353]
+[ext_resource path="res://Assets/NPC/Accessories/Sitting/Eyes/Sitting_Eyes_Very_Tired/Sitting_Eyes_Very_Tired14.png" type="Texture" id=1354]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 48.0
@@ -1524,6 +1615,19 @@ animations = [ {
 "speed": 25.0
 } ]
 
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 1351 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1337 ), ExtResource( 1347 ), ExtResource( 1327 ), ExtResource( 1338 ), ExtResource( 1339 ), ExtResource( 1336 ), ExtResource( 1349 ), ExtResource( 1352 ), ExtResource( 1328 ), ExtResource( 1353 ), ExtResource( 1340 ), ExtResource( 1341 ), ExtResource( 1342 ), ExtResource( 1350 ), ExtResource( 1354 ), ExtResource( 1348 ), ExtResource( 1343 ), ExtResource( 1329 ) ],
+"loop": true,
+"name": "sit",
+"speed": 25.0
+} ]
+
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [  ],
@@ -1534,7 +1638,7 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "sit",
-"speed": 5.0
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=16]
@@ -1557,10 +1661,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 1344 ), ExtResource( 1345 ), ExtResource( 1330 ), ExtResource( 1346 ), ExtResource( 1334 ), ExtResource( 1331 ), ExtResource( 1332 ), ExtResource( 1333 ), ExtResource( 1335 ), ExtResource( 726 ), ExtResource( 1313 ), ExtResource( 1262 ), ExtResource( 1320 ), ExtResource( 1299 ), ExtResource( 1297 ), ExtResource( 1293 ), ExtResource( 1237 ), ExtResource( 1238 ) ],
 "loop": true,
 "name": "sit",
-"speed": 5.0
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=18]
@@ -1570,10 +1674,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 1263 ), ExtResource( 1302 ), ExtResource( 1303 ), ExtResource( 1321 ), ExtResource( 1258 ), ExtResource( 1324 ), ExtResource( 1268 ), ExtResource( 1289 ), ExtResource( 1301 ), ExtResource( 1267 ), ExtResource( 1304 ), ExtResource( 1253 ), ExtResource( 1322 ), ExtResource( 1269 ), ExtResource( 1323 ), ExtResource( 1239 ), ExtResource( 1314 ), ExtResource( 1255 ) ],
 "loop": true,
 "name": "sit",
-"speed": 5.0
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=19]
@@ -1583,10 +1687,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 1273 ), ExtResource( 1318 ), ExtResource( 1274 ), ExtResource( 1242 ), ExtResource( 1325 ), ExtResource( 1311 ), ExtResource( 1305 ), ExtResource( 1315 ), ExtResource( 1294 ), ExtResource( 1316 ), ExtResource( 1279 ), ExtResource( 1249 ), ExtResource( 1250 ), ExtResource( 1251 ), ExtResource( 1306 ), ExtResource( 1290 ), ExtResource( 1307 ), ExtResource( 1308 ) ],
 "loop": true,
 "name": "sit",
-"speed": 5.0
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=20]
@@ -1596,10 +1700,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 1295 ), ExtResource( 1317 ), ExtResource( 1288 ), ExtResource( 1284 ), ExtResource( 1287 ), ExtResource( 1326 ), ExtResource( 1285 ), ExtResource( 1286 ), ExtResource( 1312 ), ExtResource( 1291 ), ExtResource( 1292 ), ExtResource( 1298 ), ExtResource( 711 ), ExtResource( 1296 ), ExtResource( 1319 ), ExtResource( 1300 ), ExtResource( 1309 ), ExtResource( 1310 ) ],
 "loop": true,
 "name": "sit",
-"speed": 5.0
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=21]
@@ -1761,7 +1865,7 @@ offset = Vector2( 95, -25 )
 visible = false
 frames = SubResource( 11 )
 animation = "dmcrun"
-frame = 16
+frame = 14
 playing = true
 offset = Vector2( 95, -25 )
 
@@ -1771,12 +1875,21 @@ offset = Vector2( 95, -25 )
 
 [node name="Wide" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyes"]
 frames = SubResource( 12 )
+animation = "sit"
+frame = 14
 playing = true
 offset = Vector2( 95, -25 )
 
 [node name="Narrow" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyes"]
 frames = SubResource( 13 )
 animation = "sit"
+offset = Vector2( 95, -25 )
+
+[node name="VeryTired" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyes"]
+frames = SubResource( 14 )
+animation = "sit"
+frame = 1
+playing = true
 offset = Vector2( 95, -25 )
 
 [node name="Eyewear" type="Node2D" parent="Animations/BodyUpper/Accessories"]
@@ -1788,6 +1901,8 @@ animation = "sit"
 
 [node name="SunGlasses" type="AnimatedSprite" parent="Animations/BodyUpper/Accessories/Eyewear"]
 frames = SubResource( 16 )
+animation = "sit"
+frame = 11
 playing = true
 offset = Vector2( 95, -25 )
 
