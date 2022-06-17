@@ -35,6 +35,12 @@ var is_train_accelerating = false
 var time_since_last_train_speed_change = 0
 var time_to_next_train_speed_change = 0 
 
+var time_to_next_signal_change = 10
+var signal_target = 200
+
+var time_to_sound = 10
+var time_to_next_tunnel = 2
+
 onready var signal_bar = $CanvasLayer/SignalBar/ProgressBar
 onready var quiet_bar = $CanvasLayer/QuietBar/ProgressBar
 onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
@@ -42,12 +48,14 @@ onready var convo_bar = $CanvasLayer/ConvoBar/ProgressBar
 func _ready():
 	signal_move_start = $SignalPoint.position.x
 	back.train_speed = 0
-	time_to_next_train_speed_change = rng.randf_range(1,5)
+	time_to_next_train_speed_change = 8
+	time_to_sound = 10
+	time_to_next_tunnel = 18
 	signal_bar.value = 0
 	quiet_bar.value = 50
 	convo_bar.value = 20
-	# start_tunnel()
-	
+
+
 func _process(delta):
 	signal_processing(delta)
 	adjust_mist(delta)
@@ -56,7 +64,16 @@ func _process(delta):
 	process_noise(delta)
 	process_tunnel(delta)
 	calculate_win_loss()
+	start_train_sound(delta)
 
+func start_train_sound(delta): 
+	if time_to_sound > 0: 
+		time_to_sound -= delta
+	elif time_to_sound > -1: 
+		$Sound/TrainBackground.playing = true
+		time_to_sound = -2
+		
+	
 func calculate_win_loss(): 
 	if convo_bar.value >= 99:
 		emit_signal("win")
@@ -70,15 +87,20 @@ func start_tunnel():
 
 func process_tunnel(delta): 
 	if is_tunnel: 
-		$Tunnel.position.x -= 500*delta
-		if $Tunnel.position.x <= -7500: 
+		$Tunnel.position.x -= back.train_speed*delta*7
+		if $Tunnel.position.x <= -34405: 
 			is_tunnel = false
 			$Tunnel.visible = false
+			time_to_next_tunnel = rng.randf_range(10,60)
+	else: 
+		if time_to_next_tunnel > 0: 
+			time_to_next_tunnel -= delta
+		else: 
+			start_tunnel()
 
-
-const NOISE_DIST = 300
-const SHUSH_DIST = 800
-const QUIET_DEC = 50
+const NOISE_DIST = 400
+const SHUSH_DIST = 500
+const QUIET_DEC = 80
 const QUIET_INC = 50
 const NOISE_THRESH = 50
 
@@ -116,7 +138,7 @@ func process_noise(delta):
 				
 	for passenger in $PassengerController/Passengers.get_children():
 		if abs(passenger.position.x - player_pos) < NOISE_DIST:
-			total_noise += passenger.noise_level * (1.0 - abs(player_pos - passenger.position.x)/NOISE_DIST)
+			total_noise += passenger.noise_level * (1.1 - abs(player_pos - passenger.position.x)/NOISE_DIST)
 	
 	var quiet = clamp(100 - total_noise, 0, 100)
 	
@@ -152,15 +174,17 @@ func randomize_train_acceleration(delta):
 		is_train_accelerating = true
 		is_train_speeding_up = false
 	time_since_last_train_speed_change = 0
-	time_to_next_train_speed_change = rng.randf_range(6,20)
+	time_to_next_train_speed_change = rng.randf_range(6,30)
 	
 	var acc_mult = rng.randf_range(0.05, 0.2)
 	train_acceleration = (train_target_speed - back.train_speed) * acc_mult
 	train_jutter_acceleration =  train_acceleration * 1.5
 		
 func accelerate_train(delta): 
-	if not is_train_accelerating: 
-		return	
+	if not is_train_accelerating:
+		$Sound/TrainAccelerate.playing = false
+		$Sound/TrainBrake.playing = false
+		return
 	
 	if is_train_speeding_up:
 		if is_train_juttering: 
@@ -183,6 +207,9 @@ func accelerate_train(delta):
 					is_train_juttering = false
 		else:
 			if back.train_speed < train_target_speed:
+				if not $Sound/TrainAccelerate.playing:
+					$Sound/TrainAccelerate.playing = true
+				$Sound/TrainAccelerate.volume_db = (train_acceleration/1200)*24 - 12
 				back.train_speed += train_acceleration * delta
 				$PlayerController.set_train_acceleration(train_acceleration)
 				$PassengerController.set_train_acceleration(train_acceleration)
@@ -196,6 +223,8 @@ func accelerate_train(delta):
 				is_train_accelerating = false
 	else: 
 		if back.train_speed > train_target_speed:
+			if not $Sound/TrainBrake.playing:
+				$Sound/TrainBrake.playing = true
 			back.train_speed += train_acceleration * delta
 			$PlayerController.set_train_acceleration(train_acceleration)
 			$PassengerController.set_train_acceleration(train_acceleration)
@@ -207,7 +236,6 @@ func accelerate_train(delta):
 			$train.set_train_acceleration(0)
 			$ObjectsController.set_train_acceleration(0)
 			is_train_accelerating = false
-			
 	return
 
 func signal_processing(delta): 
@@ -241,9 +269,17 @@ func signal_processing(delta):
 			convo_bar.value -= convo_reduction_speed*delta
 		
 	#$SignalPoint.position.x -= back.train_speed* signal_move_mult * delta
-	$SignalPoint.position.x -= 200 * signal_move_mult * delta
-	if $SignalPoint.position.x < -250: 
-		$SignalPoint.position.x = signal_move_start
+
+	if time_to_next_signal_change > 0: 
+		time_to_next_signal_change -= delta
+	else: 
+		signal_target = rng.randf_range(200, 5000) 
+		time_to_next_signal_change = rng.randf_range(2, 20) 
+	
+	if $SignalPoint.position.x < signal_target - 4:
+		$SignalPoint.position.x += 200 * signal_move_mult * delta
+	elif $SignalPoint.position.x > signal_target + 4:
+		$SignalPoint.position.x -= 200 * signal_move_mult * delta
 
 func adjust_mist(delta):
 	if mist_increase:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Train.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sounds/Train/Train background.mp3" type="AudioStream" id=3]
 [ext_resource path="res://FPSCounter.gd" type="Script" id=4]
 [ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://ShushIndicator.gd" type="Script" id=6]
@@ -19,6 +20,8 @@
 [ext_resource path="res://StevenHawk.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Passenger.tscn" type="PackedScene" id=19]
 [ext_resource path="res://placeholders/seating_space.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sounds/Train/Engine Rev.mp3" type="AudioStream" id=21]
+[ext_resource path="res://Assets/Sounds/Train/cc0_train_freight_emergency_stop.mp3" type="AudioStream" id=22]
 [ext_resource path="res://PassengerController.gd" type="Script" id=23]
 [ext_resource path="res://PassengerTarget.gd" type="Script" id=24]
 
@@ -29,6 +32,12 @@ shader = SubResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.141176, 0.698039, 0.92549, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.960784, 0.929412, 0.462745, 1 )
@@ -68,6 +77,10 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 5 )
+
 [node name="Main" type="Node2D"]
 
 [node name="GameController" type="Node2D" parent="."]
@@ -84,15 +97,12 @@ z_index = 900
 modulate = Color( 1, 1, 1, 0.866667 )
 material = SubResource( 2 )
 margin_left = 5112.0
-margin_right = 12576.0
-margin_bottom = 862.0
+margin_right = 39512.0
+margin_bottom = 922.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="GameController/Tunnel"]
-margin_right = 7528.0
+margin_right = 34463.0
 margin_bottom = 856.0
 color = Color( 0, 0, 0, 1 )
 
@@ -114,7 +124,7 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="TunnelWall2" type="Node2D" parent="GameController/Tunnel"]
-position = Vector2( 7463, 0 )
+position = Vector2( 34405, 10 )
 
 [node name="BrickWallMid" type="Sprite" parent="GameController/Tunnel/TunnelWall2"]
 position = Vector2( -1720, 0 )
@@ -427,7 +437,7 @@ position = Vector2( 20, 44 )
 
 [node name="SignalPoint" type="Node2D" parent="GameController"]
 modulate = Color( 1, 1, 1, 0.443137 )
-position = Vector2( 5345, 428 )
+position = Vector2( 1067, 458 )
 z_index = 1111
 
 [node name="Sprite" type="Sprite" parent="GameController/SignalPoint"]
@@ -447,6 +457,14 @@ step = 0.0
 value = 50.0
 percent_visible = false
 
+[node name="Label" type="Label" parent="GameController/CanvasLayer/SignalBar"]
+margin_left = 43.0
+margin_top = 38.0
+margin_right = 171.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 9 )
+text = "Connection"
+
 [node name="QuietBar" type="Node2D" parent="GameController/CanvasLayer"]
 position = Vector2( 0, 60 )
 
@@ -459,6 +477,14 @@ custom_styles/fg = SubResource( 4 )
 step = 0.0
 value = 50.0
 percent_visible = false
+
+[node name="Label" type="Label" parent="GameController/CanvasLayer/QuietBar"]
+margin_left = 44.0
+margin_top = 37.0
+margin_right = 172.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 9 )
+text = "Quiet"
 
 [node name="ConvoBar" type="Node2D" parent="GameController/CanvasLayer"]
 position = Vector2( 0, 120 )
@@ -473,7 +499,16 @@ step = 0.0
 value = 50.0
 percent_visible = false
 
+[node name="Label" type="Label" parent="GameController/CanvasLayer/ConvoBar"]
+margin_left = 43.0
+margin_top = 36.0
+margin_right = 171.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 9 )
+text = "Victory"
+
 [node name="FPSCounter" type="Node2D" parent="GameController/CanvasLayer"]
+visible = false
 position = Vector2( 48, 152 )
 script = ExtResource( 4 )
 
@@ -501,3 +536,30 @@ custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
+
+[node name="Label" type="Label" parent="GameController/CanvasLayer/ShushIndicator"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="PressX" type="Label" parent="GameController/CanvasLayer/ShushIndicator"]
+margin_left = -39.0
+margin_top = -58.0
+margin_right = 40.0
+margin_bottom = -24.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Press X"
+align = 1
+valign = 1
+
+[node name="Sound" type="Node2D" parent="GameController"]
+
+[node name="TrainBackground" type="AudioStreamPlayer" parent="GameController/Sound"]
+stream = ExtResource( 3 )
+
+[node name="TrainAccelerate" type="AudioStreamPlayer" parent="GameController/Sound"]
+stream = ExtResource( 21 )
+
+[node name="TrainBrake" type="AudioStreamPlayer" parent="GameController/Sound"]
+stream = ExtResource( 22 )
