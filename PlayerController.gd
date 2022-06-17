@@ -27,7 +27,7 @@ var slide_velocity_change_rate = 0.5
 var is_shushing = false
 var time_for_shush = 0
 
-func _physics_process(delta):
+func _process(delta):
 	player_main_process(delta)
 
 func player_main_process(delta): 

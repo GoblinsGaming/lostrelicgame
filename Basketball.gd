@@ -10,7 +10,7 @@ var roll_velocity_change_rate = 0.5
 func _ready():
 	pass # Replace with function body.
 
-func _physics_process(delta):
+func _process(delta):
 	speed += train_acceleration*delta*roll_velocity_change_rate*0.5
 	if abs(speed - train_acceleration) > 4: 
 		speed += (train_acceleration - speed)*delta*roll_velocity_change_rate

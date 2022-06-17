@@ -61,7 +61,4 @@ func set_train_acceleration(new_acceleration):
 		passenger.set_train_acceleration(new_acceleration)
 	$StevenHawk.set_train_acceleration(new_acceleration)
 	
-func _process(delta):
-	pass
-
 

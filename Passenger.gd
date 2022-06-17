@@ -97,7 +97,6 @@ func _process(delta):
 				$Sound/Talk/AudioStreamPlayer2D.volume_db = (noise_level / MAX_NOISE_LEVEL) * 24 - 12
 			time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
 
-func _physics_process(delta): 
 	if passenger_state == PassengerState.WALK:
 		passenger_state = PassengerState.WALK
 		BodyUpper.play("walk")

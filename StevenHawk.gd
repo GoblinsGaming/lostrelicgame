@@ -17,7 +17,7 @@ func _ready():
 	for sound in sounds:
 		sound.stream.loop = false
 
-func _physics_process(delta):
+func _process(delta):
 	velocity_calculations(delta)
 
 func velocity_calculations(delta):

@@ -23,7 +23,7 @@ func _ready():
 	noise.period = 4
 	noise.octaves = 2
 
-func _physics_process(delta):
+func _process(delta):
 	train_accelerate_drift_camera(delta)
 
 	if trauma:

@@ -160,6 +160,7 @@ func _on_StartButtonArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		if not is_help_open and not is_credits_open and not is_exit_open:
 			start_layer.visible = true
+			$Sound/Music.playing = false
 			yield(get_tree().create_timer(0.2), "timeout")
 			emit_signal("start_game")
 		
