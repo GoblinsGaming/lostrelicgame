@@ -142,6 +142,7 @@ script = ExtResource( 23 )
 
 [node name="Seating" type="Node2D" parent="GameController/PassengerController"]
 visible = false
+position = Vector2( 0, -1.18921 )
 
 [node name="Seating1" type="Node2D" parent="GameController/PassengerController/Seating"]
 position = Vector2( 766, 550 )
@@ -364,10 +365,10 @@ position = Vector2( 1372, 626 )
 position = Vector2( 1544, 629 )
 
 [node name="Passenger3" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
-position = Vector2( 1712, 626 )
+position = Vector2( 1932, 624.811 )
 
 [node name="Passenger4" parent="GameController/PassengerController/Passengers" instance=ExtResource( 19 )]
-position = Vector2( 1884, 629 )
+position = Vector2( 1750.05, 612.298 )
 
 [node name="PassengerBackup" type="Node2D" parent="GameController/PassengerController"]
 visible = false
@@ -387,7 +388,7 @@ position = Vector2( 2256, 528 )
 position = Vector2( 2440, 528 )
 
 [node name="StevenHawk" parent="GameController/PassengerController" instance=ExtResource( 18 )]
-position = Vector2( 2185, 629 )
+position = Vector2( 2185, 627.811 )
 z_index = 850
 
 [node name="ObjectsController" type="Node2D" parent="GameController"]
@@ -477,8 +478,8 @@ margin_left = -27.0
 margin_top = -23.0
 margin_right = 27.0
 margin_bottom = 22.0
-custom_colors/font_color = Color( 1, 0, 0.678431, 1 )
 custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 0, 0.678431, 1 )
 text = "100"
 align = 1
 valign = 1

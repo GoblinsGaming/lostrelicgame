@@ -14,9 +14,6 @@ func _ready():
 	for seat in $Seating.get_children (): 
 		unassigned_targets.append(seat)
 
-	for handhold in $Handholds.get_children (): 
-		unassigned_targets.append(handhold)
-		
 	for passenger in $Passengers.get_children(): 
 		passengers.append(passenger)
 		passenger.connect("stop_using_target", self, "_on_passenger_stop_using_target")

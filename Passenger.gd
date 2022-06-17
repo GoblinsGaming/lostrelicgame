@@ -8,15 +8,15 @@ var BodyUpper
 var BodyLower
 var Accessories
 var rng = RandomNumberGenerator.new()
+var preseated_y
 
 enum PassengerState {
 	IDLE,
 	WALK,
-	HANDHOLD,
 	SIT,
 	SHOVE, 
 	TRIP
-}
+	}
 
 const WALK_SPEED = 200
 export var target_velocity = WALK_SPEED
@@ -40,8 +40,8 @@ var invincibility_timer = 0
 var is_invincible
 
 const MAX_VELOCITY = 1200
-const TRIP_VELOCITY = 800
-const COMFORT_VELOCITY = 500
+const TRIP_VELOCITY = 1000
+const COMFORT_VELOCITY = 700
 
 var is_npc = true
 
@@ -72,14 +72,24 @@ func walk_to_target(new_target):
 	reset_wait()
 
 func _physics_process(delta): 
+	if passenger_state == PassengerState.WALK:
+		passenger_state = PassengerState.WALK
+		BodyUpper.play("walk")
+		BodyLower.play("walk")
+		BodyUpper.rotation_degrees = 0
+		Accessories.position.x = 0
+		Accessories.position.y = 0
+		Accessories.rotation_degrees = 0
 	if passenger_state == PassengerState.SHOVE and abs(velocity) < COMFORT_VELOCITY:
 		passenger_state = PassengerState.WALK
 		BodyUpper.play("walk")
 		BodyLower.play("walk")
+		BodyUpper.rotation_degrees = 0
 		Accessories.position.x = 0
 		Accessories.position.y = 0
 		Accessories.rotation_degrees = 0
 	if passenger_state in [PassengerState.WALK, PassengerState.SHOVE] and abs(velocity) > TRIP_VELOCITY: 
+		BodyUpper.rotation_degrees = 0
 		passenger_state = PassengerState.TRIP
 		BodyUpper.play("dmcrun")
 		BodyLower.play("dmcrun")
@@ -88,13 +98,14 @@ func _physics_process(delta):
 		Accessories.rotation_degrees = 44
 	elif passenger_state == PassengerState.WALK and abs(velocity) > COMFORT_VELOCITY: 
 		passenger_state = PassengerState.SHOVE
+		BodyUpper.rotation_degrees = 45
 		BodyUpper.play("run")
 		BodyLower.play("run")
 		Accessories.position.x = 0
 		Accessories.position.y = 0
-		Accessories.rotation_degrees = 0
+		Accessories.rotation_degrees = 45
 
-	if passenger_state == PassengerState.SHOVE:
+	if passenger_state == PassengerState.SHOVE or passenger_state == PassengerState.TRIP:
 		if velocity > 0: 
 			$Animations.scale.x = 1
 		else: 
@@ -105,6 +116,13 @@ func _physics_process(delta):
 			
 	if passenger_state == PassengerState.WALK: 
 		#$AnimatedSprite.play("walk")
+		BodyUpper.play("walk")
+		BodyLower.play("walk")
+		var children = $Animations/BodyUpper/Accessories.get_children()
+		for child in children:
+			var grandchildren = child.get_children()
+			for grandchild in grandchildren:
+				grandchild.play("default")
 		if position.x < target_x - seating_half_width:
 			target_velocity = WALK_SPEED#  - train_acceleration
 			$Animations.scale.x = 1
@@ -114,13 +132,9 @@ func _physics_process(delta):
 		else: 
 			if target.target_type == PassengerTarget.TargetType.SEAT:
 				passenger_state = PassengerState.SIT
-				position.x = target_x
+				position.x = target_x + 30
 				#$AnimatedSprite.play("sit")
-				reset_wait()
-			elif target.target_type == PassengerTarget.TargetType.HANDHOLD:
-				passenger_state = PassengerState.HANDHOLD
-				position.x = target_x
-				#$AnimatedSprite.play("handhold")
+				sit_animations()
 				reset_wait()
 			else: 
 				passenger_state = PassengerState.IDLE
@@ -129,9 +143,13 @@ func _physics_process(delta):
 				#$AnimatedSprite.play("idle")
 				reset_wait()
 				
-	elif passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD, PassengerState.TRIP] : 
+	elif passenger_state == PassengerState.TRIP and abs(velocity) < TRIP_VELOCITY:
+		emit_signal("stop_using_target", self)
+	elif passenger_state in [PassengerState.SIT]: 
 		if time_since_last_state_change >= time_til_next_state_change: 
-			emit_signal("stop_using_target", self)
+			if passenger_state == PassengerState.SIT:
+				time_since_last_state_change = 0
+				stand_animations()
 		else: 
 			time_since_last_state_change += delta
 			
@@ -141,7 +159,7 @@ func set_train_acceleration(new_train_acceleration):
 	train_acceleration = -3*new_train_acceleration
 
 func velocity_calculations(delta): 
-	if passenger_state in [PassengerState.SIT, PassengerState.HANDHOLD]:
+	if passenger_state in [PassengerState.SIT]:
 		return
 	velocity = clamp(velocity, -MAX_VELOCITY, MAX_VELOCITY)
 	
@@ -225,7 +243,7 @@ func invisibilize():
 	children = $Animations/BodyUpper/Chinos.get_children()
 	for child in children:
 		child.visible = false
-	children = $Animations/BodyUpper/Accessories/Static.get_children()
+	children = $Animations/BodyUpper/Accessories.get_children()
 	for child in children:
 		var grandchildren = child.get_children()
 		for grandchild in grandchildren:
@@ -243,28 +261,34 @@ func generate_npc():
 		BodyUpper = children[randi() % children.size()]
 	Accessories = $Animations/BodyUpper/Accessories
 	#eyes
-	var children = $Animations/BodyUpper/Accessories/Static/Eyes.get_children()
+	var children = $Animations/BodyUpper/Accessories/Eyes.get_children()
 	children[randi() % children.size()].visible = true
 
 	#eyewear
-	children = $Animations/BodyUpper/Accessories/Static/Eyewear.get_children()
+	children = $Animations/BodyUpper/Accessories/Eyewear.get_children()
 	children[randi() % children.size()].visible = true
 
 	#facial_feature
-	children = $Animations/BodyUpper/Accessories/Static/FacialFeature.get_children()
+	children = $Animations/BodyUpper/Accessories/FacialFeature.get_children()
 	children[randi() % children.size()].visible = true
 
 	#hair
-	children = $Animations/BodyUpper/Accessories/Static/Hair.get_children()
+	children = $Animations/BodyUpper/Accessories/Hair.get_children()
 	children[randi() % children.size()].visible = true
 
 	#mouth
-	children = $Animations/BodyUpper/Accessories/Static/Mouth.get_children()
+	children = $Animations/BodyUpper/Accessories/Mouth.get_children()
 	children[randi() % children.size()].visible = true
 
 	#nose
-	children = $Animations/BodyUpper/Accessories/Static/Nose.get_children()
+	children = $Animations/BodyUpper/Accessories/Nose.get_children()
 	children[randi() % children.size()].visible = true
+
+	children = $Animations/BodyUpper/Accessories.get_children()
+	for child in children:
+		var grandchildren = child.get_children()
+		for grandchild in grandchildren:
+			grandchild.play("default")
 
 	BodyUpper.visible = true
 	BodyLower.visible = true
@@ -272,3 +296,49 @@ func generate_npc():
 	BodyLower.playing = true
 	BodyUpper.play("walk")
 	BodyLower.play("walk")
+
+func sit_animations():
+	z_index = -1
+	preseated_y =  position.y
+	position.y = 555
+	BodyUpper.play("sit")
+	BodyLower.play("sit")
+	var children = $Animations/BodyUpper/Accessories.get_children()
+	var grandchildren
+	for child in children:
+		grandchildren = child.get_children()
+		for grandchild in grandchildren:
+			grandchild.play("sit")
+	yield(BodyUpper, "animation_finished")
+	BodyUpper.playing = false
+	BodyLower.playing = false
+	var framecount
+	framecount = BodyUpper.frames.get_frame_count("sit")
+	if framecount > 0:
+		BodyUpper.set_frame(framecount - 1)
+	framecount = BodyLower.frames.get_frame_count("sit")
+	if framecount > 0:
+		BodyLower.set_frame(framecount - 1)
+	for child in children:
+		grandchildren = child.get_children()
+		for grandchild in grandchildren:
+			grandchild.playing = false
+			framecount = grandchild.frames.get_frame_count("sit")
+			if framecount > 0:
+				grandchild.set_frame(framecount - 1)
+
+func stand_animations():
+	print("STAND")
+	BodyUpper.play("sit", true)
+	BodyLower.play("sit", true)
+	var children = $Animations/BodyUpper/Accessories.get_children()
+	var grandchildren
+	for child in children:
+		grandchildren = child.get_children()
+		for grandchild in grandchildren:
+			grandchild.play("sit", true)
+	yield(BodyUpper, "animation_finished")
+	print("DONE")
+	position.y = preseated_y
+	z_index = 0
+	emit_signal("stop_using_target", self)
