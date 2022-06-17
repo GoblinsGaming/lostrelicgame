@@ -116,8 +116,6 @@ func calculate_player_input_forces(delta):
 			player_velocity -= delta * PLAYER_STRENGTH / (1 + sqrt(abs(player_velocity)))
 	else:
 		calculate_friction()
-	if Input.is_action_pressed("ui_down"):
-		player_velocity = 0
 	
 
 func calculate_friction():
