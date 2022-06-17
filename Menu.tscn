@@ -349,7 +349,6 @@ texture = ExtResource( 17 )
 pause_mode = 1
 
 [node name="CreditsScreen" type="Node2D" parent="CreditsLayer"]
-visible = false
 
 [node name="Background" type="Sprite" parent="CreditsLayer/CreditsScreen"]
 modulate = Color( 1, 1, 0.639216, 0.85098 )
@@ -386,7 +385,9 @@ Team
 Liam \"Stunbrick\" Chimes: Team Lead, Programmer
 Mark \"PureAwesome\" Chimes: Programmer
 Daniel \"Mossy\" Jonker: Art (Mossiebirch@gmail.com)
-Malcolm \"Cujo26\" Erskine: Animation/Sound design"
+Malcolm \"Cujo26\" Erskine: Animation/Sound design
+
+Sound Effects acquired from Zapsplat.com"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
