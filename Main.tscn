@@ -501,3 +501,7 @@ custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
+
+[node name="Label" type="Label" parent="GameController/CanvasLayer/ShushIndicator"]
+margin_right = 40.0
+margin_bottom = 14.0

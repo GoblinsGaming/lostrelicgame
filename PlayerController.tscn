@@ -224,7 +224,7 @@
 [ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top02.png" type="Texture" id=222]
 [ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top05.png" type="Texture" id=223]
 [ext_resource path="res://Assets/Player/shush/Shush_Top/Shush_Top21.png" type="Texture" id=224]
-[ext_resource path="res://Assets/Sounds/Player/Phone_Noise_Final.mp3" type="AudioStream" id=225]
+[ext_resource path="res://Assets/Sounds/Player/shhh.mp3" type="AudioStream" id=225]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 46.9275
@@ -321,7 +321,7 @@ offset = Vector2( 90, -25 )
 [node name="BodyWhole" type="AnimatedSprite" parent="Player/Animations"]
 frames = SubResource( 4 )
 animation = "run"
-frame = 29
+frame = 49
 playing = true
 offset = Vector2( 20, 143 )
 
