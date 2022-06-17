@@ -90,6 +90,9 @@ func _process(delta):
 			noise_level = clamp(noise_level, 0, MAX_NOISE_LEVEL)
 			$Animations/Speech.scale.x = (noise_level / MAX_NOISE_LEVEL) * 2
 			$Animations/Speech.scale.y = (noise_level / MAX_NOISE_LEVEL) * 2
+			if noise_level > 10:
+				$Sound/Talk/AudioStreamPlayer2D.playing = true
+				$Sound/Talk/AudioStreamPlayer2D.volume_db = (noise_level / MAX_NOISE_LEVEL) * 24 - 12
 			time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
 
 func _physics_process(delta): 
@@ -351,6 +354,7 @@ func sit_animations():
 				grandchild.set_frame(framecount - 1)
 	$Animations/Speech.scale.x = (noise_level / MAX_NOISE_LEVEL ) * 2
 	$Animations/Speech.scale.y = (noise_level / MAX_NOISE_LEVEL ) * 2
+	#$Sound/Talk/AudioStreamPlayer2D.playing = true
 	$Animations/Speech.visible = true
 
 func stand_animations():
@@ -364,6 +368,7 @@ func stand_animations():
 		for grandchild in grandchildren:
 			grandchild.play("sit", true)
 	noise_level = 0
+	$Sound/Talk/AudioStreamPlayer2D.playing = false
 	$Animations/Speech.visible = false
 	yield(BodyUpper, "animation_finished")
 	print("DONE")
@@ -376,4 +381,5 @@ func shush():
 	noise_level = 0
 	$Animations/Speech.scale.x = 0
 	$Animations/Speech.scale.y = 0
+	$Sound/Talk/AudioStreamPlayer2D.playing = false
 	time_to_next_noise_change = rng.randf_range(MIN_TIME_BETWEEN_NOISE_CHANGES,MAX_TIME_BETWEEN_NOISE_CHANGES)
